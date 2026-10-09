@@ -368,61 +368,84 @@ export default function HeroSection({ onOpenQuote, setActivePage }) {
           </div>
         </div>
 
-        {/* HERO EDITORIAL STATEMENT */}
-        <div className="max-w-4xl mx-auto text-center space-y-5 sm:space-y-6 px-2">
+        {/* SPARTAN-STYLE HERO EDITORIAL STATEMENT */}
+        <div className="max-w-5xl mx-auto text-center space-y-5 sm:space-y-6 px-2">
           
           {/* Glowing Slide Badge */}
           <div className="flex justify-center items-center gap-2">
-            <div className={`inline-flex items-center space-x-2 px-4 py-1.5 rounded-full border text-xs font-bold font-mono tracking-wider uppercase backdrop-blur-md shadow-xl transition-all duration-500 ${current.theme.badgeClass}`}>
-              <span className="w-2 h-2 rounded-full bg-emerald-400 inline-block animate-pulse" />
-              <span>{current.badge}</span>
+            <div className="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full border border-red-500/40 bg-red-950/40 text-red-400 text-xs font-bold font-mono tracking-wider uppercase backdrop-blur-md shadow-xl">
+              <span className="w-2 h-2 rounded-full bg-red-500 inline-block animate-ping" />
+              <span>ELITE SECURITY & TACTICAL RESPONSE • ZAMBIA</span>
             </div>
           </div>
 
-          {/* Dynamic Bold Editorial Headline - Responsive & Full Visibility */}
-          <div className="min-h-[100px] sm:min-h-[125px] flex items-center justify-center">
-            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-[44px] font-black font-display tracking-tight uppercase leading-[1.12] transition-all duration-500 drop-shadow-lg">
-              <span>{current.headlinePrefix} </span>
-              <span className={`bg-gradient-to-r ${current.theme.highlightGradient} bg-clip-text text-transparent drop-shadow-[0_0_25px_${current.theme.glowRgba}]`}>
-                {current.headlineHighlight}
+          {/* Spartan Signature Headline */}
+          <div className="min-h-[110px] sm:min-h-[140px] flex flex-col items-center justify-center space-y-2">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black font-display tracking-tight uppercase leading-[1.1] drop-shadow-xl text-white">
+              ELITE SECURITY & <br className="hidden sm:inline" />
+              <span className="bg-gradient-to-r from-red-500 via-rose-400 to-amber-400 bg-clip-text text-transparent drop-shadow-[0_0_35px_rgba(239,68,68,0.4)]">
+                TACTICAL RESPONSE
               </span>
-              <br />
-              <span className="text-white">{current.headlineSuffix}</span>
             </h1>
+            <p className="text-sm sm:text-base md:text-lg font-bold text-slate-200 tracking-wide uppercase">
+              Protecting people, properties and businesses across Zambia.
+            </p>
           </div>
 
           {/* Subtitle description */}
-          <p className="text-xs sm:text-sm md:text-base text-slate-200 max-w-2xl mx-auto font-normal leading-relaxed min-h-[44px] sm:min-h-[50px] flex items-center justify-center drop-shadow-md">
-            {current.description}
+          <p className="text-xs sm:text-sm md:text-base text-slate-300 max-w-2xl mx-auto font-normal leading-relaxed drop-shadow-md">
+            {current.description || 'Advanced security solutions including armed guarding, AI monitoring, VIP protection, and rapid response teams operating from our Rhodespark 24/7 command center.'}
           </p>
 
-          {/* GLOBANT-STYLE ACTION BUTTONS */}
+          {/* SPARTAN-STYLE ACTION BUTTONS */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
             <button
-              onClick={() => {
-                setBtnActive(!btnActive);
-                onOpenQuote(current.pillLabel);
-              }}
-              className={`w-full sm:w-auto px-8 py-4 font-extrabold text-xs sm:text-sm tracking-wider uppercase rounded-full shadow-2xl transition-all duration-300 transform hover:-translate-y-0.5 active:scale-95 flex items-center justify-center cursor-pointer text-white group ${
-                btnActive
-                  ? 'bg-gradient-to-r from-emerald-500 to-teal-500 shadow-emerald-500/40 ring-2 ring-emerald-400'
-                  : `${current.theme.btnGradient} ring-1 ring-white/25`
-              }`}
+              onClick={() => onOpenQuote(current.pillLabel)}
+              className="w-full sm:w-auto px-9 py-4 font-extrabold text-xs sm:text-sm tracking-wider uppercase rounded-xl shadow-2xl transition-all duration-300 transform hover:-translate-y-0.5 active:scale-95 flex items-center justify-center cursor-pointer text-white bg-gradient-to-r from-red-600 via-rose-600 to-red-700 hover:from-red-500 hover:to-rose-600 shadow-red-600/40 border border-red-500/40 group"
             >
               <Shield className="w-4 h-4 mr-2.5 group-hover:scale-110 transition-transform" />
-              <span>REQUEST SECURITY ASSESSMENT</span>
+              <span>GET SECURITY QUOTE</span>
               <ArrowRight className="w-4 h-4 ml-2.5 group-hover:translate-x-1.5 transition-transform" />
             </button>
 
             <button
-              onClick={scrollToKeyFeatures}
-              className="w-full sm:w-auto px-7 py-4 bg-slate-900/90 hover:bg-slate-800 text-slate-200 hover:text-white font-bold text-xs sm:text-sm tracking-wider uppercase rounded-full border border-slate-700/90 hover:border-cyan-400/60 transition-all flex items-center justify-center space-x-2.5 cursor-pointer shadow-xl group backdrop-blur-md"
+              onClick={() => {
+                const svc = document.getElementById('our-security-services');
+                if (svc) svc.scrollIntoView({ behavior: 'smooth' });
+                else if (setActivePage) setActivePage('services');
+              }}
+              className="w-full sm:w-auto px-8 py-4 bg-slate-900/90 hover:bg-slate-800 text-slate-200 hover:text-white font-bold text-xs sm:text-sm tracking-wider uppercase rounded-xl border border-slate-700/90 hover:border-blue-400/60 transition-all flex items-center justify-center space-x-2.5 cursor-pointer shadow-xl group backdrop-blur-md"
             >
-              <div className="w-6 h-6 rounded-full bg-blue-600/20 border border-blue-500/30 flex items-center justify-center group-hover:scale-110 transition-transform">
-                <Sparkles className="w-3 h-3 text-cyan-400 fill-current" />
-              </div>
-              <span>EXPLORE KEY FEATURES</span>
+              <span>LEARN ABOUT OUR SERVICES</span>
+              <ChevronRight className="w-4 h-4 text-slate-400 group-hover:translate-x-1 transition-transform" />
             </button>
+          </div>
+
+          {/* Spartan Featured Hero Banner: RAPID RESPONSE PANIC BUTTON */}
+          <div className="pt-4 max-w-xl mx-auto">
+            <div className="p-3.5 sm:p-4 rounded-2xl bg-gradient-to-r from-red-950/70 via-[#0d1424]/90 to-blue-950/70 border border-red-500/30 backdrop-blur-md flex flex-col sm:flex-row items-center justify-between gap-3 text-left shadow-2xl">
+              <div className="flex items-center space-x-3">
+                <div className="w-10 h-10 rounded-xl bg-red-600/20 border border-red-500/50 flex items-center justify-center text-red-400 shrink-0">
+                  <Activity className="w-5 h-5 animate-pulse" />
+                </div>
+                <div>
+                  <div className="text-xs font-black uppercase text-white tracking-wider flex items-center space-x-2">
+                    <span>RAPID RESPONSE PANIC BUTTON</span>
+                    <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-red-600 text-white font-bold">24/7 LIVE</span>
+                  </div>
+                  <p className="text-[11px] text-slate-300 line-clamp-1">
+                    One-touch emergency activation with instant GPS tracking & rapid dispatch.
+                  </p>
+                </div>
+              </div>
+
+              <a
+                href="tel:+260777127114"
+                className="w-full sm:w-auto px-4 py-2 bg-red-600 hover:bg-red-500 text-white font-bold text-[11px] uppercase tracking-wider rounded-lg shrink-0 text-center transition-colors shadow-md"
+              >
+                CALL CONTROL ROOM
+              </a>
+            </div>
           </div>
 
         </div>

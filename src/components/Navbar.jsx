@@ -20,8 +20,8 @@ export default function Navbar({ activePage, setActivePage, onOpenQuote }) {
     { id: 'home', label: 'Home' },
     { id: 'about', label: 'About Us' },
     { id: 'services', label: 'Services' },
+    { id: 'coverage', label: 'Areas We Service' },
     { id: 'careers', label: 'Careers' },
-    { id: 'coverage', label: 'Coverage' },
     { id: 'contact', label: 'Contact Us' },
   ];
 
@@ -41,81 +41,102 @@ export default function Navbar({ activePage, setActivePage, onOpenQuote }) {
     onOpenQuote();
   };
 
-  // Button Color Styles based on Click State
-  const getQuoteBtnStyle = () => {
-    if (quoteBtnState === 1) {
-      return 'bg-gradient-to-r from-emerald-600 via-teal-500 to-emerald-600 hover:from-teal-500 hover:to-emerald-500 shadow-emerald-500/30 text-white';
-    }
-    if (quoteBtnState === 2) {
-      return 'bg-gradient-to-r from-amber-600 via-orange-500 to-amber-600 hover:from-orange-500 hover:to-amber-500 shadow-amber-500/30 text-white';
-    }
-    return 'bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-500 hover:from-cyan-400 hover:via-blue-500 hover:to-indigo-600 shadow-blue-600/30 text-white';
-  };
-
   return (
     <>
-      {/* Main Sticky Navbar - Clean & Never Touches Hero Section */}
+      {/* Top Emergency Control Room Bar (Spartan SA Style) */}
+      <div className="bg-[#04070d] border-b border-slate-800 text-slate-300 text-[11px] sm:text-xs py-2 px-4 sm:px-8 lg:px-12 relative z-50">
+        <div className="w-full max-w-[1680px] mx-auto flex flex-col sm:flex-row items-center justify-between gap-1.5 sm:gap-4 font-mono">
+          <div className="flex items-center space-x-2 text-slate-300">
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+            </span>
+            <span className="text-[10px] sm:text-xs uppercase tracking-wider font-semibold text-slate-300">
+              24/7 National Command Center: <span className="text-emerald-400 font-bold">Active</span>
+            </span>
+            <span className="text-slate-600 hidden md:inline">|</span>
+            <span className="text-slate-400 hidden md:inline">Rhodespark, Lusaka HQ</span>
+          </div>
+
+          <div className="flex items-center flex-wrap justify-center gap-3 sm:gap-6 text-[11px] sm:text-xs">
+            <div className="flex items-center space-x-1.5">
+              <span className="text-slate-400 uppercase font-medium">Emergency Control Room:</span>
+              <a
+                href="tel:+260777127114"
+                className="text-red-400 hover:text-red-300 font-bold transition-colors tracking-wide"
+              >
+                +260 777 127 114
+              </a>
+            </div>
+
+            <div className="flex items-center space-x-1.5">
+              <span className="text-slate-400 uppercase font-medium">Operations:</span>
+              <a
+                href="tel:+260968025444"
+                className="text-blue-400 hover:text-blue-300 font-bold transition-colors"
+              >
+                +260 968 025 444
+              </a>
+            </div>
+
+            <a
+              href="https://wa.me/260777127114"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-emerald-400 hover:text-emerald-300 font-bold transition-colors hidden lg:inline"
+            >
+              WhatsApp Dispatch →
+            </a>
+          </div>
+        </div>
+      </div>
+
+      {/* Main Sticky Navbar (Spartan High-Contrast Tactical Layout) */}
       <header 
-        className={`sticky top-0 z-50 transition-all duration-300 border-b border-slate-800/90 shadow-2xl ${
+        className={`sticky top-0 z-40 transition-all duration-300 border-b border-slate-800/90 shadow-2xl ${
           scrolled 
-            ? 'bg-[#080c16]/98 backdrop-blur-md py-3' 
-            : 'bg-[#080c16] py-3.5 sm:py-4'
+            ? 'bg-[#070b14]/98 backdrop-blur-md py-3' 
+            : 'bg-[#070b14] py-3.5 sm:py-4'
         }`}
       >
         <div className="w-full max-w-[1680px] mx-auto px-4 sm:px-8 lg:px-12 flex items-center justify-between">
           
-          {/* Logo Brand on Left: Clean Single Name (TOUGH TASK SECURITY SOLUTION LTD) */}
+          {/* Logo Brand on Left */}
           <button 
             onClick={handleLogoClick}
-            className="flex items-center space-x-3.5 text-left focus:outline-none group cursor-pointer"
-            title="Click to toggle emblem animation"
-            aria-label="Tough Task Security Solution Ltd Home"
+            className="flex items-center space-x-3 text-left focus:outline-none group cursor-pointer"
+            aria-label="Tough Task Security Solutions Ltd Home"
           >
-            {/* Animated Logo Container: 3D Flip, Halo Glow & Status Light */}
-            <div 
-              className={`relative w-11 h-11 sm:w-12 sm:h-12 rounded-xl p-1.5 flex items-center justify-center shrink-0 shadow-lg transition-all duration-500 transform ${
-                logoToggled 
-                  ? 'bg-blue-600/30 border-2 border-blue-400 rotate-y-180 scale-105 shadow-[0_0_25px_rgba(59,130,246,0.7)]' 
-                  : 'bg-[#0f172a] border border-slate-700 hover:border-blue-500 hover:scale-105 shadow-md'
-              }`}
-            >
+            <div className="relative w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-[#0d1424] border border-slate-700/80 p-1.5 flex items-center justify-center shrink-0 shadow-lg group-hover:border-blue-500 transition-all duration-300">
               <img 
                 src="/assets/logo.png" 
-                alt="Tough Task Security Solution Ltd" 
-                className={`w-full h-full object-contain transition-transform duration-500 ${
-                  logoToggled ? 'rotate-12 scale-110' : 'group-hover:scale-105'
-                }`}
+                alt="Tough Task Security Solutions Ltd" 
+                className="w-full h-full object-contain filter drop-shadow group-hover:scale-105 transition-transform" 
               />
-              {logoToggled && (
-                <span className="absolute -top-1 -right-1 w-3 h-3 rounded-full bg-emerald-400 border-2 border-[#080c16] animate-ping" />
-              )}
             </div>
 
-            {/* Clean, Non-Repetitive Company Name */}
             <div className="flex flex-col justify-center">
-              <span className={`text-sm sm:text-base font-black tracking-tight uppercase font-display leading-tight transition-colors duration-300 ${
-                logoToggled ? 'text-blue-400' : 'text-white group-hover:text-blue-400'
-              }`}>
-                TOUGH TASK SECURITY SOLUTION LTD
+              <span className="text-sm sm:text-base font-black tracking-tight uppercase font-display text-white group-hover:text-blue-400 transition-colors">
+                TOUGH TASK SECURITY
               </span>
-              <span className="text-[10px] tracking-wider text-slate-400 font-mono font-medium">
-                ZAMBIA • 10 PROVINCES COVERAGE
+              <span className="text-[10px] tracking-widest text-slate-400 font-mono font-semibold uppercase">
+                SOLUTIONS LIMITED • ZAMBIA
               </span>
             </div>
           </button>
 
           {/* Desktop Navigation Links */}
-          <nav className="hidden lg:flex items-center space-x-1 xl:space-x-1.5">
+          <nav className="hidden lg:flex items-center space-x-1 xl:space-x-2">
             {navLinks.map((link) => {
               const isActive = activePage === link.id;
               return (
                 <button
                   key={link.id}
                   onClick={() => handleNavClick(link.id)}
-                  className={`px-3 py-2 text-xs font-bold uppercase tracking-wider rounded-lg transition-all duration-200 ${
+                  className={`px-3.5 py-2 text-xs font-bold uppercase tracking-wider rounded-lg transition-all duration-200 cursor-pointer ${
                     isActive 
-                      ? 'text-blue-400 bg-blue-500/10 border border-blue-500/30 shadow-sm' 
-                      : 'text-slate-300 hover:text-white hover:bg-slate-800/60'
+                      ? 'text-white bg-blue-600 shadow-md shadow-blue-600/30 font-extrabold' 
+                      : 'text-slate-300 hover:text-white hover:bg-slate-800/70'
                   }`}
                 >
                   {link.label}
@@ -124,16 +145,14 @@ export default function Navbar({ activePage, setActivePage, onOpenQuote }) {
             })}
           </nav>
 
-          {/* REQUEST A QUOTE Button with Animated Multi-Color Hover & Click Transition */}
+          {/* Spartan-Style GET SECURITY QUOTE Button */}
           <div className="hidden lg:flex items-center space-x-3">
             <button
               onClick={handleQuoteClick}
-              className={`relative overflow-hidden px-5 py-2.5 text-xs font-bold uppercase tracking-wider rounded-lg shadow-md transition-all duration-300 transform hover:-translate-y-0.5 active:scale-95 flex items-center group cursor-pointer ${getQuoteBtnStyle()}`}
+              className="relative overflow-hidden px-6 py-3 bg-gradient-to-r from-red-600 via-rose-600 to-red-700 hover:from-red-500 hover:to-rose-600 text-white font-extrabold text-xs uppercase tracking-wider rounded-lg shadow-lg shadow-red-600/30 transition-all duration-300 transform hover:-translate-y-0.5 active:scale-95 flex items-center group cursor-pointer border border-red-500/30"
             >
-              <span className="relative z-10 flex items-center">
-                <span>REQUEST A QUOTE</span>
-                <ChevronRight className="w-3.5 h-3.5 ml-1 group-hover:translate-x-1 transition-transform" />
-              </span>
+              <span>GET SECURITY QUOTE</span>
+              <ChevronRight className="w-4 h-4 ml-1.5 group-hover:translate-x-1 transition-transform" />
             </button>
           </div>
 
@@ -141,8 +160,8 @@ export default function Navbar({ activePage, setActivePage, onOpenQuote }) {
           <div className="flex items-center space-x-2 lg:hidden">
             <a
               href="tel:+260777127114"
-              className="p-2 text-emerald-400 bg-slate-900 border border-slate-700 rounded-lg hover:bg-slate-800"
-              aria-label="Call emergency hotline"
+              className="p-2 text-red-400 bg-red-950/40 border border-red-800/80 rounded-lg hover:bg-red-900/60 transition-colors"
+              aria-label="Call emergency control room"
             >
               <Phone className="w-4 h-4" />
             </a>
@@ -159,7 +178,7 @@ export default function Navbar({ activePage, setActivePage, onOpenQuote }) {
 
         {/* Mobile Dropdown Menu */}
         {mobileMenuOpen && (
-          <div className="lg:hidden border-t border-slate-800 bg-[#080c16] px-5 py-5 space-y-3 shadow-2xl animate-fadeIn">
+          <div className="lg:hidden border-t border-slate-800 bg-[#070b14] px-5 py-5 space-y-3 shadow-2xl animate-fadeIn">
             <div className="space-y-1">
               {navLinks.map((link) => {
                 const isActive = activePage === link.id;
@@ -169,12 +188,12 @@ export default function Navbar({ activePage, setActivePage, onOpenQuote }) {
                     onClick={() => handleNavClick(link.id)}
                     className={`w-full flex items-center justify-between px-3.5 py-2.5 text-sm font-semibold rounded-lg transition-colors text-left ${
                       isActive
-                        ? 'text-blue-400 bg-blue-500/10 border border-blue-500/20'
+                        ? 'text-white bg-blue-600 font-bold'
                         : 'text-slate-300 hover:text-white hover:bg-slate-800/60'
                     }`}
                   >
                     <span>{link.label}</span>
-                    <ChevronRight className={`w-4 h-4 ${isActive ? 'text-blue-400' : 'text-slate-600'}`} />
+                    <ChevronRight className={`w-4 h-4 ${isActive ? 'text-white' : 'text-slate-600'}`} />
                   </button>
                 );
               })}
@@ -186,16 +205,16 @@ export default function Navbar({ activePage, setActivePage, onOpenQuote }) {
                   setMobileMenuOpen(false);
                   handleQuoteClick();
                 }}
-                className={`w-full py-3 font-bold text-xs uppercase tracking-wider rounded-lg shadow-md flex items-center justify-center transition-all ${getQuoteBtnStyle()}`}
+                className="w-full py-3.5 font-extrabold text-xs uppercase tracking-wider rounded-lg shadow-md bg-gradient-to-r from-red-600 to-rose-600 text-white flex items-center justify-center transition-all"
               >
-                <span>REQUEST A SECURITY QUOTE</span>
+                <span>GET SECURITY QUOTE</span>
                 <ArrowRight className="w-4 h-4 ml-2" />
               </button>
               
-              <div className="p-3 bg-[#0d1320] rounded-lg border border-slate-800 text-xs space-y-1 text-slate-300">
-                <div className="font-semibold text-white">24/7 Dispatch Desk:</div>
-                <div className="flex justify-between items-center pt-1">
-                  <a href="tel:+260777127114" className="text-emerald-400 font-bold hover:underline">
+              <div className="p-3 bg-[#0d1320] rounded-lg border border-slate-800 text-xs space-y-1.5 text-slate-300 font-mono">
+                <div className="font-semibold text-white">Emergency Control Room:</div>
+                <div className="flex justify-between items-center pt-0.5">
+                  <a href="tel:+260777127114" className="text-red-400 font-bold hover:underline">
                     +260 777 127 114
                   </a>
                   <a href="tel:+260968025444" className="text-blue-400 font-bold hover:underline">

@@ -117,94 +117,86 @@ export default function Footer({ setActivePage, onOpenQuote }) {
             </ul>
           </div>
 
-          {/* Column 4: Contact & Socials (3 cols) */}
-          <div className="lg:col-span-3 space-y-3">
+          {/* Column 4: Get in Touch & Download Profile (Spartan SA Style) */}
+          <div className="lg:col-span-3 space-y-4">
             <h4 className="text-xs font-bold uppercase tracking-wider text-white">
-              HEAD OFFICE
+              GET IN TOUCH
             </h4>
 
-            <div className="space-y-2.5 text-xs">
-              <div className="flex items-start">
-                <MapPin className="w-3.5 h-3.5 text-blue-400 mr-2 mt-0.5 shrink-0" />
-                <div className="text-slate-300">
-                  <p className="font-semibold text-white">National Council for the Laity Building</p>
-                  <p>Office No. 5, Rhodespark</p>
-                  <p>Lusaka, Zambia</p>
-                </div>
-              </div>
+            <p className="text-xs text-slate-400 leading-relaxed">
+              Need a security solution tailored to your premises? Our Rhodespark control desk is ready 24/7 with professional guarding, tactical response, and offsite AI monitoring.
+            </p>
 
-              <div className="space-y-1 pt-1">
-                <div className="flex items-center">
-                  <Phone className="w-3.5 h-3.5 text-emerald-400 mr-2 shrink-0" />
-                  <a href="tel:+260777127114" className="text-slate-200 font-bold hover:text-white">
-                    +260 777 127 114
-                  </a>
-                </div>
-                <div className="flex items-center">
-                  <Phone className="w-3.5 h-3.5 text-blue-400 mr-2 shrink-0" />
-                  <a href="tel:+260968025444" className="text-slate-200 font-bold hover:text-white">
-                    +260 968 025 444
-                  </a>
-                </div>
-                <div className="flex items-center">
-                  <Mail className="w-3.5 h-3.5 text-slate-400 mr-2 shrink-0" />
-                  <a href="mailto:info@toughtaskltd.com" className="text-slate-300 hover:text-white">
-                    info@toughtaskltd.com
-                  </a>
-                </div>
-              </div>
+            <button
+              onClick={() => onOpenQuote()}
+              className="w-full py-3 bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white font-bold text-xs uppercase tracking-wider rounded-xl transition-all shadow-lg shadow-red-600/30 flex items-center justify-center space-x-2 cursor-pointer"
+            >
+              <span>GET A SECURITY QUOTE</span>
+              <ChevronRight className="w-3.5 h-3.5" />
+            </button>
 
-              <div className="pt-2">
-                <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider block mb-1.5">
-                  Social Channels
-                </span>
-                <div className="flex flex-col space-y-1 text-xs">
-                  <a 
-                    href="https://www.facebook.com/search/top?q=Tough%20Task%20Security%20Solutions%20Ltd" 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
-                    className="text-slate-300 hover:text-blue-400 transition-colors"
-                  >
-                    • Facebook: Tough Task Security Solutions Ltd
-                  </a>
-                  <a 
-                    href="https://www.tiktok.com/@toughtasksecurity" 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
-                    className="text-slate-300 hover:text-pink-400 transition-colors"
-                  >
-                    • TikTok: Tough Task Security Solutions Ltd
-                  </a>
-                  <a 
-                    href="https://www.linkedin.com/company/tough-task-security-solutions-ltd" 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
-                    className="text-slate-300 hover:text-blue-300 transition-colors"
-                  >
-                    • LinkedIn: Tough Task Security Solutions Ltd
-                  </a>
-                </div>
+            <div className="pt-2 text-xs text-slate-300 space-y-2 font-mono">
+              <div className="flex items-center justify-between p-2 rounded-lg bg-[#0a0f1b] border border-slate-800">
+                <span className="text-[11px] text-slate-400">Emergency 24/7:</span>
+                <a href="tel:+260777127114" className="text-red-400 font-bold hover:underline">
+                  +260 777 127 114
+                </a>
               </div>
+              <div className="flex items-center justify-between p-2 rounded-lg bg-[#0a0f1b] border border-slate-800">
+                <span className="text-[11px] text-slate-400">Operations Desk:</span>
+                <a href="tel:+260968025444" className="text-blue-400 font-bold hover:underline">
+                  +260 968 025 444
+                </a>
+              </div>
+            </div>
+
+            <div className="pt-2">
+              <div className="text-[11px] font-bold text-slate-400 uppercase tracking-wider mb-1.5">
+                Head Office
+              </div>
+              <p className="text-xs text-slate-300">
+                National Council for the Laity Building, Office No. 5, Rhodespark, Lusaka, Zambia
+              </p>
             </div>
           </div>
 
         </div>
 
+        {/* Spartan-Style Compliance & Accreditation Strip */}
+        <div className="py-6 border-b border-slate-800/80 flex flex-wrap items-center justify-between gap-4 text-xs font-mono text-slate-400">
+          <div className="flex items-center space-x-2 text-slate-300">
+            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+            <span>100% Zambian-Owned & Managed Security Enterprise</span>
+          </div>
+          <div className="flex flex-wrap gap-4 text-[11px]">
+            <span className="px-2.5 py-1 rounded bg-[#0b101c] border border-slate-800 text-slate-300">
+              ✓ Ministry of Home Affairs Licensed
+            </span>
+            <span className="px-2.5 py-1 rounded bg-[#0b101c] border border-slate-800 text-slate-300">
+              ✓ Zambia Police Vetting & Clearance
+            </span>
+            <span className="px-2.5 py-1 rounded bg-[#0b101c] border border-slate-800 text-slate-300">
+              ✓ PACRA & ZRA Compliant
+            </span>
+          </div>
+        </div>
+
         {/* Bottom Copyright & Attribution Bar */}
         <div className="pt-6 flex flex-col md:flex-row justify-between items-center text-xs text-slate-400 gap-4">
           <div>
-            © 2026 Tough Task Security Solutions Limited. Registered Private Security Provider in Zambia.
+            © 2026 Tough Task Security Solutions Limited. All Rights Reserved.
           </div>
 
           <div className="flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-[#0b101c] border border-slate-800">
-            <span className="text-slate-400 text-[11px]">Built by</span>
-            <span className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-400 to-emerald-400 font-mono text-[11px] tracking-wide">
-              Zambia Cloud Programmer
+            <span className="text-slate-400 text-[11px]">System Status:</span>
+            <span className="font-bold text-emerald-400 font-mono text-[11px] flex items-center">
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 mr-1.5 animate-ping"></span>
+              Rhodespark Command Online
             </span>
           </div>
 
           <div className="flex items-center space-x-6">
-            <button onClick={() => handleLink('contact')} className="hover:text-white transition-colors">
+            <button onClick={() => handleLink('contact')} className="hover:text-white transition-colors cursor-pointer">
               Privacy & Terms
             </button>
             <button

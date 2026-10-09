@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import QuoteBuilderModal from './components/QuoteBuilderModal';
+import FloatingEmergencyButton from './components/FloatingEmergencyButton';
 import DualSplitIntro from './components/DualSplitIntro';
 import HomePage from './pages/HomePage';
 import AboutPage from './pages/AboutPage';
@@ -128,6 +129,11 @@ export default function App() {
         }}
         preselectedService={preselectedService}
         preselectedLocation={preselectedLocation}
+      />
+
+      {/* 6. Spartan Floating Emergency Dispatch Trigger */}
+      <FloatingEmergencyButton 
+        onOpenQuote={() => handleOpenQuote()} 
       />
     </div>
   );

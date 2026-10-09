@@ -7,99 +7,118 @@ export default function SecurityServicesSection({ onOpenQuote }) {
 
   const services = [
     {
-      id: 'manned-guarding',
+      id: 'guarding-services',
       number: '01',
-      title: 'Manned Guarding',
+      title: 'Guarding Services',
       image: '/assets/services/service-manned-guarding.jpg',
       kommodoUrl: 'https://kommodo.ai/i/edjHGlQ2YCfxUNG8ifuQ',
-      description: 'Our professionally trained security officers ensure continuous surveillance and safety at residential, corporate, and industrial locations, providing a visible security presence.',
+      description: 'Disciplined static and mobile guarding providing visible deterrence, access screening, and patrol coverage for corporate, industrial, and residential premises.',
       icon: Users,
-      badge: '24/7 STATIC & PATROL FORCE',
+      badge: 'ARMED & UNARMED GUARDS',
       accentColor: 'text-blue-400',
       glowColor: 'rgba(59,130,246,0.35)',
       highlights: [
-        'Vetted & disciplined security force',
-        'Electronic NFC perimeter checkpoint tags',
+        '100% Police vetted with fingerprint clearance',
+        'Electronic NFC perimeter checkpoint verification',
         'Unannounced day and night supervisor audits',
-        'Visible crime deterrence & access screening'
+        'Smart uniform presentation & military drill'
       ],
-      sla: 'Continuous on-post attendance & digital incident logging'
+      sla: 'Continuous post attendance & digital incident logging'
+    },
+    {
+      id: 'tactical-units',
+      number: '02',
+      title: 'Tactical Units & Armed Patrols',
+      image: '/assets/hero/hero-7.jpg',
+      kommodoUrl: 'https://kommodo.ai/i/6yAi3RLLW55YddojIRxJ',
+      description: 'Specialized tactical response units equipped for high-risk environments, counter-intrusion operations, and sub-minute emergency escalation.',
+      icon: Shield,
+      badge: 'SUB-5 MINUTE TACTICAL INTERVENTION',
+      accentColor: 'text-red-400',
+      glowColor: 'rgba(239,68,68,0.35)',
+      highlights: [
+        'Armed tactical backup cruisers on 24/7 patrol',
+        'Direct VHF/UHF tactical radio synchronization',
+        'Advanced defensive drill and threat neutralization',
+        'Sub-5 minute priority escalation in Lusaka & Copperbelt'
+      ],
+      sla: 'Sub-5 minute emergency response deployment'
+    },
+    {
+      id: 'rapid-response-button',
+      number: '03',
+      title: 'Rapid Response Panic Button',
+      image: '/assets/services/service-alarm-response.jpg',
+      kommodoUrl: 'https://kommodo.ai/i/w0y986Q7PS3vmuVkLxJb',
+      description: 'One-touch emergency activation with instant GPS coordinates and priority dispatch directly linked to our 24/7 Rhodespark control room.',
+      icon: BellRing,
+      badge: 'ONE-TOUCH GPS ACTIVATION',
+      accentColor: 'text-rose-400',
+      glowColor: 'rgba(244,63,94,0.35)',
+      highlights: [
+        'Instant wireless distress beacon to central dispatch',
+        'Automated live vehicle GPS telemetry routing',
+        'Simultaneous client SMS & WhatsApp alert relays',
+        'Direct emergency liaison with Zambia Police Service'
+      ],
+      sla: 'Instantaneous distress receipt & cruiser dispatch'
+    },
+    {
+      id: 'offsite-monitoring',
+      number: '04',
+      title: 'Offsite AI Monitoring & CCTV',
+      image: '/assets/service-cctv.jpg',
+      kommodoUrl: 'https://kommodo.ai/i/V7XKKsO9SYq7IoA23wqN',
+      description: 'AI-powered offsite video surveillance detecting perimeter breaches, loitering, and unusual activity in real time with audio challenge capabilities.',
+      icon: Eye,
+      badge: 'AI-POWERED THREAT DETECTION',
+      accentColor: 'text-cyan-400',
+      glowColor: 'rgba(6,182,212,0.35)',
+      highlights: [
+        'Intelligent video analytics & line-crossing detection',
+        'Live 24/7 control room surveillance feed monitoring',
+        'Two-way audio challenge and siren activation',
+        'Encrypted cloud evidence vault storage'
+      ],
+      sla: 'Zero-downtime surveillance & instant breach alerts'
+    },
+    {
+      id: 'vip-protection',
+      number: '05',
+      title: 'VIP & Close Protection',
+      image: '/assets/services/service-vip-protection.jpg',
+      kommodoUrl: 'https://kommodo.ai/i/7FUCwVZSCuUDWWUvmkK8',
+      description: 'Discreet close protection officers and armored motorcades for chief executives, foreign dignitaries, diplomats, and high-profile individuals.',
+      icon: UserCheck,
+      badge: 'EXECUTIVE BODYGUARD DETAILS',
+      accentColor: 'text-emerald-400',
+      glowColor: 'rgba(16,185,129,0.35)',
+      highlights: [
+        'Trained close protection officers and evasive drivers',
+        'Advance route reconnaissance and threat intelligence',
+        'Discreet suited executive details for summits & galas',
+        'Armored escort vehicle convoys'
+      ],
+      sla: 'Impeccable discretion adhering to international standards'
     },
     {
       id: 'cash-in-transit',
-      number: '02',
-      title: 'Cash-In-Transit Services',
+      number: '06',
+      title: 'Cash-In-Transit & Bullion Logistics',
       image: '/assets/services/service-cash-in-transit.jpg',
       kommodoUrl: 'https://kommodo.ai/i/Pk2KK6k0AhWQTbPvQn0D',
-      description: 'Specialized transportation solution for cash and valuables, designed to ensure secure delivery with minimal risk.',
+      description: 'Ironclad armored vehicle bullion transit and cash management across banking networks, mining concessions, and retail commercial nodes.',
       icon: Truck,
       badge: 'ARMORED BULLION & VAULT ESCORT',
       accentColor: 'text-amber-400',
       glowColor: 'rgba(245,158,11,0.35)',
       highlights: [
-        'Armored transport & armed tactical escort',
-        'Real-time GPS route telemetry & geofencing',
-        'Dual-custody verification protocols',
-        'Direct emergency liaison with Zambia Police'
+        'Armored transport vehicles with satellite GPS tracking',
+        'Dual-custody vault-to-vault transfer manifests',
+        'Armed tactical escort teams on national transit routes',
+        'Comprehensive cash-in-transit insurance coverage'
       ],
-      sla: 'Zero-breach bullion & cash transfer protocols'
-    },
-    {
-      id: 'event-security',
-      number: '03',
-      title: 'Event Security management',
-      image: '/assets/services/service-event-security.jpg',
-      kommodoUrl: 'https://kommodo.ai/i/9CyC1vvi8n0T64fLY8vE',
-      description: 'Our event security security encompass comprehensive planning and deployment strategies to ensure the safe conduct of events large and small.',
-      icon: Shield,
-      badge: 'LARGE & SMALL SCALE EVENTS',
-      accentColor: 'text-emerald-400',
-      glowColor: 'rgba(16,185,129,0.35)',
-      highlights: [
-        'Comprehensive crowd control & perimeter zoning',
-        'VIP backstage & stage protection cordons',
-        'Access badge scanning & bag inspection',
-        'Rapid emergency evacuation protocols'
-      ],
-      sla: 'Flawless crowd coordination & emergency safe-haven readiness'
-    },
-    {
-      id: 'vip-protection',
-      number: '04',
-      title: 'VIP & Executive Protection',
-      image: '/assets/services/service-vip-protection.jpg',
-      kommodoUrl: 'https://kommodo.ai/i/7FUCwVZSCuUDWWUvmkK8',
-      description: 'We specialize in close protection services for high-profile individuals, ensuring their safety in every circumstance with our expert team.',
-      icon: UserCheck,
-      badge: 'CLOSE PROTECTION & BODYGUARDS',
-      accentColor: 'text-cyan-400',
-      glowColor: 'rgba(6,182,212,0.35)',
-      highlights: [
-        'Elite close protection bodyguards',
-        'Advanced motorcade & defensive driving',
-        'Discreet suited executive details',
-        'High-threat route reconnaissance'
-      ],
-      sla: 'Discreet high-level protection adhering to international standards'
-    },
-    {
-      id: 'alarm-monitoring',
-      number: '05',
-      title: 'Alarm Monitoring & Response',
-      image: '/assets/services/service-alarm-response.jpg',
-      kommodoUrl: 'https://kommodo.ai/i/w0y986Q7PS3vmuVkLxJb',
-      description: 'We provide advanced alarm systems monitored by our rapid response teams to ensure immediate action in case of any security breaches.',
-      icon: BellRing,
-      badge: 'SUB-5 MINUTE RAPID INTERVENTION',
-      accentColor: 'text-rose-400',
-      glowColor: 'rgba(239,68,68,0.35)',
-      highlights: [
-        '24/7 central command telemetry monitoring',
-        'Sub-minute rapid armed response dispatch',
-        'Intrusion, panic button & perimeter beam alarms',
-        'Instant client smartphone alarm alerts'
-      ],
-      sla: 'Sub-5 minute priority armed response arrival'
+      sla: 'Zero-loss bullion & cash transfer protocols'
     }
   ];
 
@@ -122,33 +141,32 @@ export default function SecurityServicesSection({ onOpenQuote }) {
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between pb-6 border-b border-slate-800 gap-6">
           <div className="space-y-3 max-w-2xl">
-            <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/30 text-blue-400 text-xs font-mono font-bold uppercase tracking-widest">
+            <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-red-500/10 border border-red-500/30 text-red-400 text-xs font-mono font-bold uppercase tracking-widest">
               <Shield className="w-3.5 h-3.5 mr-1" />
-              <span>PROTECTION DELIVERED ACROSS ZAMBIA</span>
+              <span>ELITE DEFENSE CAPABILITIES IN ZAMBIA</span>
             </div>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-black font-display tracking-tight uppercase text-white leading-tight">
-              OUR SECURITY <span className="bg-gradient-to-r from-blue-400 via-cyan-300 to-emerald-300 bg-clip-text text-transparent">SERVICES</span>
+              OUR SECURITY <span className="bg-gradient-to-r from-red-500 via-rose-400 to-amber-400 bg-clip-text text-transparent">SERVICES</span>
             </h2>
-            <p className="text-slate-400 text-xs sm:text-sm md:text-base leading-relaxed">
-              Tailored, disciplined, and technologically empowered security solutions protecting residential, corporate, and industrial assets.
+            <p className="text-slate-300 text-xs sm:text-sm md:text-base leading-relaxed">
+              Advanced security solutions including armed guarding, AI monitoring, VIP protection, and rapid response teams.
             </p>
           </div>
 
           <button
             onClick={() => onOpenQuote()}
-            className="self-start md:self-end px-7 py-3.5 bg-gradient-to-r from-blue-600 via-indigo-600 to-cyan-500 hover:from-blue-500 hover:to-cyan-400 text-white text-xs font-bold uppercase tracking-wider rounded-full transition-all duration-300 flex items-center space-x-2 shadow-xl group cursor-pointer"
+            className="self-start md:self-end px-7 py-3.5 bg-gradient-to-r from-red-600 via-rose-600 to-red-700 hover:from-red-500 hover:to-rose-600 text-white text-xs font-bold uppercase tracking-wider rounded-xl transition-all duration-300 flex items-center space-x-2 shadow-xl shadow-red-600/30 group cursor-pointer border border-red-500/30"
           >
-            <span>REQUEST SERVICE QUOTE</span>
+            <span>GET SECURITY QUOTE</span>
             <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </button>
         </div>
 
-        {/* 5-Column Interactive Animated Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
+        {/* 6-Card Spartan-Style Tactical Grid (2 Rows of 3 Cards) */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {services.map((srv, idx) => {
             const SrvIcon = srv.icon;
             const isSelected = activeService === idx;
-            const isHovered = hoveredCard === srv.id;
 
             return (
               <div
@@ -156,39 +174,39 @@ export default function SecurityServicesSection({ onOpenQuote }) {
                 onClick={() => setActiveService(idx)}
                 onMouseEnter={() => setHoveredCard(srv.id)}
                 onMouseLeave={() => setHoveredCard(null)}
-                className={`rounded-3xl overflow-hidden flex flex-col justify-between border transition-all duration-500 cursor-pointer group relative ${
+                className={`rounded-2xl overflow-hidden flex flex-col justify-between border transition-all duration-400 cursor-pointer group relative ${
                   isSelected
-                    ? 'bg-gradient-to-b from-[#101b33] via-[#0b1324] to-[#070b14] border-blue-400 shadow-[0_20px_45px_rgba(59,130,246,0.3)] scale-[1.03] -translate-y-2 z-10'
-                    : 'bg-[#090e1a]/90 border-slate-800/90 hover:border-slate-600 hover:bg-[#0e172a] shadow-lg hover:-translate-y-1'
+                    ? 'bg-gradient-to-b from-[#131d31] via-[#0b1220] to-[#070b14] border-red-500/80 shadow-[0_20px_45px_rgba(239,68,68,0.25)] scale-[1.02] -translate-y-2 z-10'
+                    : 'bg-[#090e1a]/95 border-slate-800 hover:border-slate-600 hover:bg-[#0d1627] shadow-xl hover:-translate-y-1.5'
                 }`}
               >
                 {/* Top Active Indicator Glow Line */}
                 {isSelected && (
-                  <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-400 via-cyan-400 to-emerald-400 z-20" />
+                  <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-red-500 via-rose-400 to-amber-400 z-20" />
                 )}
 
                 {/* Service Image Header with Animated Zoom & Contrast */}
-                <div className="relative h-52 w-full overflow-hidden bg-slate-900">
+                <div className="relative h-56 w-full overflow-hidden bg-slate-900">
                   <img
                     src={srv.image}
                     alt={srv.title}
                     onError={(e) => {
                       e.currentTarget.src = srv.kommodoUrl;
                     }}
-                    className="w-full h-full object-cover filter brightness-[0.85] contrast-[1.08] group-hover:scale-110 transition-transform duration-700"
+                    className="w-full h-full object-cover filter brightness-[0.85] contrast-[1.08] group-hover:scale-108 transition-transform duration-700"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#090e1a] via-[#090e1a]/40 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#090e1a] via-[#090e1a]/30 to-transparent" />
                   
                   {/* Floating Number Pill */}
-                  <div className="absolute top-3.5 left-3.5 px-3 py-1 rounded-full bg-[#05080e]/90 border border-slate-700 text-xs font-mono font-bold text-blue-400 backdrop-blur-md shadow-md">
+                  <div className="absolute top-3.5 left-3.5 px-3 py-1 rounded-full bg-[#05080e]/90 border border-slate-700 text-xs font-mono font-bold text-red-400 backdrop-blur-md shadow-md">
                     {srv.number}
                   </div>
 
                   {/* Animated Icon Floating Pod */}
                   <div className={`absolute top-3.5 right-3.5 w-10 h-10 rounded-xl flex items-center justify-center transition-all duration-300 backdrop-blur-md ${
                     isSelected 
-                      ? 'bg-blue-600 text-white shadow-lg shadow-blue-500/50 scale-110' 
-                      : 'bg-[#05080e]/90 border border-slate-700 text-blue-400 group-hover:border-blue-500'
+                      ? 'bg-red-600 text-white shadow-lg shadow-red-500/50 scale-110' 
+                      : 'bg-[#05080e]/90 border border-slate-700 text-slate-300 group-hover:text-red-400 group-hover:border-red-500'
                   }`}>
                     <SrvIcon className="w-5 h-5" />
                   </div>
@@ -200,22 +218,40 @@ export default function SecurityServicesSection({ onOpenQuote }) {
                     <div className="text-[10px] font-mono font-bold text-slate-400 uppercase tracking-wider">
                       {srv.badge}
                     </div>
-                    <h3 className="text-base sm:text-lg font-black font-display text-white uppercase tracking-tight group-hover:text-blue-300 transition-colors leading-snug">
+                    <h3 className="text-lg font-black font-display text-white uppercase tracking-tight group-hover:text-red-400 transition-colors leading-snug">
                       {srv.title}
                     </h3>
-                    <p className="text-xs text-slate-300 leading-relaxed font-normal">
+                    <p className="text-xs sm:text-sm text-slate-300 leading-relaxed font-normal">
                       {srv.description}
                     </p>
                   </div>
 
-                  {/* Animated Action Footer */}
+                  {/* Bullet Highlights */}
+                  <div className="space-y-1.5 pt-2 border-t border-slate-800/80">
+                    {srv.highlights.slice(0, 3).map((hl, hIdx) => (
+                      <div key={hIdx} className="flex items-center text-[11px] text-slate-300">
+                        <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 mr-2 shrink-0" />
+                        <span className="truncate">{hl}</span>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Animated Action Footer (Spartan SA "Learn More" Link) */}
                   <div className="pt-4 border-t border-slate-800/90 flex items-center justify-between">
-                    <span className="text-[11px] font-mono text-blue-400 font-bold group-hover:text-cyan-300 transition-colors">
-                      {isSelected ? 'Active Selection' : 'Inspect'}
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        onOpenQuote(srv.title);
+                      }}
+                      className="text-xs font-bold text-red-400 hover:text-white uppercase tracking-wider transition-colors flex items-center"
+                    >
+                      <span>Get Quote</span>
+                      <ArrowRight className="w-3.5 h-3.5 ml-1" />
+                    </button>
+                    <span className="text-[11px] font-mono text-slate-400 group-hover:text-white transition-colors flex items-center">
+                      <span>Learn More</span>
+                      <ChevronRight className="w-4 h-4 ml-0.5 group-hover:translate-x-1 transition-transform" />
                     </span>
-                    <div className="p-1.5 rounded-full bg-blue-500/10 group-hover:bg-blue-600 text-blue-400 group-hover:text-white transition-all transform group-hover:translate-x-1">
-                      <ChevronRight className="w-4 h-4" />
-                    </div>
                   </div>
                 </div>
 
@@ -228,9 +264,9 @@ export default function SecurityServicesSection({ onOpenQuote }) {
         <div className="rounded-3xl bg-gradient-to-r from-[#0d162a] via-[#091122] to-[#0d162a] border border-blue-500/40 p-6 sm:p-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center shadow-2xl relative overflow-hidden">
           
           <div className="lg:col-span-7 space-y-5">
-            <div className="flex items-center space-x-2 text-xs font-mono font-bold text-cyan-400 uppercase">
-              <span className="w-2.5 h-2.5 rounded-full bg-cyan-400 animate-ping" />
-              <span>ACTIVE DEPLOYMENT PREVIEW • {current.number} / 05</span>
+            <div className="flex items-center space-x-2 text-xs font-mono font-bold text-red-400 uppercase">
+              <span className="w-2.5 h-2.5 rounded-full bg-red-400 animate-ping" />
+              <span>ACTIVE DEPLOYMENT PREVIEW • {current.number} / 06</span>
             </div>
 
             <div className="space-y-2">

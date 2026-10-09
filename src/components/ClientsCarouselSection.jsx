@@ -52,7 +52,7 @@ export default function ClientsCarouselSection({ onOpenQuote }) {
 
           {/* Marquee Track */}
           <div className={`flex items-center space-x-6 sm:space-x-8 w-max ${
-            isHovered ? 'animate-none' : 'animate-[marquee_28s_linear_infinite]'
+            isHovered ? 'animate-none' : 'animate-marquee'
           }`}>
             {marqueeList.map((client, idx) => (
               <div
