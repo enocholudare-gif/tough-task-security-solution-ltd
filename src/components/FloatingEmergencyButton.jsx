@@ -73,10 +73,11 @@ export default function FloatingEmergencyButton({ onOpenQuote }) {
       {/* Floating Main Button with Pulsing Beacon Ring */}
       <button
         onClick={() => setExpanded(!expanded)}
-        className="relative group p-4 rounded-full bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white shadow-2xl shadow-red-600/50 border-2 border-red-400 cursor-pointer transition-all duration-300 transform hover:scale-105 active:scale-95 flex items-center justify-center"
+        className="relative group p-4 rounded-full bg-gradient-to-r from-red-600 via-rose-600 to-red-700 hover:from-red-500 hover:to-rose-600 text-white shadow-2xl shadow-red-600/50 border-2 border-red-400 cursor-pointer transition-all duration-300 transform hover:scale-105 active:scale-95 flex items-center justify-center btn-shimmer"
         aria-label="24/7 Emergency Dispatch"
       >
-        {/* Pulsing Sonar Ring */}
+        {/* Pulsing Sonar Waves */}
+        <span className="absolute -inset-3 rounded-full bg-red-600/30 animate-sonar pointer-events-none" />
         <span className="absolute -inset-1 rounded-full bg-red-500 opacity-40 animate-ping pointer-events-none" />
 
         <div className="relative z-10 flex items-center space-x-2">

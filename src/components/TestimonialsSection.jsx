@@ -62,42 +62,40 @@ export default function TestimonialsSection() {
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
-    <section id="testimonials" className="py-24 lg:py-32 bg-[#060912] text-slate-100 border-t border-slate-800/90 relative overflow-hidden">
-      {/* Background Accent Grid */}
-      <div className="absolute inset-0 tactical-grid opacity-20 pointer-events-none" />
-
+    <section id="testimonials" className="py-24 lg:py-32 bg-[#f5f5f5] text-slate-900 border-t border-slate-200 relative overflow-hidden light-grid-pattern">
+      
       <div className="relative z-10 w-full max-w-[1680px] mx-auto px-4 sm:px-8 lg:px-12 space-y-16">
         
         {/* Spartan-Style Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6 border-b border-slate-800">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6 border-b border-slate-200">
           <div className="space-y-3 max-w-2xl">
-            <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-mono font-bold uppercase tracking-widest">
-              <Star className="w-3.5 h-3.5 fill-current text-amber-400" />
+            <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-amber-50 border border-amber-200 text-amber-700 text-xs font-mono font-bold uppercase tracking-widest shadow-sm">
+              <Star className="w-3.5 h-3.5 fill-current text-amber-500" />
               <span>VERIFIED CLIENT REVIEWS</span>
             </div>
 
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black font-display tracking-tight uppercase text-white leading-tight">
-              WHAT OUR <span className="bg-gradient-to-r from-amber-400 via-orange-400 to-red-400 bg-clip-text text-transparent">CLIENTS SAY</span>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black font-display tracking-tight uppercase text-slate-900 leading-tight">
+              WHAT OUR <span className="text-red-600">CLIENTS SAY</span>
             </h2>
 
-            <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
+            <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
               Real feedback from clients who trust Tough Task Security Solutions for protection, rapid response, and manned guarding across Zambia.
             </p>
           </div>
 
           {/* Google 5-Star Trust Badge */}
-          <div className="p-4 rounded-2xl bg-[#0b101c] border border-slate-800 flex items-center space-x-4 shadow-xl shrink-0">
-            <div className="w-12 h-12 rounded-xl bg-blue-600/20 border border-blue-500/40 flex items-center justify-center text-blue-400 font-bold text-xl font-display">
+          <div className="p-4 rounded-2xl bg-white border border-slate-200 flex items-center space-x-4 shadow-md shrink-0">
+            <div className="w-12 h-12 rounded-xl bg-blue-50 border border-blue-200 flex items-center justify-center text-blue-600 font-bold text-xl font-display">
               G
             </div>
             <div>
-              <div className="flex items-center space-x-1 text-amber-400">
+              <div className="flex items-center space-x-1 text-amber-500">
                 {[...Array(5)].map((_, i) => (
                   <Star key={i} className="w-4 h-4 fill-current" />
                 ))}
               </div>
-              <div className="text-xs font-bold text-white mt-1">4.9 / 5.0 Rating</div>
-              <div className="text-[10px] text-slate-400 font-mono">100% Verified Corporate Audits</div>
+              <div className="text-xs font-bold text-slate-900 mt-1">4.9 / 5.0 Rating</div>
+              <div className="text-[10px] text-slate-500 font-mono">100% Verified Corporate Audits</div>
             </div>
           </div>
         </div>
@@ -107,40 +105,40 @@ export default function TestimonialsSection() {
           {testimonials.map((t) => (
             <div
               key={t.id}
-              className="p-7 rounded-2xl bg-[#090e1a]/95 border border-slate-800 hover:border-slate-600 hover:bg-[#0d1627] transition-all duration-300 flex flex-col justify-between space-y-6 shadow-xl relative group hover:-translate-y-1"
+              className="p-7 rounded-2xl bg-white border border-slate-200 hover:border-red-400 hover:shadow-2xl transition-all duration-300 flex flex-col justify-between space-y-6 shadow-sm relative group spartan-card"
             >
               <div className="space-y-4">
                 {/* Header with Google Logo & Stars */}
                 <div className="flex items-center justify-between">
-                  <div className="flex items-center space-x-1 text-amber-400">
+                  <div className="flex items-center space-x-1 text-amber-500">
                     {[...Array(t.rating)].map((_, i) => (
-                      <Star key={i} className="w-4 h-4 fill-current" />
+                  <Star key={i} className="w-4 h-4 fill-current" />
                     ))}
                   </div>
 
-                  <span className="text-[10px] font-mono font-semibold text-emerald-400 bg-emerald-950/40 border border-emerald-500/30 px-2 py-0.5 rounded-full">
+                  <span className="text-[10px] font-mono font-semibold text-emerald-700 bg-emerald-50 border border-emerald-200 px-2 py-0.5 rounded-full">
                     {t.date}
                   </span>
                 </div>
 
-                <p className="text-xs sm:text-sm text-slate-300 leading-relaxed italic">
+                <p className="text-xs sm:text-sm text-slate-700 leading-relaxed italic">
                   "{t.review}"
                 </p>
               </div>
 
               {/* Reviewer Details */}
-              <div className="pt-4 border-t border-slate-800/80 flex items-center space-x-3.5">
-                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-red-600 to-blue-600 text-white font-bold text-xs flex items-center justify-center font-display shrink-0 shadow-md">
+              <div className="pt-4 border-t border-slate-100 flex items-center space-x-3.5">
+                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-red-600 to-rose-600 text-white font-bold text-xs flex items-center justify-center font-display shrink-0 shadow-md">
                   {t.name.split(' ').map(n => n[0]).join('')}
                 </div>
                 <div className="space-y-0.5">
-                  <h4 className="text-sm font-bold text-white font-display">
+                  <h4 className="text-sm font-bold text-slate-900 font-display">
                     {t.name}
                   </h4>
-                  <p className="text-[11px] text-slate-400 leading-tight">
+                  <p className="text-[11px] text-slate-500 leading-tight">
                     {t.role}
                   </p>
-                  <p className="text-[10px] text-red-400 font-mono">
+                  <p className="text-[10px] text-red-600 font-mono font-semibold">
                     📍 {t.location}
                   </p>
                 </div>

@@ -24,33 +24,33 @@ export default function CoverageSection({ onOpenQuote }) {
   const activeProvince = provincesData.find(p => p.id === selectedProvinceId);
 
   return (
-    <section id="coverage-section" className="py-20 bg-[#070b12] text-slate-100 border-t border-slate-800/80">
+    <section id="coverage-section" className="py-20 bg-slate-50 text-slate-900 border-t border-slate-200 light-grid-pattern">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto space-y-3">
-          <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-bold uppercase tracking-widest">
-            <Radio className="w-3.5 h-3.5 mr-1 text-emerald-400 animate-pulse" />
+          <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-red-50 border border-red-200 text-red-600 text-xs font-bold uppercase tracking-widest shadow-sm">
+            <Radio className="w-3.5 h-3.5 mr-1 text-red-600 animate-pulse" />
             OPERATIONAL FOOTPRINT
           </div>
           
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black font-display tracking-tight uppercase text-white">
-            NATIONWIDE SECURITY <span className="text-blue-500">COVERAGE</span>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black font-display tracking-tight uppercase text-slate-900">
+            NATIONWIDE SECURITY <span className="text-red-600">COVERAGE</span>
           </h2>
           
-          <p className="text-slate-400 text-sm sm:text-base leading-relaxed">
+          <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
             Tough Task Security Solutions provides professional security services across Zambia, with operational coverage spanning all ten provinces and 39 key economic districts.
           </p>
 
-          <div className="flex flex-wrap justify-center items-center gap-6 pt-1 text-xs font-semibold text-slate-300">
-            <span className="flex items-center"><span className="w-2 h-2 rounded-full bg-emerald-400 mr-2" /> 10 / 10 Provinces Active</span>
-            <span className="flex items-center"><span className="w-2 h-2 rounded-full bg-blue-400 mr-2" /> 39 Operational Districts</span>
-            <span className="flex items-center"><span className="w-2 h-2 rounded-full bg-amber-400 mr-2" /> National Inter-District Escorts</span>
+          <div className="flex flex-wrap justify-center items-center gap-6 pt-1 text-xs font-semibold text-slate-700">
+            <span className="flex items-center"><span className="w-2 h-2 rounded-full bg-emerald-500 mr-2" /> 10 / 10 Provinces Active</span>
+            <span className="flex items-center"><span className="w-2 h-2 rounded-full bg-red-500 mr-2" /> 39 Operational Districts</span>
+            <span className="flex items-center"><span className="w-2 h-2 rounded-full bg-amber-500 mr-2" /> National Inter-District Escorts</span>
           </div>
         </div>
 
         {/* Clean Search & Province Filter Bar */}
-        <div className="bg-[#0e1422] border border-slate-800 p-4 sm:p-5 rounded-2xl shadow-lg space-y-3.5">
+        <div className="bg-white border border-slate-200 p-4 sm:p-5 rounded-2xl shadow-md space-y-3.5">
           <div className="flex flex-col md:flex-row gap-3 justify-between items-center">
             
             {/* Search Input */}
@@ -61,12 +61,12 @@ export default function CoverageSection({ onOpenQuote }) {
                 placeholder="Search district or province..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full pl-9 pr-4 py-2 bg-[#090d16] border border-slate-700 rounded-lg text-xs text-white placeholder-slate-500 focus:outline-none focus:border-blue-500 transition-all"
+                className="w-full pl-9 pr-4 py-2 bg-slate-50 border border-slate-300 rounded-lg text-xs text-slate-900 placeholder-slate-400 focus:outline-none focus:border-red-600 focus:bg-white transition-all shadow-sm"
               />
               {searchQuery && (
                 <button
                   onClick={() => setSearchQuery('')}
-                  className="absolute right-3 top-1/2 -translate-y-1/2 text-xs text-slate-400 hover:text-white"
+                  className="absolute right-3 top-1/2 -translate-y-1/2 text-xs text-slate-400 hover:text-slate-600"
                 >
                   ✕
                 </button>
@@ -75,12 +75,12 @@ export default function CoverageSection({ onOpenQuote }) {
 
             {/* Results Count & Deploy Action */}
             <div className="flex items-center space-x-3 w-full md:w-auto justify-between md:justify-end text-xs">
-              <span className="text-slate-400 font-mono">
-                Showing <strong className="text-white">{filteredDistricts.length}</strong> of 39 Districts
+              <span className="text-slate-600 font-mono">
+                Showing <strong className="text-slate-900">{filteredDistricts.length}</strong> of 39 Districts
               </span>
               <button
                 onClick={onOpenQuote}
-                className="px-4 py-2 text-xs font-bold uppercase tracking-wider text-white bg-blue-600 hover:bg-blue-500 rounded-lg shadow-sm transition-all"
+                className="px-4 py-2 text-xs font-bold uppercase tracking-wider text-white bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 rounded-lg shadow-md transition-all btn-shimmer"
               >
                 DEPLOY IN YOUR AREA
               </button>
@@ -88,14 +88,14 @@ export default function CoverageSection({ onOpenQuote }) {
           </div>
 
           {/* Province Pills */}
-          <div className="pt-2 border-t border-slate-800/80">
+          <div className="pt-2 border-t border-slate-200">
             <div className="flex items-center space-x-1.5 overflow-x-auto pb-1 text-xs">
               <button
                 onClick={() => setSelectedProvinceId('all')}
                 className={`px-3 py-1.5 rounded-lg font-medium whitespace-nowrap transition-all ${
                   selectedProvinceId === 'all'
-                    ? 'bg-blue-600 text-white font-bold'
-                    : 'bg-[#090d16] text-slate-300 hover:text-white hover:bg-slate-800'
+                    ? 'bg-red-600 text-white font-bold shadow-sm'
+                    : 'bg-slate-100 text-slate-700 hover:text-slate-900 hover:bg-slate-200'
                 }`}
               >
                 All 10 Provinces ({allLocationsList.length})
@@ -106,8 +106,8 @@ export default function CoverageSection({ onOpenQuote }) {
                   onClick={() => setSelectedProvinceId(prov.id)}
                   className={`px-3 py-1.5 rounded-lg font-medium whitespace-nowrap transition-all ${
                     selectedProvinceId === prov.id
-                      ? 'bg-blue-600 text-white font-bold'
-                      : 'bg-[#090d16] text-slate-300 hover:text-white hover:bg-slate-800'
+                      ? 'bg-red-600 text-white font-bold shadow-sm'
+                      : 'bg-slate-100 text-slate-700 hover:text-slate-900 hover:bg-slate-200'
                   }`}
                 >
                   {prov.name} ({prov.districts.length})
@@ -121,23 +121,23 @@ export default function CoverageSection({ onOpenQuote }) {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           
           {/* Left: Zambia SVG Map Visualization (5 cols) */}
-          <div className="lg:col-span-5 bg-[#0e1422] border border-slate-800 rounded-2xl p-5 shadow-xl space-y-4">
-            <div className="flex items-center justify-between border-b border-slate-800 pb-3">
+          <div className="lg:col-span-5 bg-white border border-slate-200 rounded-2xl p-5 shadow-md space-y-4">
+            <div className="flex items-center justify-between border-b border-slate-200 pb-3">
               <div>
-                <h3 className="text-xs font-bold text-white uppercase tracking-wider font-display">
+                <h3 className="text-xs font-bold text-slate-900 uppercase tracking-wider font-display">
                   ZAMBIA PROVINCE MAP
                 </h3>
-                <p className="text-[11px] text-slate-400">
+                <p className="text-[11px] text-slate-500">
                   Select a province node to inspect deployment
                 </p>
               </div>
-              <span className="text-[10px] font-mono text-emerald-400 bg-emerald-950 px-2 py-0.5 rounded border border-emerald-800">
+              <span className="text-[10px] font-mono text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200 font-semibold">
                 10 PROVINCES
               </span>
             </div>
 
             {/* Tactical SVG Map */}
-            <div className="relative aspect-[4/3] bg-[#090d16] rounded-xl border border-slate-800 p-2 overflow-hidden flex items-center justify-center">
+            <div className="relative aspect-[4/3] bg-[#0c1422] rounded-xl border border-slate-800 p-2 overflow-hidden flex items-center justify-center shadow-inner">
               <svg viewBox="0 0 400 320" className="w-full h-full max-h-[300px]">
                 <defs>
                   <linearGradient id="mapGrad" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -170,7 +170,7 @@ export default function CoverageSection({ onOpenQuote }) {
                         cx={posX}
                         cy={posY}
                         r={isSelected ? "8" : "5"}
-                        fill={isSelected ? "#3b82f6" : "#0284c7"}
+                        fill={isSelected ? "#dc2626" : "#3b82f6"}
                         stroke="#ffffff"
                         strokeWidth={isSelected ? "2" : "1"}
                         className="transition-all duration-200"
@@ -179,7 +179,7 @@ export default function CoverageSection({ onOpenQuote }) {
                         x={posX}
                         y={posY - 9}
                         textAnchor="middle"
-                        fill={isSelected ? "#ffffff" : "#94a3b8"}
+                        fill={isSelected ? "#ffffff" : "#cbd5e1"}
                         fontSize="9"
                         fontWeight={isSelected ? "bold" : "normal"}
                         className="pointer-events-none tracking-tight"
@@ -191,11 +191,11 @@ export default function CoverageSection({ onOpenQuote }) {
                 })}
               </svg>
 
-              <div className="absolute bottom-2 left-2 right-2 bg-[#090d16]/90 p-2 rounded border border-slate-800 text-[11px] flex justify-between items-center">
-                <span className="text-slate-300 font-medium">
+              <div className="absolute bottom-2 left-2 right-2 bg-slate-900/90 p-2 rounded border border-slate-700 text-[11px] flex justify-between items-center backdrop-blur-md">
+                <span className="text-slate-200 font-medium">
                   {activeProvince ? activeProvince.name : "All 10 Provinces"}
                 </span>
-                <span className="text-blue-400 font-bold">
+                <span className="text-red-400 font-bold font-mono">
                   {activeProvince ? `${activeProvince.districts.length} Districts` : "39 Districts Total"}
                 </span>
               </div>
@@ -203,14 +203,14 @@ export default function CoverageSection({ onOpenQuote }) {
 
             {/* Active Province Details */}
             {activeProvince && (
-              <div className="p-3.5 rounded-xl bg-[#090d16] border border-slate-800 text-xs space-y-1">
+              <div className="p-3.5 rounded-xl bg-slate-50 border border-slate-200 text-xs space-y-1">
                 <div className="flex justify-between items-center">
-                  <span className="font-bold text-white uppercase">{activeProvince.name}</span>
-                  <span className="text-[10px] text-emerald-400 bg-emerald-950 px-2 py-0.5 rounded border border-emerald-800">
+                  <span className="font-bold text-slate-900 uppercase">{activeProvince.name}</span>
+                  <span className="text-[10px] text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200 font-semibold">
                     {activeProvince.status}
                   </span>
                 </div>
-                <p className="text-slate-400 leading-relaxed text-[11px]">
+                <p className="text-slate-600 leading-relaxed text-[11px]">
                   {activeProvince.description}
                 </p>
               </div>
@@ -224,33 +224,33 @@ export default function CoverageSection({ onOpenQuote }) {
                 filteredDistricts.map((district) => (
                   <div
                     key={district.id}
-                    className="p-3.5 rounded-xl bg-[#0e1422] border border-slate-800 hover:border-blue-500/50 transition-colors flex flex-col justify-between space-y-2 shadow-sm"
+                    className="p-3.5 rounded-xl bg-white border border-slate-200 hover:border-red-500 hover:shadow-md transition-all duration-300 flex flex-col justify-between space-y-2 shadow-sm spartan-card"
                   >
                     <div>
                       <div className="flex items-center justify-between">
                         <div className="flex items-center space-x-1.5">
-                          <MapPin className="w-3.5 h-3.5 text-blue-400 shrink-0" />
-                          <h4 className="text-sm font-bold text-white">{district.name}</h4>
+                          <MapPin className="w-3.5 h-3.5 text-red-600 shrink-0" />
+                          <h4 className="text-sm font-bold text-slate-900">{district.name}</h4>
                         </div>
-                        <span className="text-[10px] font-mono text-slate-400 bg-[#090d16] px-1.5 py-0.5 rounded border border-slate-800">
+                        <span className="text-[10px] font-mono text-slate-500 bg-slate-100 px-1.5 py-0.5 rounded border border-slate-200">
                           #{district.id}
                         </span>
                       </div>
-                      <div className="text-[11px] text-blue-400 mt-0.5">
+                      <div className="text-[11px] text-red-600 mt-0.5 font-semibold">
                         {district.province}
                       </div>
-                      <p className="text-[11px] text-slate-400 mt-1.5 line-clamp-1">
+                      <p className="text-[11px] text-slate-600 mt-1.5 line-clamp-1">
                         {district.coverage}
                       </p>
                     </div>
 
-                    <div className="pt-2 border-t border-slate-800 flex justify-between items-center text-[11px]">
-                      <span className="text-emerald-400 font-medium flex items-center">
-                        <CheckCircle2 className="w-3 h-3 mr-1" /> Active Post
+                    <div className="pt-2 border-t border-slate-100 flex justify-between items-center text-[11px]">
+                      <span className="text-emerald-700 font-medium flex items-center">
+                        <CheckCircle2 className="w-3 h-3 mr-1 text-emerald-600" /> Active Post
                       </span>
                       <button
                         onClick={() => onOpenQuote(district.name)}
-                        className="text-blue-400 hover:text-white font-bold"
+                        className="text-red-600 hover:text-red-700 font-bold cursor-pointer"
                       >
                         Deploy →
                       </button>
@@ -258,14 +258,14 @@ export default function CoverageSection({ onOpenQuote }) {
                   </div>
                 ))
               ) : (
-                <div className="col-span-2 p-8 text-center bg-[#0e1422] rounded-xl border border-slate-800 text-xs text-slate-400">
+                <div className="col-span-2 p-8 text-center bg-white rounded-xl border border-slate-200 text-xs text-slate-500">
                   No districts match "{searchQuery}".
                 </div>
               )}
             </div>
 
-            <div className="p-3 bg-[#0e1422] rounded-xl border border-slate-800 text-[11px] text-slate-400 flex items-center space-x-2">
-              <Shield className="w-4 h-4 text-blue-400 shrink-0" />
+            <div className="p-3 bg-white rounded-xl border border-slate-200 text-[11px] text-slate-600 flex items-center space-x-2 shadow-sm">
+              <Shield className="w-4 h-4 text-red-600 shrink-0" />
               <span>All 39 districts represent active deployment capability under Tough Task Security Solutions.</span>
             </div>
           </div>

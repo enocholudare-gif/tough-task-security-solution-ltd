@@ -126,11 +126,11 @@ export default function SecurityServicesSection({ onOpenQuote }) {
   const IconComp = current.icon;
 
   return (
-    <section id="our-security-services" className="py-24 lg:py-32 bg-[#06080e] text-slate-100 border-t border-slate-800/90 relative overflow-hidden">
+    <section id="our-security-services" className="py-24 lg:py-32 bg-[#f5f5f5] text-slate-900 border-t border-slate-200 relative overflow-hidden light-grid-pattern">
       
       {/* Dynamic Ambient Background Glow */}
       <div 
-        className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[800px] h-[500px] rounded-full blur-[140px] pointer-events-none transition-all duration-700 opacity-20"
+        className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[800px] h-[500px] rounded-full blur-[140px] pointer-events-none transition-all duration-700 opacity-15"
         style={{
           background: current.glowColor
         }}
@@ -139,23 +139,23 @@ export default function SecurityServicesSection({ onOpenQuote }) {
       <div className="relative z-10 w-full max-w-[1680px] mx-auto px-4 sm:px-8 lg:px-12 space-y-16">
         
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between pb-6 border-b border-slate-800 gap-6">
+        <div className="flex flex-col md:flex-row md:items-end justify-between pb-6 border-b border-slate-200 gap-6">
           <div className="space-y-3 max-w-2xl">
-            <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-red-500/10 border border-red-500/30 text-red-400 text-xs font-mono font-bold uppercase tracking-widest">
-              <Shield className="w-3.5 h-3.5 mr-1" />
+            <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-red-50 border border-red-200 text-red-600 text-xs font-mono font-bold uppercase tracking-widest shadow-sm">
+              <Shield className="w-3.5 h-3.5 mr-1 text-red-600" />
               <span>ELITE DEFENSE CAPABILITIES IN ZAMBIA</span>
             </div>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black font-display tracking-tight uppercase text-white leading-tight">
-              OUR SECURITY <span className="bg-gradient-to-r from-red-500 via-rose-400 to-amber-400 bg-clip-text text-transparent">SERVICES</span>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black font-display tracking-tight uppercase text-slate-900 leading-tight">
+              OUR SECURITY <span className="text-red-600">SERVICES</span>
             </h2>
-            <p className="text-slate-300 text-xs sm:text-sm md:text-base leading-relaxed">
+            <p className="text-slate-600 text-xs sm:text-sm md:text-base leading-relaxed">
               Advanced security solutions including armed guarding, AI monitoring, VIP protection, and rapid response teams.
             </p>
           </div>
 
           <button
             onClick={() => onOpenQuote()}
-            className="self-start md:self-end px-7 py-3.5 bg-gradient-to-r from-red-600 via-rose-600 to-red-700 hover:from-red-500 hover:to-rose-600 text-white text-xs font-bold uppercase tracking-wider rounded-xl transition-all duration-300 flex items-center space-x-2 shadow-xl shadow-red-600/30 group cursor-pointer border border-red-500/30"
+            className="self-start md:self-end px-7 py-3.5 bg-gradient-to-r from-red-600 via-rose-600 to-red-700 hover:from-red-500 hover:to-rose-600 text-white text-xs font-bold uppercase tracking-wider rounded-xl transition-all duration-300 flex items-center space-x-2 shadow-xl shadow-red-600/30 group cursor-pointer border border-red-500/30 btn-shimmer"
           >
             <span>GET SECURITY QUOTE</span>
             <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -174,31 +174,31 @@ export default function SecurityServicesSection({ onOpenQuote }) {
                 onClick={() => setActiveService(idx)}
                 onMouseEnter={() => setHoveredCard(srv.id)}
                 onMouseLeave={() => setHoveredCard(null)}
-                className={`rounded-2xl overflow-hidden flex flex-col justify-between border transition-all duration-400 cursor-pointer group relative ${
+                className={`rounded-2xl overflow-hidden flex flex-col justify-between border transition-all duration-300 cursor-pointer group relative spartan-card ${
                   isSelected
-                    ? 'bg-gradient-to-b from-[#131d31] via-[#0b1220] to-[#070b14] border-red-500/80 shadow-[0_20px_45px_rgba(239,68,68,0.25)] scale-[1.02] -translate-y-2 z-10'
-                    : 'bg-[#090e1a]/95 border-slate-800 hover:border-slate-600 hover:bg-[#0d1627] shadow-xl hover:-translate-y-1.5'
+                    ? 'bg-white border-2 border-red-600 shadow-[0_20px_45px_rgba(239,68,68,0.2)] scale-[1.02] -translate-y-2 z-10'
+                    : 'bg-white border-slate-200/90 hover:border-red-500/70 hover:shadow-2xl hover:-translate-y-2 shadow-md'
                 }`}
               >
                 {/* Top Active Indicator Glow Line */}
                 {isSelected && (
-                  <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-red-500 via-rose-400 to-amber-400 z-20" />
+                  <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-red-600 via-rose-500 to-amber-500 z-20" />
                 )}
 
                 {/* Service Image Header with Animated Zoom & Contrast */}
-                <div className="relative h-56 w-full overflow-hidden bg-slate-900">
+                <div className="relative h-56 w-full overflow-hidden bg-slate-100">
                   <img
                     src={srv.image}
                     alt={srv.title}
                     onError={(e) => {
                       e.currentTarget.src = srv.kommodoUrl;
                     }}
-                    className="w-full h-full object-cover filter brightness-[0.85] contrast-[1.08] group-hover:scale-108 transition-transform duration-700"
+                    className="w-full h-full object-cover filter brightness-[0.92] contrast-[1.05] spartan-img"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#090e1a] via-[#090e1a]/30 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                   
                   {/* Floating Number Pill */}
-                  <div className="absolute top-3.5 left-3.5 px-3 py-1 rounded-full bg-[#05080e]/90 border border-slate-700 text-xs font-mono font-bold text-red-400 backdrop-blur-md shadow-md">
+                  <div className="absolute top-3.5 left-3.5 px-3 py-1 rounded-full bg-slate-900/90 border border-slate-700 text-xs font-mono font-bold text-red-400 backdrop-blur-md shadow-md">
                     {srv.number}
                   </div>
 
@@ -206,49 +206,49 @@ export default function SecurityServicesSection({ onOpenQuote }) {
                   <div className={`absolute top-3.5 right-3.5 w-10 h-10 rounded-xl flex items-center justify-center transition-all duration-300 backdrop-blur-md ${
                     isSelected 
                       ? 'bg-red-600 text-white shadow-lg shadow-red-500/50 scale-110' 
-                      : 'bg-[#05080e]/90 border border-slate-700 text-slate-300 group-hover:text-red-400 group-hover:border-red-500'
+                      : 'bg-white/95 border border-slate-200 text-slate-800 group-hover:bg-red-600 group-hover:text-white group-hover:border-red-600 shadow-md'
                   }`}>
                     <SrvIcon className="w-5 h-5" />
                   </div>
                 </div>
 
                 {/* Service Text Body */}
-                <div className="p-6 flex-1 flex flex-col justify-between space-y-4">
+                <div className="p-6 flex-1 flex flex-col justify-between space-y-4 bg-white">
                   <div className="space-y-2.5">
-                    <div className="text-[10px] font-mono font-bold text-slate-400 uppercase tracking-wider">
+                    <div className="text-[10px] font-mono font-bold text-red-600 uppercase tracking-wider">
                       {srv.badge}
                     </div>
-                    <h3 className="text-lg font-black font-display text-white uppercase tracking-tight group-hover:text-red-400 transition-colors leading-snug">
+                    <h3 className="text-lg font-black font-display text-slate-900 uppercase tracking-tight group-hover:text-red-600 transition-colors leading-snug">
                       {srv.title}
                     </h3>
-                    <p className="text-xs sm:text-sm text-slate-300 leading-relaxed font-normal">
+                    <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
                       {srv.description}
                     </p>
                   </div>
 
                   {/* Bullet Highlights */}
-                  <div className="space-y-1.5 pt-2 border-t border-slate-800/80">
+                  <div className="space-y-1.5 pt-2 border-t border-slate-100">
                     {srv.highlights.slice(0, 3).map((hl, hIdx) => (
-                      <div key={hIdx} className="flex items-center text-[11px] text-slate-300">
-                        <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 mr-2 shrink-0" />
+                      <div key={hIdx} className="flex items-center text-[11px] text-slate-700">
+                        <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 mr-2 shrink-0" />
                         <span className="truncate">{hl}</span>
                       </div>
                     ))}
                   </div>
 
                   {/* Animated Action Footer (Spartan SA "Learn More" Link) */}
-                  <div className="pt-4 border-t border-slate-800/90 flex items-center justify-between">
+                  <div className="pt-4 border-t border-slate-100 flex items-center justify-between">
                     <button
                       onClick={(e) => {
                         e.stopPropagation();
                         onOpenQuote(srv.title);
                       }}
-                      className="text-xs font-bold text-red-400 hover:text-white uppercase tracking-wider transition-colors flex items-center"
+                      className="text-xs font-bold text-red-600 hover:text-red-700 uppercase tracking-wider transition-colors flex items-center group-hover:translate-x-0.5"
                     >
                       <span>Get Quote</span>
                       <ArrowRight className="w-3.5 h-3.5 ml-1" />
                     </button>
-                    <span className="text-[11px] font-mono text-slate-400 group-hover:text-white transition-colors flex items-center">
+                    <span className="text-[11px] font-mono text-slate-500 group-hover:text-slate-900 transition-colors flex items-center">
                       <span>Learn More</span>
                       <ChevronRight className="w-4 h-4 ml-0.5 group-hover:translate-x-1 transition-transform" />
                     </span>
@@ -297,7 +297,7 @@ export default function SecurityServicesSection({ onOpenQuote }) {
             <div className="pt-2 flex flex-wrap items-center gap-4">
               <button
                 onClick={() => onOpenQuote(current.title)}
-                className="px-8 py-3.5 bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-500 hover:to-cyan-400 text-white font-bold text-xs uppercase tracking-wider rounded-full shadow-xl transition-all duration-200 transform hover:-translate-y-0.5 active:scale-95 flex items-center space-x-2 cursor-pointer"
+                className="px-8 py-3.5 bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-500 hover:to-cyan-400 text-white font-bold text-xs uppercase tracking-wider rounded-full shadow-xl transition-all duration-200 transform hover:-translate-y-0.5 active:scale-95 flex items-center space-x-2 cursor-pointer btn-shimmer"
               >
                 <span>DEPLOY {current.title.toUpperCase()}</span>
                 <ArrowRight className="w-4 h-4" />

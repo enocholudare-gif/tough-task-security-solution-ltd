@@ -75,10 +75,10 @@ export default function WhyChooseUsSection({ onOpenQuote }) {
             return (
               <div
                 key={pt.id}
-                className={`p-7 rounded-2xl border transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between group shadow-xl relative overflow-hidden ${
+                className={`p-7 rounded-2xl border transition-all duration-300 hover:-translate-y-2 flex flex-col justify-between group shadow-xl relative overflow-hidden spartan-card ${
                   isHighlight
                     ? 'bg-gradient-to-br from-[#1c1316] via-[#100d17] to-[#0a0f1b] border-red-500/50 hover:border-red-400 md:col-span-2 lg:col-span-2 shadow-red-500/10'
-                    : 'bg-[#090e1a]/95 border-slate-800 hover:border-slate-600 hover:bg-[#0e1627]'
+                    : 'bg-[#090e1a]/95 border-slate-800 hover:border-red-500/60 hover:bg-[#0e1627]'
                 }`}
               >
                 {/* Header with Tag & Icon */}
@@ -131,7 +131,7 @@ export default function WhyChooseUsSection({ onOpenQuote }) {
 
             <button
               onClick={() => onOpenQuote()}
-              className="w-full py-4 bg-gradient-to-r from-red-600 via-rose-600 to-red-700 hover:from-red-500 hover:to-rose-600 text-white font-extrabold text-xs uppercase tracking-wider rounded-xl shadow-xl shadow-red-600/30 transition-all flex items-center justify-center space-x-2 cursor-pointer border border-red-500/40"
+              className="w-full py-4 bg-gradient-to-r from-red-600 via-rose-600 to-red-700 hover:from-red-500 hover:to-rose-600 text-white font-extrabold text-xs uppercase tracking-wider rounded-xl shadow-xl shadow-red-600/30 transition-all flex items-center justify-center space-x-2 cursor-pointer border border-red-500/40 btn-shimmer"
             >
               <Shield className="w-4 h-4" />
               <span>REQUEST SITE SURVEY</span>
