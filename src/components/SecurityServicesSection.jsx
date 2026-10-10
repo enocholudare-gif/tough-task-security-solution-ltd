@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Shield, ArrowRight, CheckCircle2, ChevronRight, Lock, Truck, Users, UserCheck, BellRing, Sparkles, MapPin, Eye, Zap, ChevronLeft } from 'lucide-react';
+import { Shield, ArrowRight, CheckCircle2, ChevronRight, Lock, Truck, Users, UserCheck, BellRing, MapPin, Eye, Zap, ChevronLeft } from 'lucide-react';
 
 export default function SecurityServicesSection({ onOpenQuote }) {
   const [activeService, setActiveService] = useState(0);
@@ -15,8 +15,8 @@ export default function SecurityServicesSection({ onOpenQuote }) {
       description: 'Disciplined static and mobile guarding providing visible deterrence, access screening, and patrol coverage for corporate, industrial, and residential premises.',
       icon: Users,
       badge: 'ARMED & UNARMED GUARDS',
-      accentColor: 'text-blue-400',
-      glowColor: 'rgba(59,130,246,0.35)',
+      accentColor: 'text-emerald-500',
+      glowColor: 'rgba(16,185,129,0.35)',
       highlights: [
         '100% Police vetted with fingerprint clearance',
         'Electronic NFC perimeter checkpoint verification',
@@ -34,8 +34,8 @@ export default function SecurityServicesSection({ onOpenQuote }) {
       description: 'Specialized tactical response units equipped for high-risk environments, counter-intrusion operations, and sub-minute emergency escalation.',
       icon: Shield,
       badge: 'SUB-5 MINUTE TACTICAL INTERVENTION',
-      accentColor: 'text-red-400',
-      glowColor: 'rgba(239,68,68,0.35)',
+      accentColor: 'text-emerald-500',
+      glowColor: 'rgba(16,185,129,0.35)',
       highlights: [
         'Armed tactical backup cruisers on 24/7 patrol',
         'Direct VHF/UHF tactical radio synchronization',
@@ -53,8 +53,8 @@ export default function SecurityServicesSection({ onOpenQuote }) {
       description: 'One-touch emergency activation with instant GPS coordinates and priority dispatch directly linked to our 24/7 Rhodespark control room.',
       icon: BellRing,
       badge: 'ONE-TOUCH GPS ACTIVATION',
-      accentColor: 'text-rose-400',
-      glowColor: 'rgba(244,63,94,0.35)',
+      accentColor: 'text-emerald-500',
+      glowColor: 'rgba(16,185,129,0.35)',
       highlights: [
         'Instant wireless distress beacon to central dispatch',
         'Automated live vehicle GPS telemetry routing',
@@ -66,16 +66,16 @@ export default function SecurityServicesSection({ onOpenQuote }) {
     {
       id: 'offsite-monitoring',
       number: '04',
-      title: 'Offsite AI Monitoring & CCTV',
+      title: 'Offsite CCTV Video Surveillance & Monitoring',
       image: '/assets/service-cctv.jpg',
       kommodoUrl: 'https://kommodo.ai/i/V7XKKsO9SYq7IoA23wqN',
-      description: 'AI-powered offsite video surveillance detecting perimeter breaches, loitering, and unusual activity in real time with audio challenge capabilities.',
+      description: 'Continuous 24/7 video surveillance detecting perimeter breaches, compound activity, and unauthorized intrusion in real time with two-way audio challenge capabilities.',
       icon: Eye,
-      badge: 'AI-POWERED THREAT DETECTION',
-      accentColor: 'text-cyan-400',
-      glowColor: 'rgba(6,182,212,0.35)',
+      badge: '24/7 VIDEO SURVEILLANCE & CHALLENGE',
+      accentColor: 'text-emerald-500',
+      glowColor: 'rgba(16,185,129,0.35)',
       highlights: [
-        'Intelligent video analytics & line-crossing detection',
+        'Perimeter intrusion line-crossing alarm detection',
         'Live 24/7 control room surveillance feed monitoring',
         'Two-way audio challenge and siren activation',
         'Encrypted cloud evidence vault storage'
@@ -91,7 +91,7 @@ export default function SecurityServicesSection({ onOpenQuote }) {
       description: 'Discreet close protection officers and armored motorcades for chief executives, foreign dignitaries, diplomats, and high-profile individuals.',
       icon: UserCheck,
       badge: 'EXECUTIVE BODYGUARD DETAILS',
-      accentColor: 'text-emerald-400',
+      accentColor: 'text-emerald-500',
       glowColor: 'rgba(16,185,129,0.35)',
       highlights: [
         'Trained close protection officers and evasive drivers',
@@ -110,8 +110,8 @@ export default function SecurityServicesSection({ onOpenQuote }) {
       description: 'Ironclad armored vehicle bullion transit and cash management across banking networks, mining concessions, and retail commercial nodes.',
       icon: Truck,
       badge: 'ARMORED BULLION & VAULT ESCORT',
-      accentColor: 'text-amber-400',
-      glowColor: 'rgba(245,158,11,0.35)',
+      accentColor: 'text-emerald-500',
+      glowColor: 'rgba(16,185,129,0.35)',
       highlights: [
         'Armored transport vehicles with satellite GPS tracking',
         'Dual-custody vault-to-vault transfer manifests',
@@ -141,21 +141,21 @@ export default function SecurityServicesSection({ onOpenQuote }) {
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between pb-6 border-b border-slate-200 gap-6">
           <div className="space-y-3 max-w-2xl">
-            <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-red-50 border border-red-200 text-red-600 text-xs font-mono font-bold uppercase tracking-widest shadow-sm">
-              <Shield className="w-3.5 h-3.5 mr-1 text-red-600" />
+            <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-700 text-xs font-mono font-bold uppercase tracking-widest shadow-sm">
+              <Shield className="w-3.5 h-3.5 mr-1 text-emerald-600" />
               <span>ELITE DEFENSE CAPABILITIES IN ZAMBIA</span>
             </div>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-black font-display tracking-tight uppercase text-slate-900 leading-tight">
-              OUR SECURITY <span className="text-red-600">SERVICES</span>
+              OUR SECURITY <span className="text-emerald-600">SERVICES</span>
             </h2>
             <p className="text-slate-600 text-xs sm:text-sm md:text-base leading-relaxed">
-              Advanced security solutions including armed guarding, AI monitoring, VIP protection, and rapid response teams.
+              Advanced security solutions including armed guarding, video surveillance, VIP protection, and rapid response teams.
             </p>
           </div>
 
           <button
             onClick={() => onOpenQuote()}
-            className="self-start md:self-end px-7 py-3.5 bg-gradient-to-r from-red-600 via-rose-600 to-red-700 hover:from-red-500 hover:to-rose-600 text-white text-xs font-bold uppercase tracking-wider rounded-xl transition-all duration-300 flex items-center space-x-2 shadow-xl shadow-red-600/30 group cursor-pointer border border-red-500/30 btn-shimmer"
+            className="self-start md:self-end px-7 py-3.5 bg-gradient-to-r from-emerald-600 via-green-600 to-emerald-700 hover:from-emerald-500 hover:to-green-600 text-white text-xs font-bold uppercase tracking-wider rounded-xl transition-all duration-300 flex items-center space-x-2 shadow-xl shadow-emerald-600/30 group cursor-pointer border border-emerald-500/30 btn-shimmer"
           >
             <span>GET SECURITY QUOTE</span>
             <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -176,13 +176,13 @@ export default function SecurityServicesSection({ onOpenQuote }) {
                 onMouseLeave={() => setHoveredCard(null)}
                 className={`rounded-2xl overflow-hidden flex flex-col justify-between border transition-all duration-300 cursor-pointer group relative spartan-card ${
                   isSelected
-                    ? 'bg-white border-2 border-red-600 shadow-[0_20px_45px_rgba(239,68,68,0.2)] scale-[1.02] -translate-y-2 z-10'
-                    : 'bg-white border-slate-200/90 hover:border-red-500/70 hover:shadow-2xl hover:-translate-y-2 shadow-md'
+                    ? 'bg-white border-2 border-emerald-600 shadow-[0_20px_45px_rgba(16,185,129,0.2)] scale-[1.02] -translate-y-2 z-10'
+                    : 'bg-white border-slate-200/90 hover:border-emerald-500/70 hover:shadow-2xl hover:-translate-y-2 shadow-md'
                 }`}
               >
                 {/* Top Active Indicator Glow Line */}
                 {isSelected && (
-                  <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-red-600 via-rose-500 to-amber-500 z-20" />
+                  <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-emerald-600 via-green-500 to-teal-400 z-20" />
                 )}
 
                 {/* Service Image Header with Animated Zoom & Contrast */}
@@ -198,15 +198,15 @@ export default function SecurityServicesSection({ onOpenQuote }) {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                   
                   {/* Floating Number Pill */}
-                  <div className="absolute top-3.5 left-3.5 px-3 py-1 rounded-full bg-slate-900/90 border border-slate-700 text-xs font-mono font-bold text-red-400 backdrop-blur-md shadow-md">
+                  <div className="absolute top-3.5 left-3.5 px-3 py-1 rounded-full bg-slate-900/90 border border-slate-700 text-xs font-mono font-bold text-emerald-400 backdrop-blur-md shadow-md">
                     {srv.number}
                   </div>
 
                   {/* Animated Icon Floating Pod */}
                   <div className={`absolute top-3.5 right-3.5 w-10 h-10 rounded-xl flex items-center justify-center transition-all duration-300 backdrop-blur-md ${
                     isSelected 
-                      ? 'bg-red-600 text-white shadow-lg shadow-red-500/50 scale-110' 
-                      : 'bg-white/95 border border-slate-200 text-slate-800 group-hover:bg-red-600 group-hover:text-white group-hover:border-red-600 shadow-md'
+                      ? 'bg-emerald-600 text-white shadow-lg shadow-emerald-500/50 scale-110' 
+                      : 'bg-white/95 border border-slate-200 text-slate-800 group-hover:bg-emerald-600 group-hover:text-white group-hover:border-emerald-600 shadow-md'
                   }`}>
                     <SrvIcon className="w-5 h-5" />
                   </div>
@@ -215,10 +215,10 @@ export default function SecurityServicesSection({ onOpenQuote }) {
                 {/* Service Text Body */}
                 <div className="p-6 flex-1 flex flex-col justify-between space-y-4 bg-white">
                   <div className="space-y-2.5">
-                    <div className="text-[10px] font-mono font-bold text-red-600 uppercase tracking-wider">
+                    <div className="text-[10px] font-mono font-bold text-emerald-700 uppercase tracking-wider">
                       {srv.badge}
                     </div>
-                    <h3 className="text-lg font-black font-display text-slate-900 uppercase tracking-tight group-hover:text-red-600 transition-colors leading-snug">
+                    <h3 className="text-lg font-black font-display text-slate-900 uppercase tracking-tight group-hover:text-emerald-600 transition-colors leading-snug">
                       {srv.title}
                     </h3>
                     <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
@@ -243,7 +243,7 @@ export default function SecurityServicesSection({ onOpenQuote }) {
                         e.stopPropagation();
                         onOpenQuote(srv.title);
                       }}
-                      className="text-xs font-bold text-red-600 hover:text-red-700 uppercase tracking-wider transition-colors flex items-center group-hover:translate-x-0.5"
+                      className="text-xs font-bold text-emerald-600 hover:text-emerald-700 uppercase tracking-wider transition-colors flex items-center group-hover:translate-x-0.5 cursor-pointer"
                     >
                       <span>Get Quote</span>
                       <ArrowRight className="w-3.5 h-3.5 ml-1" />
@@ -261,11 +261,11 @@ export default function SecurityServicesSection({ onOpenQuote }) {
         </div>
 
         {/* Deep Dive Active Service Interactive Showcase Banner */}
-        <div className="rounded-3xl bg-gradient-to-r from-[#0d162a] via-[#091122] to-[#0d162a] border border-blue-500/40 p-6 sm:p-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center shadow-2xl relative overflow-hidden">
+        <div className="rounded-3xl bg-gradient-to-r from-[#0d162a] via-[#091122] to-[#0d162a] border border-emerald-500/30 p-6 sm:p-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center shadow-2xl relative overflow-hidden">
           
           <div className="lg:col-span-7 space-y-5">
-            <div className="flex items-center space-x-2 text-xs font-mono font-bold text-red-400 uppercase">
-              <span className="w-2.5 h-2.5 rounded-full bg-red-400 animate-ping" />
+            <div className="flex items-center space-x-2 text-xs font-mono font-bold text-emerald-400 uppercase">
+              <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-ping" />
               <span>ACTIVE DEPLOYMENT PREVIEW • {current.number} / 06</span>
             </div>
 
@@ -282,22 +282,22 @@ export default function SecurityServicesSection({ onOpenQuote }) {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
               {current.highlights.map((h, i) => (
                 <div key={i} className="p-3 rounded-2xl bg-[#060a14] border border-slate-800 flex items-start space-x-2.5">
-                  <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
+                  <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
                   <span className="text-xs text-slate-200">{h}</span>
                 </div>
               ))}
             </div>
 
             {/* Service SLA Box */}
-            <div className="p-3.5 rounded-2xl bg-blue-950/40 border border-blue-500/30 text-xs text-cyan-300 flex items-center space-x-2.5">
-              <Lock className="w-4 h-4 text-cyan-400 shrink-0" />
+            <div className="p-3.5 rounded-2xl bg-emerald-950/40 border border-emerald-500/30 text-xs text-emerald-300 flex items-center space-x-2.5">
+              <Lock className="w-4 h-4 text-emerald-400 shrink-0" />
               <span><strong>Guaranteed SLA:</strong> {current.sla}</span>
             </div>
 
             <div className="pt-2 flex flex-wrap items-center gap-4">
               <button
                 onClick={() => onOpenQuote(current.title)}
-                className="px-8 py-3.5 bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-500 hover:to-cyan-400 text-white font-bold text-xs uppercase tracking-wider rounded-full shadow-xl transition-all duration-200 transform hover:-translate-y-0.5 active:scale-95 flex items-center space-x-2 cursor-pointer btn-shimmer"
+                className="px-8 py-3.5 bg-gradient-to-r from-emerald-600 to-green-600 hover:from-emerald-500 hover:to-green-500 text-white font-bold text-xs uppercase tracking-wider rounded-full shadow-xl transition-all duration-200 transform hover:-translate-y-0.5 active:scale-95 flex items-center space-x-2 cursor-pointer btn-shimmer"
               >
                 <span>DEPLOY {current.title.toUpperCase()}</span>
                 <ArrowRight className="w-4 h-4" />
@@ -318,10 +318,10 @@ export default function SecurityServicesSection({ onOpenQuote }) {
             
             <div className="absolute bottom-4 left-4 right-4 p-4 rounded-2xl bg-[#05080e]/95 backdrop-blur-md border border-slate-800 text-xs flex items-center justify-between">
               <div className="space-y-0.5">
-                <span className="text-cyan-400 font-bold font-mono block">NATIONWIDE REACH:</span>
+                <span className="text-emerald-400 font-bold font-mono block">NATIONWIDE REACH:</span>
                 <span className="text-slate-200">All 10 Provinces • 39 Districts</span>
               </div>
-              <Shield className="w-6 h-6 text-blue-400 shrink-0" />
+              <Shield className="w-6 h-6 text-emerald-400 shrink-0" />
             </div>
           </div>
 

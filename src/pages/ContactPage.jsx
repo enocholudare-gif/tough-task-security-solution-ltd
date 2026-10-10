@@ -27,12 +27,12 @@ export default function ContactPage({ onOpenQuote }) {
       {/* Page Hero */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto space-y-4">
-          <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-blue-900/40 border border-blue-500/30 text-blue-400 text-xs font-bold uppercase tracking-widest">
+          <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-emerald-950/60 border border-emerald-500/30 text-emerald-400 text-xs font-bold uppercase tracking-widest">
             <Phone className="w-3.5 h-3.5 mr-1 text-emerald-400" />
             GET IN TOUCH
           </div>
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-black text-white font-display tracking-tight uppercase leading-tight">
-            CONTACT <span className="text-blue-500">TOUGH TASK SECURITY</span>
+            CONTACT <span className="text-emerald-500">TOUGH TASK SECURITY</span>
           </h1>
           <p className="text-slate-300 text-base sm:text-lg leading-relaxed">
             Connect with our operations command in Rhodespark, Lusaka for site security surveys, emergency dispatch, or national corporate tenders.
@@ -248,7 +248,7 @@ export default function ContactPage({ onOpenQuote }) {
                     <select
                       value={formData.location}
                       onChange={(e) => setFormData({ ...formData, location: e.target.value })}
-                      className="w-full px-3.5 py-2.5 bg-security-950 border border-security-750 rounded-xl text-sm text-white focus:border-blue-500"
+                      className="w-full px-3.5 py-2.5 bg-security-950 border border-security-750 rounded-xl text-sm text-white focus:border-emerald-500"
                     >
                       <option value="Lusaka (Lusaka Province)">Lusaka (National HQ)</option>
                       {allLocationsList.map((loc) => (
@@ -267,13 +267,13 @@ export default function ContactPage({ onOpenQuote }) {
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                     placeholder="Provide details about your facility, location, guard requirements, or specific security concerns..."
-                    className="w-full px-3.5 py-2.5 bg-security-950 border border-security-750 rounded-xl text-sm text-white placeholder-slate-500 focus:border-blue-500"
+                    className="w-full px-3.5 py-2.5 bg-security-950 border border-security-750 rounded-xl text-sm text-white placeholder-slate-500 focus:border-emerald-500"
                   ></textarea>
                 </div>
 
                 <button
                   type="submit"
-                  className="w-full py-4 bg-blue-600 hover:bg-blue-500 text-white font-bold text-sm uppercase tracking-wider rounded-xl shadow-xl shadow-blue-600/30 transition-all flex items-center justify-center"
+                  className="w-full py-4 bg-gradient-to-r from-emerald-600 to-green-700 hover:from-emerald-500 hover:to-green-600 text-white font-bold text-sm uppercase tracking-wider rounded-xl shadow-xl shadow-emerald-600/30 transition-all flex items-center justify-center cursor-pointer btn-shimmer"
                 >
                   <Send className="w-4 h-4 mr-2" />
                   <span>REQUEST SECURITY ASSESSMENT</span>

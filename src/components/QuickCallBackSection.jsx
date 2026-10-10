@@ -21,8 +21,8 @@ export default function QuickCallBackSection() {
   return (
     <section id="contact-call-back" className="py-24 lg:py-32 bg-white text-slate-900 border-y border-slate-200/90 relative overflow-hidden light-grid-pattern">
       {/* Background Accent Aura */}
-      <div className="absolute top-1/2 left-0 w-96 h-96 bg-blue-500/5 rounded-full blur-[140px] pointer-events-none" />
-      <div className="absolute bottom-0 right-10 w-96 h-96 bg-red-500/5 rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute top-1/2 left-0 w-96 h-96 bg-emerald-500/5 rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute bottom-0 right-10 w-96 h-96 bg-emerald-500/5 rounded-full blur-[140px] pointer-events-none" />
 
       <div className="relative z-10 w-full max-w-[1680px] mx-auto px-4 sm:px-8 lg:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
@@ -30,14 +30,14 @@ export default function QuickCallBackSection() {
           {/* Left Column: Direct Contact & Authority (Matching Spartan SA Left Side) */}
           <div className="lg:col-span-5 space-y-8">
             <div className="space-y-3">
-              <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-red-50 border border-red-200 text-red-600 text-xs font-mono font-bold uppercase tracking-widest shadow-sm">
-                <Shield className="w-3.5 h-3.5 mr-1 text-red-600" />
+              <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-600 text-xs font-mono font-bold uppercase tracking-widest shadow-sm">
+                <Shield className="w-3.5 h-3.5 mr-1 text-emerald-600" />
                 <span>24/7 COMMAND DESK</span>
               </div>
 
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-black font-display tracking-tight uppercase text-slate-900 leading-tight">
                 CONTACT <br />
-                <span className="text-red-600">
+                <span className="text-emerald-600">
                   TOUGH TASK SECURITY
                 </span>
               </h2>
@@ -51,15 +51,15 @@ export default function QuickCallBackSection() {
             <div className="space-y-4">
               
               {/* Emergency Control Room */}
-              <div className="p-4 sm:p-5 rounded-2xl bg-slate-50 border border-slate-200 flex items-start space-x-4 shadow-sm hover:border-red-500 hover:bg-white hover:shadow-xl transition-all duration-300 spartan-card">
-                <div className="w-12 h-12 rounded-xl bg-red-100/80 border border-red-200 text-red-600 flex items-center justify-center shrink-0">
+              <div className="p-4 sm:p-5 rounded-2xl bg-slate-50 border border-slate-200 flex items-start space-x-4 shadow-sm hover:border-emerald-500 hover:bg-white hover:shadow-xl transition-all duration-300 spartan-card">
+                <div className="w-12 h-12 rounded-xl bg-emerald-100/80 border border-emerald-200 text-emerald-600 flex items-center justify-center shrink-0">
                   <Phone className="w-6 h-6 animate-pulse" />
                 </div>
                 <div className="space-y-1">
-                  <div className="text-[10px] font-mono uppercase text-red-600 font-bold tracking-wider">
+                  <div className="text-[10px] font-mono uppercase text-emerald-600 font-bold tracking-wider">
                     Emergency Control Room (24/7/365)
                   </div>
-                  <a href="tel:+260777127114" className="text-lg font-black text-slate-900 hover:text-red-600 transition-colors font-mono block">
+                  <a href="tel:+260777127114" className="text-lg font-black text-slate-900 hover:text-emerald-600 transition-colors font-mono block">
                     +260 777 127 114
                   </a>
                   <p className="text-xs text-slate-500">Direct dispatch, patrol coordination & alarm response</p>
@@ -67,15 +67,15 @@ export default function QuickCallBackSection() {
               </div>
 
               {/* Operations & Administration */}
-              <div className="p-4 sm:p-5 rounded-2xl bg-slate-50 border border-slate-200 flex items-start space-x-4 shadow-sm hover:border-blue-500 hover:bg-white hover:shadow-xl transition-all duration-300 spartan-card">
-                <div className="w-12 h-12 rounded-xl bg-blue-100/80 border border-blue-200 text-blue-600 flex items-center justify-center shrink-0">
+              <div className="p-4 sm:p-5 rounded-2xl bg-slate-50 border border-slate-200 flex items-start space-x-4 shadow-sm hover:border-emerald-500 hover:bg-white hover:shadow-xl transition-all duration-300 spartan-card">
+                <div className="w-12 h-12 rounded-xl bg-emerald-100/80 border border-emerald-200 text-emerald-600 flex items-center justify-center shrink-0">
                   <Phone className="w-6 h-6" />
                 </div>
                 <div className="space-y-1">
-                  <div className="text-[10px] font-mono uppercase text-blue-600 font-bold tracking-wider">
+                  <div className="text-[10px] font-mono uppercase text-emerald-600 font-bold tracking-wider">
                     Operations & Tenders Desk
                   </div>
-                  <a href="tel:+260968025444" className="text-lg font-black text-slate-900 hover:text-blue-600 transition-colors font-mono block">
+                  <a href="tel:+260968025444" className="text-lg font-black text-slate-900 hover:text-emerald-600 transition-colors font-mono block">
                     +260 968 025 444
                   </a>
                   <p className="text-xs text-slate-500">Commercial guarding quotes, VIP escorts & contracts</p>
@@ -107,7 +107,7 @@ export default function QuickCallBackSection() {
                   <div className="text-[10px] font-mono uppercase text-slate-500 font-bold tracking-wider">
                     Corporate Enquiries
                   </div>
-                  <a href="mailto:info@toughtaskltd.com" className="text-slate-900 font-bold hover:text-red-600 transition-colors block text-sm">
+                  <a href="mailto:info@toughtaskltd.com" className="text-slate-900 font-bold hover:text-emerald-600 transition-colors block text-sm">
                     info@toughtaskltd.com
                   </a>
                   <p className="text-slate-500">Formal tenders & service level agreements</p>
@@ -121,7 +121,7 @@ export default function QuickCallBackSection() {
           <div className="lg:col-span-7 bg-slate-50 border border-slate-200 p-8 sm:p-10 rounded-3xl shadow-xl space-y-6 relative overflow-hidden">
             
             {/* Top Bar Accent */}
-            <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-red-600 via-rose-500 to-amber-500" />
+            <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-emerald-600 via-green-500 to-teal-500" />
 
             <div className="space-y-2 border-b border-slate-200 pb-4">
               <h3 className="text-2xl font-black font-display uppercase tracking-tight text-slate-900">
@@ -142,7 +142,7 @@ export default function QuickCallBackSection() {
                     CALL BACK LOGGED
                   </h4>
                   <p className="text-sm text-slate-600 max-w-md mx-auto leading-relaxed">
-                    Thank you, <strong className="text-slate-900">{formData.name}</strong>. Our Rhodespark control desk has prioritized your request for <strong className="text-red-600">{formData.service}</strong> in <strong className="text-slate-900">{formData.location}</strong>.
+                    Thank you, <strong className="text-slate-900">{formData.name}</strong>. Our Rhodespark control desk has prioritized your request for <strong className="text-emerald-600">{formData.service}</strong> in <strong className="text-slate-900">{formData.location}</strong>.
                   </p>
                   <p className="text-xs text-slate-500">
                     We will call you directly at <span className="text-slate-900 font-semibold">{formData.phone}</span>.
@@ -180,7 +180,7 @@ export default function QuickCallBackSection() {
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                       placeholder="e.g. Kondwani Banda"
-                      className="w-full px-4 py-3 bg-white border border-slate-300 rounded-xl text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:border-red-600 focus:ring-2 focus:ring-red-100 transition-colors shadow-sm"
+                      className="w-full px-4 py-3 bg-white border border-slate-300 rounded-xl text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:border-emerald-600 focus:ring-2 focus:ring-emerald-100 transition-colors shadow-sm"
                     />
                   </div>
 
@@ -192,7 +192,7 @@ export default function QuickCallBackSection() {
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                       placeholder="e.g. +260 96X XXX XXX"
-                      className="w-full px-4 py-3 bg-white border border-slate-300 rounded-xl text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:border-red-600 focus:ring-2 focus:ring-red-100 transition-colors shadow-sm"
+                      className="w-full px-4 py-3 bg-white border border-slate-300 rounded-xl text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:border-emerald-600 focus:ring-2 focus:ring-emerald-100 transition-colors shadow-sm"
                     />
                   </div>
                 </div>
@@ -205,7 +205,7 @@ export default function QuickCallBackSection() {
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                       placeholder="e.g. admin@enterprise.co.zm"
-                      className="w-full px-4 py-3 bg-white border border-slate-300 rounded-xl text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:border-red-600 focus:ring-2 focus:ring-red-100 transition-colors shadow-sm"
+                      className="w-full px-4 py-3 bg-white border border-slate-300 rounded-xl text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:border-emerald-600 focus:ring-2 focus:ring-emerald-100 transition-colors shadow-sm"
                     />
                   </div>
 
@@ -214,12 +214,12 @@ export default function QuickCallBackSection() {
                     <select
                       value={formData.service}
                       onChange={(e) => setFormData({ ...formData, service: e.target.value })}
-                      className="w-full px-4 py-3 bg-white border border-slate-300 rounded-xl text-sm text-slate-900 focus:outline-none focus:border-red-600 focus:ring-2 focus:ring-red-100 transition-colors shadow-sm"
+                      className="w-full px-4 py-3 bg-white border border-slate-300 rounded-xl text-sm text-slate-900 focus:outline-none focus:border-emerald-600 focus:ring-2 focus:ring-emerald-100 transition-colors shadow-sm"
                     >
                       <option value="Manned Guarding">Manned Guarding (Static & Patrol)</option>
                       <option value="Tactical Armed Units">Tactical Armed Units & Response</option>
                       <option value="Rapid Response Panic Button">Rapid Response Panic Button</option>
-                      <option value="Offsite AI Monitoring">Offsite AI Monitoring & CCTV</option>
+                      <option value="Offsite CCTV Video Surveillance">Offsite CCTV Video Surveillance & Monitoring</option>
                       <option value="VIP & Close Protection">VIP & Close Protection</option>
                       <option value="Cash-In-Transit Logistics">Cash-In-Transit & Bullion Logistics</option>
                       <option value="Mining & Concession Security">Mining & Concession Security</option>
@@ -232,7 +232,7 @@ export default function QuickCallBackSection() {
                   <select
                     value={formData.location}
                     onChange={(e) => setFormData({ ...formData, location: e.target.value })}
-                    className="w-full px-4 py-3 bg-white border border-slate-300 rounded-xl text-sm text-slate-900 focus:outline-none focus:border-red-600 focus:ring-2 focus:ring-red-100 transition-colors shadow-sm"
+                    className="w-full px-4 py-3 bg-white border border-slate-300 rounded-xl text-sm text-slate-900 focus:outline-none focus:border-emerald-600 focus:ring-2 focus:ring-emerald-100 transition-colors shadow-sm"
                   >
                     <option value="Lusaka (Lusaka Province)">Lusaka Province — National HQ</option>
                     {allLocationsList.map((loc) => (
@@ -250,14 +250,14 @@ export default function QuickCallBackSection() {
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                     placeholder="Describe your site (number of guards, facility type, urgent requirements)..."
-                    className="w-full px-4 py-3 bg-white border border-slate-300 rounded-xl text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:border-red-600 focus:ring-2 focus:ring-red-100 transition-colors shadow-sm"
+                    className="w-full px-4 py-3 bg-white border border-slate-300 rounded-xl text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:border-emerald-600 focus:ring-2 focus:ring-emerald-100 transition-colors shadow-sm"
                   ></textarea>
                 </div>
 
                 {/* Submit Button (Spartan SA High-Contrast Button) */}
                 <button
                   type="submit"
-                  className="w-full py-4 bg-gradient-to-r from-red-600 via-rose-600 to-red-700 hover:from-red-500 hover:to-rose-600 text-white font-extrabold text-sm uppercase tracking-wider rounded-xl shadow-xl shadow-red-600/30 transition-all flex items-center justify-center space-x-2 cursor-pointer border border-red-500/40 btn-shimmer"
+                  className="w-full py-4 bg-gradient-to-r from-emerald-600 via-green-600 to-emerald-700 hover:from-emerald-500 hover:to-green-600 text-white font-extrabold text-sm uppercase tracking-wider rounded-xl shadow-xl shadow-emerald-600/30 transition-all flex items-center justify-center space-x-2 cursor-pointer border border-emerald-500/40 btn-shimmer"
                 >
                   <Send className="w-4 h-4" />
                   <span>REQUEST CALL BACK</span>

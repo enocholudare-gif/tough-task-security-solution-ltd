@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Award, Shield, CheckCircle2, ChevronRight, Building, Sparkles } from 'lucide-react';
+import { Award, Shield, CheckCircle2, ChevronRight, Building } from 'lucide-react';
 
 export default function ClientsCarouselSection({ onOpenQuote }) {
   const [isHovered, setIsHovered] = useState(false);
@@ -26,17 +26,17 @@ export default function ClientsCarouselSection({ onOpenQuote }) {
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto space-y-3">
-          <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-red-50 border border-red-200 text-red-600 text-xs font-mono font-bold uppercase tracking-widest shadow-sm">
-            <Award className="w-3.5 h-3.5 mr-1 text-red-600" />
+          <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-600 text-xs font-mono font-bold uppercase tracking-widest shadow-sm">
+            <Award className="w-3.5 h-3.5 mr-1 text-emerald-600" />
             <span>NATIONWIDE CORPORATE PARTNERSHIPS</span>
           </div>
 
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-black font-display tracking-tight uppercase text-slate-900 leading-tight">
-            TRUSTED BY LEADING <span className="text-red-600">ORGANISATIONS</span>
+            TRUSTED BY LEADING <span className="text-emerald-600">ORGANISATIONS</span>
           </h2>
 
           <p className="text-slate-600 text-xs sm:text-sm md:text-base leading-relaxed max-w-xl mx-auto">
-            Providing high-reliability physical guarding, AI video telemetry, and rapid emergency intervention for commercial institutions and estates across Zambia.
+            Providing high-reliability physical guarding, CCTV surveillance telemetry, and rapid emergency intervention for commercial institutions and estates across Zambia.
           </p>
         </div>
 
@@ -57,7 +57,7 @@ export default function ClientsCarouselSection({ onOpenQuote }) {
             {marqueeList.map((client, idx) => (
               <div
                 key={`${client.id}-${idx}`}
-                className="w-48 sm:w-56 h-28 sm:h-32 rounded-2xl bg-slate-50 border border-slate-200 hover:border-red-500 hover:bg-white p-4 sm:p-5 flex items-center justify-center transition-all duration-300 hover:scale-105 shadow-sm hover:shadow-xl group cursor-pointer shrink-0 spartan-card"
+                className="w-48 sm:w-56 h-28 sm:h-32 rounded-2xl bg-slate-50 border border-slate-200 hover:border-emerald-500 hover:bg-white p-4 sm:p-5 flex items-center justify-center transition-all duration-300 hover:scale-105 shadow-sm hover:shadow-xl group cursor-pointer shrink-0 spartan-card"
               >
                 <img
                   src={client.logo}
@@ -78,7 +78,7 @@ export default function ClientsCarouselSection({ onOpenQuote }) {
 
           <button
             onClick={() => onOpenQuote()}
-            className="text-red-600 hover:text-red-700 font-bold flex items-center transition-colors cursor-pointer group"
+            className="text-emerald-600 hover:text-emerald-700 font-bold flex items-center transition-colors cursor-pointer group"
           >
             <span>Partner With Tough Task</span>
             <ChevronRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />

@@ -10,12 +10,12 @@ export default function AboutPage({ onOpenQuote, setActivePage }) {
       {/* Page Hero */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto space-y-4">
-          <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-blue-900/40 border border-blue-500/30 text-blue-400 text-xs font-bold uppercase tracking-widest">
+          <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-emerald-950/60 border border-emerald-500/30 text-emerald-400 text-xs font-bold uppercase tracking-widest">
             <Shield className="w-3.5 h-3.5 mr-1 text-emerald-400" />
             ABOUT TOUGH TASK
           </div>
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-black text-white font-display tracking-tight uppercase leading-tight">
-            DISCIPLINE, TECHNOLOGY & <span className="text-blue-500">TRUST IN ZAMBIA</span>
+            DISCIPLINE, TECHNOLOGY & <span className="text-emerald-500">TRUST IN ZAMBIA</span>
           </h1>
           <p className="text-slate-300 text-base sm:text-lg leading-relaxed">
             A 100% Zambian-owned private security enterprise setting new national benchmarks for corporate guarding, tactical telemetry, and rapid incident resolution.
@@ -217,7 +217,7 @@ export default function AboutPage({ onOpenQuote, setActivePage }) {
           <div className="lg:col-span-4 flex justify-start lg:justify-end">
             <button
               onClick={onOpenQuote}
-              className="px-6 py-4 bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs uppercase tracking-wider rounded-xl shadow-lg transition-all"
+              className="px-6 py-4 bg-gradient-to-r from-emerald-600 to-green-700 hover:from-emerald-500 hover:to-green-600 text-white font-bold text-xs uppercase tracking-wider rounded-xl shadow-lg transition-all btn-shimmer"
             >
               REQUEST SECURITY PARTNERSHIP
             </button>

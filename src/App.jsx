@@ -55,7 +55,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#f5f5f5] text-slate-900 selection:bg-red-600 selection:text-white font-sans antialiased">
+    <div className="min-h-screen flex flex-col bg-[#f5f5f5] text-slate-900 selection:bg-emerald-600 selection:text-white font-sans antialiased">
       
       {/* 1. Full-Screen Left & Right Dual-Split Portal Opening Reveal */}
       {showIntro && (

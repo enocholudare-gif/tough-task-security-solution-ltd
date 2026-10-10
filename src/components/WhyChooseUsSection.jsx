@@ -1,14 +1,14 @@
 import React from 'react';
-import { Cpu, Shield, Radio, CheckCircle2, TrendingDown, ArrowRight, Zap, Award, Lock, Clock } from 'lucide-react';
+import { Camera, Shield, Radio, CheckCircle2, TrendingDown, ArrowRight, Zap, Award, Lock, Clock } from 'lucide-react';
 
 export default function WhyChooseUsSection({ onOpenQuote }) {
   const points = [
     {
-      id: 'ai-monitoring',
-      title: 'AI-Powered Surveillance & GPS Telemetry',
-      description: 'Intelligent perimeter analytics with real-time intrusion alarms, NFC guard tour verification, and automated occurrence reporting.',
-      icon: Cpu,
-      tag: 'TECH-ENABLED DEFENSE'
+      id: 'cctv-monitoring',
+      title: '24/7 CCTV Video Surveillance & GPS Fleet Telemetry',
+      description: 'High-resolution CCTV camera networks with perimeter tripwire alarms, NFC guard patrol verification, and automated occurrence logging.',
+      icon: Camera,
+      tag: 'ADVANCED SURVEILLANCE'
     },
     {
       id: 'control-room',
@@ -46,23 +46,23 @@ export default function WhyChooseUsSection({ onOpenQuote }) {
       <div className="absolute inset-0 tactical-grid opacity-30 pointer-events-none" />
 
       {/* Radiant Glow Orb */}
-      <div className="absolute top-1/2 right-10 w-96 h-96 bg-red-600/10 rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute top-1/2 right-10 w-96 h-96 bg-emerald-600/10 rounded-full blur-[140px] pointer-events-none" />
 
       <div className="relative z-10 w-full max-w-[1680px] mx-auto px-4 sm:px-8 lg:px-12 space-y-16">
         
         {/* Spartan-Style Section Header */}
         <div className="max-w-3xl space-y-3">
-          <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-red-500/10 border border-red-500/30 text-red-400 text-xs font-mono font-bold uppercase tracking-widest">
+          <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-mono font-bold uppercase tracking-widest">
             <Zap className="w-3.5 h-3.5 mr-1" />
             <span>UNCOMPROMISING EXCELLENCE</span>
           </div>
 
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-black font-display tracking-tight uppercase text-white leading-tight">
-            WHY CHOOSE <span className="bg-gradient-to-r from-red-500 via-rose-400 to-amber-400 bg-clip-text text-transparent">TOUGH TASK SECURITY</span>
+            WHY CHOOSE <span className="bg-gradient-to-r from-emerald-500 via-green-400 to-teal-400 bg-clip-text text-transparent">TOUGH TASK SECURITY</span>
           </h2>
 
           <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
-            Advanced AI-driven monitoring, elite tactical personnel, and rapid response systems built to protect what matters most across Zambia.
+            Advanced CCTV video surveillance, elite tactical personnel, and rapid response units built to protect what matters most across Zambia.
           </p>
         </div>
 
@@ -77,22 +77,22 @@ export default function WhyChooseUsSection({ onOpenQuote }) {
                 key={pt.id}
                 className={`p-7 rounded-2xl border transition-all duration-300 hover:-translate-y-2 flex flex-col justify-between group shadow-xl relative overflow-hidden spartan-card ${
                   isHighlight
-                    ? 'bg-gradient-to-br from-[#1c1316] via-[#100d17] to-[#0a0f1b] border-red-500/50 hover:border-red-400 md:col-span-2 lg:col-span-2 shadow-red-500/10'
-                    : 'bg-[#090e1a]/95 border-slate-800 hover:border-red-500/60 hover:bg-[#0e1627]'
+                    ? 'bg-gradient-to-br from-[#0c1c14] via-[#0b1612] to-[#0a0f1b] border-emerald-500/50 hover:border-emerald-400 md:col-span-2 lg:col-span-2 shadow-emerald-500/10'
+                    : 'bg-[#090e1a]/95 border-slate-800 hover:border-emerald-500/60 hover:bg-[#0e1627]'
                 }`}
               >
                 {/* Header with Tag & Icon */}
                 <div className="space-y-4">
                   <div className="flex items-center justify-between">
-                    <span className="text-[10px] font-mono font-bold text-red-400 bg-red-950/40 border border-red-500/30 px-3 py-1 rounded-full uppercase tracking-wider">
+                    <span className="text-[10px] font-mono font-bold text-emerald-400 bg-emerald-950/40 border border-emerald-500/30 px-3 py-1 rounded-full uppercase tracking-wider">
                       {pt.tag}
                     </span>
-                    <div className="w-12 h-12 rounded-xl bg-slate-900 border border-slate-700/80 group-hover:border-red-500/60 flex items-center justify-center text-red-400 group-hover:text-white transition-colors">
+                    <div className="w-12 h-12 rounded-xl bg-slate-900 border border-slate-700/80 group-hover:border-emerald-500/60 flex items-center justify-center text-emerald-400 group-hover:text-white transition-colors">
                       <Icon className="w-6 h-6" />
                     </div>
                   </div>
 
-                  <h3 className="text-xl font-bold font-display uppercase tracking-tight text-white group-hover:text-red-400 transition-colors">
+                  <h3 className="text-xl font-bold font-display uppercase tracking-tight text-white group-hover:text-emerald-400 transition-colors">
                     {pt.title}
                   </h3>
 
@@ -116,9 +116,9 @@ export default function WhyChooseUsSection({ onOpenQuote }) {
           })}
 
           {/* Quick CTA Card */}
-          <div className="p-7 rounded-2xl bg-gradient-to-br from-red-900/40 via-red-950/30 to-[#0a0f1b] border border-red-500/40 flex flex-col justify-between space-y-6 shadow-xl">
+          <div className="p-7 rounded-2xl bg-gradient-to-br from-emerald-950/40 via-green-950/30 to-[#0a0f1b] border border-emerald-500/40 flex flex-col justify-between space-y-6 shadow-xl">
             <div className="space-y-2">
-              <span className="text-[10px] font-mono font-bold text-amber-400 uppercase tracking-widest block">
+              <span className="text-[10px] font-mono font-bold text-emerald-400 uppercase tracking-widest block">
                 GET STARTED IN UNDER 24 HOURS
               </span>
               <h3 className="text-2xl font-black font-display text-white uppercase leading-snug">
@@ -131,7 +131,7 @@ export default function WhyChooseUsSection({ onOpenQuote }) {
 
             <button
               onClick={() => onOpenQuote()}
-              className="w-full py-4 bg-gradient-to-r from-red-600 via-rose-600 to-red-700 hover:from-red-500 hover:to-rose-600 text-white font-extrabold text-xs uppercase tracking-wider rounded-xl shadow-xl shadow-red-600/30 transition-all flex items-center justify-center space-x-2 cursor-pointer border border-red-500/40 btn-shimmer"
+              className="w-full py-4 bg-gradient-to-r from-emerald-600 via-green-600 to-emerald-700 hover:from-emerald-500 hover:to-green-600 text-white font-extrabold text-xs uppercase tracking-wider rounded-xl shadow-xl shadow-emerald-600/30 transition-all flex items-center justify-center space-x-2 cursor-pointer border border-emerald-500/40 btn-shimmer"
             >
               <Shield className="w-4 h-4" />
               <span>REQUEST SITE SURVEY</span>

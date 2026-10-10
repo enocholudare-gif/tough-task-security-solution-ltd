@@ -23,12 +23,12 @@ export default function CareersPage() {
       {/* Page Hero */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto space-y-4">
-          <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-blue-900/40 border border-blue-500/30 text-blue-400 text-xs font-bold uppercase tracking-widest">
+          <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-emerald-950/60 border border-emerald-500/30 text-emerald-400 text-xs font-bold uppercase tracking-widest">
             <UserCheck className="w-3.5 h-3.5 mr-1 text-emerald-400" />
             JOIN THE FORCE
           </div>
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-black text-white font-display tracking-tight uppercase leading-tight">
-            CAREERS & <span className="text-blue-500">TRAINING ACADEMY</span>
+            CAREERS & <span className="text-emerald-500">TRAINING ACADEMY</span>
           </h1>
           <p className="text-slate-300 text-base sm:text-lg leading-relaxed">
             We are building Zambia's most disciplined and respected security force. We hire on character, train for operational excellence, and reward integrity.
@@ -91,19 +91,19 @@ export default function CareersPage() {
               </h3>
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 text-center text-xs font-mono">
                 <div className="p-3 bg-security-900 border border-security-800 rounded-lg">
-                  <div className="text-blue-400 font-bold">LEVEL 01</div>
+                  <div className="text-emerald-400 font-bold">LEVEL 01</div>
                   <div className="text-slate-200 mt-1">Security Officer</div>
                 </div>
                 <div className="p-3 bg-security-900 border border-security-800 rounded-lg">
-                  <div className="text-blue-400 font-bold">LEVEL 02</div>
+                  <div className="text-emerald-400 font-bold">LEVEL 02</div>
                   <div className="text-slate-200 mt-1">Senior Guard</div>
                 </div>
                 <div className="p-3 bg-security-900 border border-security-800 rounded-lg">
-                  <div className="text-blue-400 font-bold">LEVEL 03</div>
+                  <div className="text-emerald-400 font-bold">LEVEL 03</div>
                   <div className="text-slate-200 mt-1">Shift Supervisor</div>
                 </div>
                 <div className="p-3 bg-security-900 border border-security-800 rounded-lg">
-                  <div className="text-blue-400 font-bold">LEVEL 04</div>
+                  <div className="text-emerald-400 font-bold">LEVEL 04</div>
                   <div className="text-slate-200 mt-1">Ops Commander</div>
                 </div>
               </div>
@@ -193,7 +193,7 @@ export default function CareersPage() {
 
                 <button
                   type="submit"
-                  className="w-full py-3.5 bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs uppercase tracking-wider rounded-lg shadow-lg transition-all"
+                  className="w-full py-3.5 bg-gradient-to-r from-emerald-600 to-green-700 hover:from-emerald-500 hover:to-green-600 text-white font-bold text-xs uppercase tracking-wider rounded-lg shadow-lg transition-all cursor-pointer btn-shimmer"
                 >
                   SUBMIT RECRUITMENT INTEREST
                 </button>

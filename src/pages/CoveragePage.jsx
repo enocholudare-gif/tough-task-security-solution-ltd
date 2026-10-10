@@ -15,7 +15,7 @@ export default function CoveragePage({ onOpenQuote }) {
             NATIONAL DEPLOYMENT NETWORK
           </div>
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-black text-white font-display tracking-tight uppercase leading-tight">
-            OPERATIONS IN ALL <span className="text-blue-500">10 PROVINCES</span>
+            OPERATIONS IN ALL <span className="text-emerald-500">10 PROVINCES</span>
           </h1>
           <p className="text-slate-300 text-base sm:text-lg leading-relaxed">
             With verified operational presence in 39 core economic districts, Tough Task delivers rapid mobilization, armed escorts, and managed guarding anywhere across the Republic of Zambia.
@@ -39,11 +39,11 @@ export default function CoveragePage({ onOpenQuote }) {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {provincesData.map((prov) => (
-            <div key={prov.id} className="p-6 rounded-2xl bg-security-900 border border-security-800 space-y-4 hover:border-blue-500/40 transition-all flex flex-col justify-between">
+            <div key={prov.id} className="p-6 rounded-2xl bg-security-900 border border-security-800 space-y-4 hover:border-emerald-500/40 transition-all flex flex-col justify-between">
               <div className="space-y-3">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center space-x-2">
-                    <MapPin className="w-4 h-4 text-blue-400" />
+                    <MapPin className="w-4 h-4 text-emerald-400" />
                     <h3 className="text-base font-bold text-white font-display uppercase">
                       {prov.name}
                     </h3>
@@ -77,7 +77,7 @@ export default function CoveragePage({ onOpenQuote }) {
                 </span>
                 <button
                   onClick={() => onOpenQuote(`${prov.name}`)}
-                  className="text-xs font-bold text-blue-400 hover:text-white"
+                  className="text-xs font-bold text-emerald-400 hover:text-white"
                 >
                   Deploy Here →
                 </button>

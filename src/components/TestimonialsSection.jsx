@@ -75,7 +75,7 @@ export default function TestimonialsSection() {
             </div>
 
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-black font-display tracking-tight uppercase text-slate-900 leading-tight">
-              WHAT OUR <span className="text-red-600">CLIENTS SAY</span>
+              WHAT OUR <span className="text-emerald-600">CLIENTS SAY</span>
             </h2>
 
             <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
@@ -85,7 +85,7 @@ export default function TestimonialsSection() {
 
           {/* Google 5-Star Trust Badge */}
           <div className="p-4 rounded-2xl bg-white border border-slate-200 flex items-center space-x-4 shadow-md shrink-0">
-            <div className="w-12 h-12 rounded-xl bg-blue-50 border border-blue-200 flex items-center justify-center text-blue-600 font-bold text-xl font-display">
+            <div className="w-12 h-12 rounded-xl bg-emerald-50 border border-emerald-200 flex items-center justify-center text-emerald-600 font-bold text-xl font-display">
               G
             </div>
             <div>
@@ -105,7 +105,7 @@ export default function TestimonialsSection() {
           {testimonials.map((t) => (
             <div
               key={t.id}
-              className="p-7 rounded-2xl bg-white border border-slate-200 hover:border-red-400 hover:shadow-2xl transition-all duration-300 flex flex-col justify-between space-y-6 shadow-sm relative group spartan-card"
+              className="p-7 rounded-2xl bg-white border border-slate-200 hover:border-emerald-500 hover:shadow-2xl transition-all duration-300 flex flex-col justify-between space-y-6 shadow-sm relative group spartan-card"
             >
               <div className="space-y-4">
                 {/* Header with Google Logo & Stars */}
@@ -128,7 +128,7 @@ export default function TestimonialsSection() {
 
               {/* Reviewer Details */}
               <div className="pt-4 border-t border-slate-100 flex items-center space-x-3.5">
-                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-red-600 to-rose-600 text-white font-bold text-xs flex items-center justify-center font-display shrink-0 shadow-md">
+                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-emerald-600 to-green-700 text-white font-bold text-xs flex items-center justify-center font-display shrink-0 shadow-md">
                   {t.name.split(' ').map(n => n[0]).join('')}
                 </div>
                 <div className="space-y-0.5">
@@ -138,7 +138,7 @@ export default function TestimonialsSection() {
                   <p className="text-[11px] text-slate-500 leading-tight">
                     {t.role}
                   </p>
-                  <p className="text-[10px] text-red-600 font-mono font-semibold">
+                  <p className="text-[10px] text-emerald-600 font-mono font-semibold">
                     📍 {t.location}
                   </p>
                 </div>

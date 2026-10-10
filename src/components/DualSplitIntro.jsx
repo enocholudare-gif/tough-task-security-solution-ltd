@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Shield, ArrowRight, Volume2, VolumeX, Sparkles } from 'lucide-react';
+import { Shield, ArrowRight, Volume2, VolumeX } from 'lucide-react';
 
 export default function DualSplitIntro({ onComplete }) {
   const [opened, setOpened] = useState(false);
@@ -42,7 +42,7 @@ export default function DualSplitIntro({ onComplete }) {
           opened ? '-translate-x-full' : 'translate-x-0'
         }`}
       >
-        <div className="flex items-center space-x-2 text-[11px] font-mono text-blue-400 font-bold uppercase tracking-widest">
+        <div className="flex items-center space-x-2 text-[11px] font-mono text-emerald-400 font-bold uppercase tracking-widest">
           <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
           <span>TOUGH TASK SECURITY</span>
         </div>
@@ -52,7 +52,7 @@ export default function DualSplitIntro({ onComplete }) {
             REPUBLIC OF ZAMBIA
           </span>
           <h2 className="text-2xl sm:text-4xl font-black text-white font-display uppercase tracking-tight leading-tight">
-            SECURITY YOU CAN <span className="text-blue-500">TRUST.</span>
+            SECURITY YOU CAN <span className="text-emerald-500">TRUST.</span>
           </h2>
           <p className="text-xs text-slate-400 leading-relaxed hidden sm:block">
             Professional, technology-driven protection for people, property, and assets across 10 provinces.
@@ -79,7 +79,7 @@ export default function DualSplitIntro({ onComplete }) {
             NATIONAL OPERATIONS
           </span>
           <h2 className="text-2xl sm:text-4xl font-black text-white font-display uppercase tracking-tight leading-tight">
-            PROTECTION THAT <span className="text-blue-500">PERFORMS.</span>
+            PROTECTION THAT <span className="text-emerald-500">PERFORMS.</span>
           </h2>
           <p className="text-xs text-slate-400 leading-relaxed hidden sm:block">
             Manned guarding, GPS tour telemetry, rapid mobile response, and CCTV analytics.
@@ -99,7 +99,7 @@ export default function DualSplitIntro({ onComplete }) {
       >
         <button
           onClick={handleManualOpen}
-          className="group relative w-24 h-24 sm:w-28 sm:h-28 rounded-2xl bg-[#090d16] border-2 border-blue-500/50 p-4 shadow-[0_0_50px_rgba(37,99,235,0.4)] flex items-center justify-center hover:border-blue-400 hover:scale-105 transition-all"
+          className="group relative w-24 h-24 sm:w-28 sm:h-28 rounded-2xl bg-[#090d16] border-2 border-emerald-500/50 p-4 shadow-[0_0_50px_rgba(16,185,129,0.4)] flex items-center justify-center hover:border-emerald-400 hover:scale-105 transition-all"
         >
           <img 
             src="/assets/logo.png" 
@@ -114,7 +114,7 @@ export default function DualSplitIntro({ onComplete }) {
           </div>
           <button
             onClick={handleManualOpen}
-            className="text-[11px] font-mono font-bold text-blue-400 bg-blue-950/80 px-3 py-1 rounded-full border border-blue-800 hover:bg-blue-600 hover:text-white transition-colors flex items-center space-x-1"
+            className="text-[11px] font-mono font-bold text-emerald-400 bg-emerald-950/80 px-3 py-1 rounded-full border border-emerald-800 hover:bg-emerald-600 hover:text-white transition-colors flex items-center space-x-1"
           >
             <span>CLICK TO ENTER</span>
             <ArrowRight className="w-3 h-3" />

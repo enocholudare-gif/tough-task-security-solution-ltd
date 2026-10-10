@@ -63,7 +63,7 @@ export default function Navbar({ activePage, setActivePage, onOpenQuote }) {
               <span className="text-slate-400 uppercase font-medium">Emergency Control Room:</span>
               <a
                 href="tel:+260777127114"
-                className="text-red-400 hover:text-red-300 font-bold transition-colors tracking-wide"
+                className="text-emerald-400 hover:text-emerald-300 font-bold transition-colors tracking-wide"
               >
                 +260 777 127 114
               </a>
@@ -135,7 +135,7 @@ export default function Navbar({ activePage, setActivePage, onOpenQuote }) {
                   onClick={() => handleNavClick(link.id)}
                   className={`px-3.5 py-2 text-xs font-bold uppercase tracking-wider rounded-lg transition-all duration-200 cursor-pointer ${
                     isActive 
-                      ? 'text-white bg-blue-600 shadow-md shadow-blue-600/30 font-extrabold' 
+                      ? 'text-white bg-emerald-600 shadow-md shadow-emerald-600/30 font-extrabold' 
                       : 'text-slate-300 hover:text-white hover:bg-slate-800/70'
                   }`}
                 >
@@ -149,7 +149,7 @@ export default function Navbar({ activePage, setActivePage, onOpenQuote }) {
           <div className="hidden lg:flex items-center space-x-3">
             <button
               onClick={handleQuoteClick}
-              className="relative overflow-hidden px-6 py-3 bg-gradient-to-r from-red-600 via-rose-600 to-red-700 hover:from-red-500 hover:to-rose-600 text-white font-extrabold text-xs uppercase tracking-wider rounded-lg shadow-lg shadow-red-600/30 transition-all duration-300 transform hover:-translate-y-0.5 active:scale-95 flex items-center group cursor-pointer border border-red-500/30"
+              className="relative overflow-hidden px-6 py-3 bg-gradient-to-r from-emerald-600 via-green-600 to-emerald-700 hover:from-emerald-500 hover:to-green-600 text-white font-extrabold text-xs uppercase tracking-wider rounded-lg shadow-lg shadow-emerald-600/30 transition-all duration-300 transform hover:-translate-y-0.5 active:scale-95 flex items-center group cursor-pointer border border-emerald-500/30 btn-shimmer"
             >
               <span>GET SECURITY QUOTE</span>
               <ChevronRight className="w-4 h-4 ml-1.5 group-hover:translate-x-1 transition-transform" />
@@ -160,7 +160,7 @@ export default function Navbar({ activePage, setActivePage, onOpenQuote }) {
           <div className="flex items-center space-x-2 lg:hidden">
             <a
               href="tel:+260777127114"
-              className="p-2 text-red-400 bg-red-950/40 border border-red-800/80 rounded-lg hover:bg-red-900/60 transition-colors"
+              className="p-2 text-emerald-400 bg-emerald-950/40 border border-emerald-800/80 rounded-lg hover:bg-emerald-900/60 transition-colors"
               aria-label="Call emergency control room"
             >
               <Phone className="w-4 h-4" />
@@ -188,7 +188,7 @@ export default function Navbar({ activePage, setActivePage, onOpenQuote }) {
                     onClick={() => handleNavClick(link.id)}
                     className={`w-full flex items-center justify-between px-3.5 py-2.5 text-sm font-semibold rounded-lg transition-colors text-left ${
                       isActive
-                        ? 'text-white bg-blue-600 font-bold'
+                        ? 'text-white bg-emerald-600 font-bold'
                         : 'text-slate-300 hover:text-white hover:bg-slate-800/60'
                     }`}
                   >
@@ -205,7 +205,7 @@ export default function Navbar({ activePage, setActivePage, onOpenQuote }) {
                   setMobileMenuOpen(false);
                   handleQuoteClick();
                 }}
-                className="w-full py-3.5 font-extrabold text-xs uppercase tracking-wider rounded-lg shadow-md bg-gradient-to-r from-red-600 to-rose-600 text-white flex items-center justify-center transition-all"
+                className="w-full py-3.5 font-extrabold text-xs uppercase tracking-wider rounded-lg shadow-md bg-gradient-to-r from-emerald-600 via-green-600 to-emerald-700 text-white flex items-center justify-center transition-all btn-shimmer"
               >
                 <span>GET SECURITY QUOTE</span>
                 <ArrowRight className="w-4 h-4 ml-2" />
@@ -214,7 +214,7 @@ export default function Navbar({ activePage, setActivePage, onOpenQuote }) {
               <div className="p-3 bg-[#0d1320] rounded-lg border border-slate-800 text-xs space-y-1.5 text-slate-300 font-mono">
                 <div className="font-semibold text-white">Emergency Control Room:</div>
                 <div className="flex justify-between items-center pt-0.5">
-                  <a href="tel:+260777127114" className="text-red-400 font-bold hover:underline">
+                  <a href="tel:+260777127114" className="text-emerald-400 font-bold hover:underline">
                     +260 777 127 114
                   </a>
                   <a href="tel:+260968025444" className="text-blue-400 font-bold hover:underline">

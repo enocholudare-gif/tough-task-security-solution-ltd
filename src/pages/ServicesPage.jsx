@@ -18,10 +18,10 @@ export default function ServicesPage({ onOpenQuote }) {
             COMPREHENSIVE PROTECTION
           </div>
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-black text-white font-display tracking-tight uppercase leading-tight">
-            SPECIALIZED <span className="text-blue-500">SECURITY SERVICES</span>
+            SPECIALIZED <span className="text-emerald-500">SECURITY SERVICES</span>
           </h1>
           <p className="text-slate-300 text-base sm:text-lg leading-relaxed">
-            From disciplined physical guarding to armored bullion escorts and AI-driven CCTV surveillance, discover our full spectrum of enterprise security solutions.
+            From disciplined physical guarding to armored bullion escorts and 24/7 CCTV video surveillance, discover our full spectrum of enterprise security solutions.
           </p>
         </div>
       </div>
@@ -41,13 +41,13 @@ export default function ServicesPage({ onOpenQuote }) {
                   onClick={() => setActiveServiceId(svc.id)}
                   className={`w-full p-3.5 rounded-xl text-left transition-all flex items-center justify-between ${
                     isActive
-                      ? 'bg-blue-600 text-white font-bold shadow-md'
+                      ? 'bg-emerald-600 text-white font-bold shadow-md'
                       : 'bg-transparent text-slate-300 hover:bg-security-800 hover:text-white'
                   }`}
                 >
                   <div className="flex items-center space-x-3">
                     <span className={`text-xs font-mono px-2 py-0.5 rounded ${
-                      isActive ? 'bg-blue-800 text-white' : 'bg-security-950 text-slate-400'
+                      isActive ? 'bg-emerald-800 text-white' : 'bg-security-950 text-slate-400'
                     }`}>
                       {svc.number}
                     </span>
@@ -61,7 +61,7 @@ export default function ServicesPage({ onOpenQuote }) {
             <div className="pt-4 p-2 border-t border-security-800">
               <button
                 onClick={() => onOpenQuote()}
-                className="w-full py-3 bg-security-950 hover:bg-security-800 border border-security-700 text-blue-400 text-xs font-bold uppercase tracking-wider rounded-xl transition-colors"
+                className="w-full py-3 bg-security-950 hover:bg-security-800 border border-security-700 text-emerald-400 text-xs font-bold uppercase tracking-wider rounded-xl transition-colors"
               >
                 REQUEST CUSTOM MULTI-SITE QUOTE
               </button>
@@ -80,7 +80,7 @@ export default function ServicesPage({ onOpenQuote }) {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-security-900 via-security-900/40 to-transparent" />
               
-              <div className="absolute top-4 left-4 bg-security-950/90 backdrop-blur-md px-3 py-1 rounded text-xs font-mono font-bold text-blue-400 border border-security-700">
+              <div className="absolute top-4 left-4 bg-security-950/90 backdrop-blur-md px-3 py-1 rounded text-xs font-mono font-bold text-emerald-400 border border-security-700">
                 SERVICE {activeService.number} OF 08
               </div>
 
@@ -108,7 +108,7 @@ export default function ServicesPage({ onOpenQuote }) {
 
               {/* Core Features */}
               <div className="space-y-3">
-                <h3 className="text-xs font-bold uppercase tracking-wider text-blue-400">
+                <h3 className="text-xs font-bold uppercase tracking-wider text-emerald-400">
                   Standard Operational Capabilities & Controls
                 </h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -129,7 +129,7 @@ export default function ServicesPage({ onOpenQuote }) {
                 <div className="p-4 rounded-xl bg-security-950 border border-security-800 space-y-2 text-xs text-slate-300">
                   {activeService.deliverables.map((deliv, idx) => (
                     <div key={idx} className="flex items-center space-x-2">
-                      <Shield className="w-3.5 h-3.5 text-blue-400 shrink-0" />
+                      <Shield className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
                       <span>{deliv}</span>
                     </div>
                   ))}
@@ -157,7 +157,7 @@ export default function ServicesPage({ onOpenQuote }) {
                 </div>
                 <button
                   onClick={() => onOpenQuote(activeService.title)}
-                  className="w-full sm:w-auto px-7 py-3.5 bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs uppercase tracking-wider rounded-xl shadow-lg transition-all flex items-center justify-center"
+                  className="w-full sm:w-auto px-7 py-3.5 bg-gradient-to-r from-emerald-600 to-green-700 hover:from-emerald-500 hover:to-green-600 text-white font-bold text-xs uppercase tracking-wider rounded-xl shadow-lg transition-all flex items-center justify-center cursor-pointer btn-shimmer"
                 >
                   <span>REQUEST QUOTE FOR {activeService.title}</span>
                   <ChevronRight className="w-4 h-4 ml-1" />

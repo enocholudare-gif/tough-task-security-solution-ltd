@@ -46,7 +46,7 @@ export default function Footer({ setActivePage, onOpenQuote }) {
 
             <div className="space-y-1.5 pt-1 text-xs text-slate-300">
               <div className="flex items-center">
-                <CheckCircle2 className="w-3.5 h-3.5 text-blue-400 mr-2 shrink-0" />
+                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 mr-2 shrink-0" />
                 <span>100% Zambian Owned & Managed</span>
               </div>
               <div className="flex items-center">
@@ -107,7 +107,7 @@ export default function Footer({ setActivePage, onOpenQuote }) {
                     onClick={() => handleLink('services')} 
                     className="hover:text-white transition-colors text-left flex items-start"
                   >
-                    <span className="text-blue-500 mr-1.5 font-mono text-[11px] font-bold">
+                    <span className="text-emerald-400 mr-1.5 font-mono text-[11px] font-bold">
                       {svc.number}
                     </span>
                     <span>{svc.title}</span>
@@ -124,12 +124,12 @@ export default function Footer({ setActivePage, onOpenQuote }) {
             </h4>
 
             <p className="text-xs text-slate-400 leading-relaxed">
-              Need a security solution tailored to your premises? Our Rhodespark control desk is ready 24/7 with professional guarding, tactical response, and offsite AI monitoring.
+              Need a security solution tailored to your premises? Our Rhodespark control desk is ready 24/7 with professional guarding, tactical response, and offsite CCTV video monitoring.
             </p>
 
             <button
               onClick={() => onOpenQuote()}
-              className="w-full py-3 bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white font-bold text-xs uppercase tracking-wider rounded-xl transition-all shadow-lg shadow-red-600/30 flex items-center justify-center space-x-2 cursor-pointer"
+              className="w-full py-3 bg-gradient-to-r from-emerald-600 to-green-700 hover:from-emerald-500 hover:to-green-600 text-white font-bold text-xs uppercase tracking-wider rounded-xl transition-all shadow-lg shadow-emerald-600/30 flex items-center justify-center space-x-2 cursor-pointer btn-shimmer"
             >
               <span>GET A SECURITY QUOTE</span>
               <ChevronRight className="w-3.5 h-3.5" />
@@ -138,13 +138,13 @@ export default function Footer({ setActivePage, onOpenQuote }) {
             <div className="pt-2 text-xs text-slate-300 space-y-2 font-mono">
               <div className="flex items-center justify-between p-2 rounded-lg bg-[#0a0f1b] border border-slate-800">
                 <span className="text-[11px] text-slate-400">Emergency 24/7:</span>
-                <a href="tel:+260777127114" className="text-red-400 font-bold hover:underline">
+                <a href="tel:+260777127114" className="text-emerald-400 font-bold hover:underline">
                   +260 777 127 114
                 </a>
               </div>
               <div className="flex items-center justify-between p-2 rounded-lg bg-[#0a0f1b] border border-slate-800">
                 <span className="text-[11px] text-slate-400">Operations Desk:</span>
-                <a href="tel:+260968025444" className="text-blue-400 font-bold hover:underline">
+                <a href="tel:+260968025444" className="text-emerald-400 font-bold hover:underline">
                   +260 968 025 444
                 </a>
               </div>

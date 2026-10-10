@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import { Shield, Award, Users, Cpu, HeartHandshake, ArrowUpRight, Sparkles, Droplets, Waves, CheckCircle2 } from 'lucide-react';
+import { Shield, Award, Users, Radio, HeartHandshake, ArrowUpRight, Droplets, Waves, CheckCircle2 } from 'lucide-react';
 
 export default function KeyFeaturesSection({ onOpenQuote }) {
   const [activeCard, setActiveCard] = useState(null);
@@ -33,7 +33,7 @@ export default function KeyFeaturesSection({ onOpenQuote }) {
       title: 'Advanced Technology',
       tagline: 'Proactive Threat Prevention',
       description: 'Our integration of cutting-edge technologies enhances the security solutions we provide, staying ahead of potential threats.',
-      icon: Cpu,
+      icon: Radio,
       floatSpeed: 'animate-[waterFlow_7.8s_ease-in-out_infinite_2.4s]',
       pillLabel: 'REAL-TIME TELEMETRY'
     },

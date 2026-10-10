@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Shield, ArrowRight, CheckCircle2, ChevronRight, Building2, Landmark, Pickaxe, Store, Plane, Cpu, Zap, Lock } from 'lucide-react';
+import { Shield, ArrowRight, CheckCircle2, ChevronRight, Building2, Landmark, Pickaxe, Store, Plane, Zap, Lock } from 'lucide-react';
 
 export default function GlobantIndustrySection({ onOpenQuote }) {
   const [activeIndustry, setActiveIndustry] = useState(0);

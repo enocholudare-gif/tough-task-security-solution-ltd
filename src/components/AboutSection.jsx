@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Shield, CheckCircle2, ChevronRight, ChevronLeft, Award, Lock, Users, Cpu, ArrowRight, Eye, Play, Pause } from 'lucide-react';
+import { Shield, CheckCircle2, ChevronRight, ChevronLeft, Award, Lock, Users, Radio, ArrowRight, Eye, Play, Pause } from 'lucide-react';
 import { companyInfo } from '../data/companyInfo';
 import { processSteps } from '../data/technologyData';
 
@@ -117,7 +117,7 @@ export default function AboutSection({ onOpenQuote, setActivePage }) {
       id: 'pillar-3',
       title: 'Advanced Technology',
       desc: 'Our integration of cutting-edge technologies enhances the security solutions we provide, staying ahead of potential threats at every turn.',
-      icon: Cpu,
+      icon: Radio,
       badge: 'PILLAR 03',
       color: 'emerald'
     }

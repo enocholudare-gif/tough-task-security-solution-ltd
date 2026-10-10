@@ -87,7 +87,7 @@ export const services = [
     id: "surveillance-cctv",
     number: "05",
     title: "Surveillance & CCTV Monitoring",
-    tagline: "24/7 centralized control room monitoring, AI video analytics, and digital forensics.",
+    tagline: "24/7 centralized control room monitoring, smart video analytics, and digital forensics.",
     image: "/assets/service-cctv.jpg",
     description: "Integration of modern video surveillance systems with live 24/7 central monitoring, automated motion analytics, cloud backup, and verified incident escalation to mobile patrol teams.",
     features: [

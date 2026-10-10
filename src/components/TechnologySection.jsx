@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Cpu, Radio, Camera, FileCheck, BarChart3, Smartphone, CheckCircle2, ShieldCheck, Clock, Activity } from 'lucide-react';
+import { Radio, Camera, FileCheck, BarChart3, Smartphone, CheckCircle2, ShieldCheck, Clock, Activity } from 'lucide-react';
 import { techPillars } from '../data/technologyData';
 
 export default function TechnologySection({ onOpenQuote }) {
@@ -13,12 +13,12 @@ export default function TechnologySection({ onOpenQuote }) {
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto space-y-3">
-          <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-bold uppercase tracking-widest">
-            <Cpu className="w-3.5 h-3.5 mr-1" />
+          <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-bold uppercase tracking-widest">
+            <Radio className="w-3.5 h-3.5 mr-1" />
             TECHNOLOGY & COMMAND
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-black font-display tracking-tight uppercase text-white">
-            SECURITY POWERED BY <span className="text-blue-500">PEOPLE & TECHNOLOGY</span>
+            SECURITY POWERED BY <span className="text-emerald-500">PEOPLE & TECHNOLOGY</span>
           </h2>
           <p className="text-slate-400 text-sm sm:text-base leading-relaxed">
             Eliminating human error and blind spots through real-time GPS telemetry, electronic incident logging, and centralized supervision.
@@ -39,14 +39,14 @@ export default function TechnologySection({ onOpenQuote }) {
                   onClick={() => setActiveTechId(pillar.id)}
                   className={`w-full p-4 rounded-xl border text-left transition-all ${
                     isActive
-                      ? 'bg-blue-600 border-blue-400 text-white shadow-md'
+                      ? 'bg-emerald-600 border-emerald-400 text-white shadow-md'
                       : 'bg-[#0e1422] border-slate-800 text-slate-300 hover:border-slate-700 hover:bg-[#121a2c]'
                   }`}
                 >
                   <div className="flex items-center justify-between">
                     <div className="flex items-center space-x-3">
                       <div className={`w-8 h-8 rounded-lg flex items-center justify-center text-xs font-bold ${
-                        isActive ? 'bg-blue-800 text-white' : 'bg-[#090d16] text-blue-400 border border-slate-700'
+                        isActive ? 'bg-emerald-800 text-white' : 'bg-[#090d16] text-emerald-400 border border-slate-700'
                       }`}>
                         {pillar.id === 'gps-tracking' && <Radio className="w-4 h-4" />}
                         {pillar.id === 'digital-incident' && <Smartphone className="w-4 h-4" />}
@@ -56,7 +56,7 @@ export default function TechnologySection({ onOpenQuote }) {
                       </div>
                       <div>
                         <h3 className="text-sm font-bold">{pillar.title}</h3>
-                        <p className={`text-[11px] ${isActive ? 'text-blue-100' : 'text-slate-400'}`}>
+                        <p className={`text-[11px] ${isActive ? 'text-emerald-100' : 'text-slate-400'}`}>
                           {pillar.short}
                         </p>
                       </div>
@@ -69,7 +69,7 @@ export default function TechnologySection({ onOpenQuote }) {
             <div className="pt-2">
               <button
                 onClick={onOpenQuote}
-                className="w-full py-3 bg-slate-800 hover:bg-slate-750 text-blue-400 hover:text-white text-xs font-bold uppercase tracking-wider rounded-xl border border-slate-700 transition-colors"
+                className="w-full py-3 bg-slate-800 hover:bg-slate-750 text-emerald-400 hover:text-white text-xs font-bold uppercase tracking-wider rounded-xl border border-slate-700 transition-colors"
               >
                 REQUEST TECH SPECIFICATIONS
               </button>

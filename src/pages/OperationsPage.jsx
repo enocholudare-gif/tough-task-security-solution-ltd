@@ -14,7 +14,7 @@ export default function OperationsPage({ onOpenQuote }) {
             OPERATIONS & CASE STUDIES
           </div>
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-black text-white font-display tracking-tight uppercase leading-tight">
-            PROVEN TRACK RECORD ACROSS <span className="text-blue-500">KEY SECTORS</span>
+            PROVEN TRACK RECORD ACROSS <span className="text-emerald-500">KEY SECTORS</span>
           </h1>
           <p className="text-slate-300 text-base sm:text-lg leading-relaxed">
             Real-world security operations safeguarding industrial complexes, corporate headquarters, diplomatic missions, and high-value logistics corridors.
@@ -38,7 +38,7 @@ export default function OperationsPage({ onOpenQuote }) {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div className="p-6 rounded-2xl bg-security-900 border border-security-800 space-y-3">
-            <Building className="w-8 h-8 text-blue-400" />
+            <Building className="w-8 h-8 text-emerald-400" />
             <h3 className="text-base font-bold text-white uppercase">Corporate & Commercial</h3>
             <p className="text-xs text-slate-300 leading-relaxed">
               Front-of-house customer hospitality, electronic badge access control, executive boardroom details, and structured parking management.
@@ -46,7 +46,7 @@ export default function OperationsPage({ onOpenQuote }) {
           </div>
 
           <div className="p-6 rounded-2xl bg-security-900 border border-security-800 space-y-3">
-            <Truck className="w-8 h-8 text-blue-400" />
+            <Truck className="w-8 h-8 text-emerald-400" />
             <h3 className="text-base font-bold text-white uppercase">Industrial & Logistics</h3>
             <p className="text-xs text-slate-300 leading-relaxed">
               Weighbridge cargo inspection, loss prevention search bays, fuel depot monitoring, and 24/7 perimeter electronic tour checkpoints.
@@ -54,7 +54,7 @@ export default function OperationsPage({ onOpenQuote }) {
           </div>
 
           <div className="p-6 rounded-2xl bg-security-900 border border-security-800 space-y-3">
-            <Lock className="w-8 h-8 text-blue-400" />
+            <Lock className="w-8 h-8 text-emerald-400" />
             <h3 className="text-base font-bold text-white uppercase">Banking & High Value Assets</h3>
             <p className="text-xs text-slate-300 leading-relaxed">
               Armored transit escorts, vault-to-vault dual custody manifests, armed static security guards, and dedicated ATM verification response teams.
