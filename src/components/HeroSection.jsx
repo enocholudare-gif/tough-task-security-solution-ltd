@@ -1,79 +1,57 @@
 import React, { useState, useEffect } from 'react';
-import { Shield, Phone, AlertTriangle, CheckCircle2, ChevronRight, ArrowRight, Lock, MapPin, Radio, Users } from 'lucide-react';
+import { Shield, ArrowRight, ChevronRight, CheckCircle2, ChevronLeft } from 'lucide-react';
 
 export default function HeroSection({ onOpenQuote, setActivePage }) {
-  const [activeUnitIndex, setActiveUnitIndex] = useState(0);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
-  // Tactical showcases matching Tough Task's authentic units
-  const responseUnits = [
-    {
-      id: 'unit-panic',
-      title: 'Rapid Response Panic Button',
-      tag: 'ONE-TOUCH WIRELESS GPS DISTANCE',
-      image: '/assets/services/service-alarm-response.jpg',
-      badge: '24/7 RHODESPARK LINK',
-      description: 'Instant distress signal with real-time GPS telemetry dispatched directly to our Rhodespark control room and tactical cruisers.',
-      features: [
-        'Sub-5 minute priority armed escalation',
-        'Direct satellite GPS vehicle tracking relay',
-        'Simultaneous SMS & WhatsApp family/corporate alerts'
-      ]
-    },
-    {
-      id: 'unit-tactical',
-      title: 'Tactical Armed Response Units',
-      tag: 'HEAVY ARMED ESCORT & PATROLS',
-      image: '/assets/hero/hero-7.jpg',
-      badge: 'ZAMBIA POLICE COORDINATED',
-      description: 'Specialized armed intervention squads equipped for high-risk intrusion defense, perimeter breaches, and cash-in-transit escorts.',
-      features: [
-        'Dedicated 24/7 mobile cruisers on active patrol',
-        'Multi-channel tactical radio synchronization',
-        'Counter-intrusion and perimeter breach containment'
-      ]
-    },
-    {
-      id: 'unit-guarding',
-      title: 'Elite Manned Guarding Sentries',
-      tag: 'STATIC & PERIMETER ACCESS SCREENING',
-      image: '/assets/services/service-manned-guarding.jpg',
-      badge: '100% POLICE VETTED',
-      description: 'Disciplined uniformed officers maintaining 24/7 access control, perimeter patrols, and visitor screening for corporate and residential facilities.',
-      features: [
-        'Police vetted with fingerprint clearance certificates',
-        'NFC electronic checkpoint patrol verification',
-        'Unannounced day and night supervisor inspections'
-      ]
-    }
+  // The 12 authentic Tough Task security operation photos
+  const heroImages = [
+    { src: '/assets/hero/hero-1.jpg', alt: 'Tough Task Security Officers Parade' },
+    { src: '/assets/hero/hero-2.jpg', alt: 'Tough Task Tactical Response Unit' },
+    { src: '/assets/hero/hero-3.jpg', alt: 'Tough Task Manned Guarding Team' },
+    { src: '/assets/hero/hero-4.jpg', alt: 'Tough Task VIP Close Protection' },
+    { src: '/assets/hero/hero-5.jpg', alt: 'Tough Task Mobile Patrol Cruisers' },
+    { src: '/assets/hero/hero-6.jpg', alt: 'Tough Task Commercial Security Screening' },
+    { src: '/assets/hero/hero-7.jpg', alt: 'Tough Task Armed Intervention Squad' },
+    { src: '/assets/hero/hero-8.jpg', alt: 'Tough Task Security Control Operations' },
+    { src: '/assets/hero/hero-9.jpg', alt: 'Tough Task Industrial Facility Guarding' },
+    { src: '/assets/hero/hero-10.jpg', alt: 'Tough Task Checkpoint Verification' },
+    { src: '/assets/hero/hero-11.jpg', alt: 'Tough Task Cash Transit & Asset Escort' },
+    { src: '/assets/hero/hero-12.jpg', alt: 'Tough Task Executive Protection Sentry' }
   ];
 
-  // Rotate between units every 6 seconds
+  // Rotate between the 12 images every 10 seconds as requested
   useEffect(() => {
     const timer = setInterval(() => {
-      setActiveUnitIndex((prev) => (prev + 1) % responseUnits.length);
-    }, 6000);
+      setCurrentImageIndex((prev) => (prev + 1) % heroImages.length);
+    }, 10000);
     return () => clearInterval(timer);
-  }, [responseUnits.length]);
+  }, [heroImages.length]);
 
-  const activeUnit = responseUnits[activeUnitIndex];
+  const handleNext = () => {
+    setCurrentImageIndex((prev) => (prev + 1) % heroImages.length);
+  };
+
+  const handlePrev = () => {
+    setCurrentImageIndex((prev) => (prev - 1 + heroImages.length) % heroImages.length);
+  };
 
   return (
     <section 
       id="hero-section"
-      className="relative bg-white text-slate-900 border-b border-slate-200 overflow-hidden light-grid-pattern py-14 sm:py-20 lg:py-24"
+      className="relative bg-white text-slate-900 border-b border-slate-200 overflow-hidden light-grid-pattern py-12 sm:py-16 lg:py-20"
     >
       {/* Subtle Ambient Emerald Aura */}
       <div className="absolute top-1/4 left-10 w-[550px] h-[350px] bg-emerald-500/5 rounded-full blur-[130px] pointer-events-none" />
       <div className="absolute bottom-10 right-10 w-[500px] h-[350px] bg-emerald-600/5 rounded-full blur-[130px] pointer-events-none" />
 
       <div className="relative z-10 w-full max-w-[1680px] mx-auto px-4 sm:px-8 lg:px-12">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
           
           {/* ========================================================
               LEFT COLUMN: SPARTAN SA SIGNATURE HEADLINE & ACTIONS
-              (Elementor 50% fadeInLeft layout)
              ======================================================== */}
-          <div className="lg:col-span-7 space-y-6 animate-fade-in-up">
+          <div className="lg:col-span-6 space-y-6 animate-fade-in-up">
             
             {/* Top Tactical Callout Badge */}
             <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-700 text-xs font-mono font-bold uppercase tracking-wider shadow-sm">
@@ -91,10 +69,10 @@ export default function HeroSection({ onOpenQuote, setActivePage }) {
               </h2>
             </div>
 
-            {/* Spartan SA Signature Gradient Accent Bar (80px wide) */}
+            {/* Spartan SA Signature Gradient Accent Bar (96px wide) */}
             <div className="w-24 h-1.5 bg-gradient-to-r from-emerald-600 via-green-500 to-transparent rounded-full" />
 
-            {/* Subheadline (Spartan SA H4) */}
+            {/* Subheadline */}
             <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-slate-800 leading-snug font-display">
               Protecting people, properties and businesses across Zambia.
             </h3>
@@ -128,7 +106,7 @@ export default function HeroSection({ onOpenQuote, setActivePage }) {
               </button>
             </div>
 
-            {/* Spartan Proof Indicators Strip */}
+            {/* Proof Indicators Strip */}
             <div className="pt-6 border-t border-slate-200 flex flex-wrap items-center gap-6 text-xs text-slate-700 font-medium">
               <span className="flex items-center space-x-2">
                 <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
@@ -147,106 +125,67 @@ export default function HeroSection({ onOpenQuote, setActivePage }) {
           </div>
 
           {/* ========================================================
-              RIGHT COLUMN: SPARTAN SA RAPID RESPONSE PANIC BUTTON CARD
-              (Elementor 50% fadeInDown layout)
+              RIGHT COLUMN: CLEAN 12-IMAGE SHOWCASE (ROTATES EVERY 10S)
+              (All distracting text removed per user request)
              ======================================================== */}
-          <div className="lg:col-span-5">
-            <div className="bg-slate-50 border border-slate-200 rounded-3xl p-6 sm:p-8 shadow-xl hover:shadow-2xl transition-all duration-300 spartan-card relative overflow-hidden">
+          <div className="lg:col-span-6">
+            <div className="relative rounded-3xl overflow-hidden bg-slate-900 border-2 border-slate-200/80 shadow-2xl group h-[420px] sm:h-[480px] lg:h-[530px] flex items-center justify-center">
               
-              {/* Top Emerald Accent Stripe */}
-              <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-emerald-600 via-green-500 to-teal-500" />
-
-              {/* Card Header matching Spartan SA */}
-              <div className="flex items-center justify-between pb-4 border-b border-slate-200">
-                <div className="flex items-center space-x-3">
-                  <div className="w-10 h-10 rounded-xl bg-emerald-100 border border-emerald-300 text-emerald-700 flex items-center justify-center shrink-0">
-                    <AlertTriangle className="w-5 h-5 animate-pulse" />
-                  </div>
-                  <div>
-                    <h3 className="text-base sm:text-lg font-black font-display uppercase tracking-tight text-slate-900">
-                      RAPID RESPONSE PANIC BUTTON
-                    </h3>
-                    <p className="text-[11px] text-slate-500 font-mono">
-                      One-Touch Emergency GPS Activation
-                    </p>
-                  </div>
-                </div>
-
-                <span className="px-2.5 py-1 rounded-full bg-emerald-600 text-white font-mono text-[10px] font-bold uppercase tracking-wider shrink-0 shadow-sm animate-pulse">
-                  24/7 LIVE
-                </span>
-              </div>
-
-              {/* Unit Image Showcase with Interactive Crossfade */}
-              <div className="relative h-60 sm:h-64 w-full rounded-2xl overflow-hidden bg-slate-200 my-5 border border-slate-200 shadow-inner group">
-                <img
-                  src={activeUnit.image}
-                  alt={activeUnit.title}
-                  className="w-full h-full object-cover filter contrast-[1.05] group-hover:scale-105 transition-transform duration-700"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-transparent to-transparent" />
-                
-                <div className="absolute bottom-3 left-3 right-3 p-3 rounded-xl bg-white/95 backdrop-blur-md border border-slate-200 text-xs flex items-center justify-between shadow-md">
-                  <div>
-                    <span className="text-[10px] font-mono text-emerald-700 font-bold block uppercase">
-                      {activeUnit.badge}
-                    </span>
-                    <span className="font-bold text-slate-900">{activeUnit.title}</span>
-                  </div>
-                  <Shield className="w-5 h-5 text-emerald-600 shrink-0" />
-                </div>
-              </div>
-
-              {/* Unit Features Checklist */}
-              <div className="space-y-2 py-2">
-                <p className="text-xs text-slate-600 leading-relaxed font-normal">
-                  {activeUnit.description}
-                </p>
-                <div className="space-y-1.5 pt-1">
-                  {activeUnit.features.map((feat, fIdx) => (
-                    <div key={fIdx} className="flex items-center text-xs text-slate-700">
-                      <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 mr-2 shrink-0" />
-                      <span>{feat}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              {/* Action Buttons */}
-              <div className="pt-4 border-t border-slate-200 flex flex-col sm:flex-row gap-3">
-                <a
-                  href="tel:+260777127114"
-                  className="flex-1 py-3.5 bg-gradient-to-r from-emerald-600 to-green-600 hover:from-emerald-500 hover:to-green-500 text-white font-bold text-xs uppercase tracking-wider rounded-xl shadow-md transition-all flex items-center justify-center space-x-2 btn-shimmer"
+              {/* 12 Images with Smooth Fade & Ken-Burns subtle motion */}
+              {heroImages.map((img, index) => (
+                <div
+                  key={index}
+                  className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
+                    index === currentImageIndex ? 'opacity-100 z-10' : 'opacity-0 z-0 pointer-events-none'
+                  }`}
                 >
-                  <Phone className="w-4 h-4" />
-                  <span>CALL: +260 777 127 114</span>
-                </a>
+                  <img
+                    src={img.src}
+                    alt={img.alt}
+                    className="w-full h-full object-cover object-center filter contrast-[1.05] brightness-[0.98] transform group-hover:scale-105 transition-transform duration-700"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/10" />
+                </div>
+              ))}
 
-                <button
-                  onClick={() => onOpenQuote(activeUnit.title)}
-                  className="px-5 py-3.5 bg-white hover:bg-slate-100 border border-slate-300 text-slate-900 font-bold text-xs uppercase tracking-wider rounded-xl transition-all flex items-center justify-center space-x-1.5 shadow-sm cursor-pointer group"
-                >
-                  <span>Learn More</span>
-                  <ArrowRight className="w-4 h-4 text-emerald-600 group-hover:translate-x-1 transition-transform" />
-                </button>
-              </div>
+              {/* Navigation Arrows (Visible on hover) */}
+              <button
+                onClick={handlePrev}
+                aria-label="Previous Image"
+                className="absolute left-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-black/50 hover:bg-emerald-600 text-white backdrop-blur-md border border-white/20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all cursor-pointer shadow-lg"
+              >
+                <ChevronLeft className="w-5 h-5" />
+              </button>
 
-              {/* Unit Selector Pills */}
-              <div className="pt-4 border-t border-slate-200/80 flex items-center justify-between text-[11px] font-mono text-slate-500">
-                <span>Select Unit Preview:</span>
-                <div className="flex items-center space-x-1.5">
-                  {responseUnits.map((u, uIdx) => (
+              <button
+                onClick={handleNext}
+                aria-label="Next Image"
+                className="absolute right-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-black/50 hover:bg-emerald-600 text-white backdrop-blur-md border border-white/20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all cursor-pointer shadow-lg"
+              >
+                <ChevronRight className="w-5 h-5" />
+              </button>
+
+              {/* Bottom Subtle Slide Indicators & Counter (Clean, Minimalist) */}
+              <div className="absolute bottom-4 left-6 right-6 z-20 flex items-center justify-between">
+                <div className="px-3 py-1 rounded-full bg-black/60 backdrop-blur-md border border-white/20 text-white font-mono text-[11px] font-bold">
+                  <span>{String(currentImageIndex + 1).padStart(2, '0')}</span>
+                  <span className="text-emerald-400 mx-1">/</span>
+                  <span className="text-slate-300">12</span>
+                </div>
+
+                {/* 12 Slide Progress Dots */}
+                <div className="flex items-center space-x-1.5 bg-black/50 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/20">
+                  {heroImages.map((_, dotIdx) => (
                     <button
-                      key={u.id}
-                      onClick={() => setActiveUnitIndex(uIdx)}
-                      className={`px-2.5 py-1 rounded-md text-[10px] font-bold uppercase transition-all cursor-pointer ${
-                        uIdx === activeUnitIndex
-                          ? 'bg-emerald-600 text-white shadow-sm'
-                          : 'bg-slate-200 text-slate-700 hover:bg-slate-300'
+                      key={dotIdx}
+                      onClick={() => setCurrentImageIndex(dotIdx)}
+                      aria-label={`Jump to image ${dotIdx + 1}`}
+                      className={`h-1.5 rounded-full transition-all cursor-pointer ${
+                        dotIdx === currentImageIndex
+                          ? 'w-6 bg-emerald-500 shadow-sm'
+                          : 'w-1.5 bg-white/40 hover:bg-white/80'
                       }`}
-                    >
-                      0{uIdx + 1}
-                    </button>
+                    />
                   ))}
                 </div>
               </div>

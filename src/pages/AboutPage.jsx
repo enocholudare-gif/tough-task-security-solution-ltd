@@ -28,7 +28,7 @@ export default function AboutPage({ onOpenQuote, setActivePage }) {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           
           <div className="p-8 sm:p-10 rounded-2xl bg-security-900 border border-security-750 space-y-4 shadow-xl relative overflow-hidden">
-            <div className="w-12 h-12 rounded-xl bg-blue-600/20 border border-blue-500/40 flex items-center justify-center text-blue-400">
+            <div className="w-12 h-12 rounded-xl bg-emerald-600/20 border border-emerald-500/40 flex items-center justify-center text-emerald-400">
               <Target className="w-6 h-6" />
             </div>
             <h2 className="text-2xl font-bold text-white font-display uppercase tracking-wider">
@@ -59,7 +59,7 @@ export default function AboutPage({ onOpenQuote, setActivePage }) {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           
           <div className="lg:col-span-6 space-y-6">
-            <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-security-900 text-blue-400 text-xs font-bold uppercase tracking-wider border border-security-750">
+            <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-security-900 text-emerald-400 text-xs font-bold uppercase tracking-wider border border-security-750">
               OUR FOUNDATIONAL PHILOSOPHY
             </div>
             <h2 className="text-3xl sm:text-4xl font-black text-white font-display uppercase tracking-tight">
@@ -73,7 +73,7 @@ export default function AboutPage({ onOpenQuote, setActivePage }) {
             </p>
             
             <div className="p-4 rounded-xl bg-security-900 border border-security-750 text-xs text-slate-200 font-mono space-y-2">
-              <div className="font-bold text-blue-400 uppercase">THE TOUGH TASK OPERATIONAL EQUATION:</div>
+              <div className="font-bold text-emerald-400 uppercase">THE TOUGH TASK OPERATIONAL EQUATION:</div>
               <p className="text-white font-bold">
                 PEOPLE + TECHNOLOGY + DISCIPLINE + RAPID RESPONSE + ACCOUNTABILITY
               </p>
@@ -105,7 +105,7 @@ export default function AboutPage({ onOpenQuote, setActivePage }) {
       {/* Core Values Expanded */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto space-y-4 mb-12">
-          <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-blue-900/40 border border-blue-500/30 text-blue-400 text-xs font-bold uppercase tracking-widest">
+          <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-emerald-950/60 border border-emerald-500/30 text-emerald-400 text-xs font-bold uppercase tracking-widest">
             <Award className="w-3.5 h-3.5 mr-1 text-emerald-400" />
             GUIDING PRINCIPLES
           </div>
@@ -116,8 +116,8 @@ export default function AboutPage({ onOpenQuote, setActivePage }) {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {companyInfo.coreValues.map((val, idx) => (
-            <div key={idx} className="p-6 rounded-2xl bg-security-900 border border-security-800 space-y-3 hover:border-blue-500/50 transition-all">
-              <div className="w-10 h-10 rounded-lg bg-blue-600/20 border border-blue-500/40 flex items-center justify-center text-blue-400 font-mono font-bold text-sm">
+            <div key={idx} className="p-6 rounded-2xl bg-security-900 border border-security-800 space-y-3 hover:border-emerald-500/50 transition-all">
+              <div className="w-10 h-10 rounded-lg bg-emerald-600/20 border border-emerald-500/40 flex items-center justify-center text-emerald-400 font-mono font-bold text-sm">
                 0{idx + 1}
               </div>
               <h3 className="text-lg font-bold text-white uppercase tracking-wider">
@@ -130,9 +130,9 @@ export default function AboutPage({ onOpenQuote, setActivePage }) {
           ))}
 
           {/* Vetting Standard Card */}
-          <div className="p-6 rounded-2xl bg-blue-950/40 border border-blue-800/80 space-y-3 flex flex-col justify-between">
+          <div className="p-6 rounded-2xl bg-emerald-950/40 border border-emerald-800/80 space-y-3 flex flex-col justify-between">
             <div className="space-y-3">
-              <div className="w-10 h-10 rounded-lg bg-blue-600 text-white flex items-center justify-center font-bold text-sm">
+              <div className="w-10 h-10 rounded-lg bg-emerald-600 text-white flex items-center justify-center font-bold text-sm">
                 SOP
               </div>
               <h3 className="text-lg font-bold text-white uppercase tracking-wider">
@@ -147,7 +147,7 @@ export default function AboutPage({ onOpenQuote, setActivePage }) {
                 setActivePage('careers');
                 window.scrollTo({ top: 0, behavior: 'smooth' });
               }}
-              className="text-xs font-bold text-blue-300 hover:text-white flex items-center pt-2"
+              className="text-xs font-bold text-emerald-400 hover:text-white flex items-center pt-2 cursor-pointer"
             >
               Explore Training & Vetting <ChevronRight className="w-3.5 h-3.5 ml-1" />
             </button>
@@ -158,7 +158,7 @@ export default function AboutPage({ onOpenQuote, setActivePage }) {
       {/* The 5-Stage "How We Work" Workflow */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto space-y-4 mb-12">
-          <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-blue-900/40 border border-blue-500/30 text-blue-400 text-xs font-bold uppercase tracking-widest">
+          <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-emerald-950/60 border border-emerald-500/30 text-emerald-400 text-xs font-bold uppercase tracking-widest">
             <Target className="w-3.5 h-3.5 mr-1 text-emerald-400" />
             OPERATIONAL METHODOLOGY
           </div>
@@ -174,7 +174,7 @@ export default function AboutPage({ onOpenQuote, setActivePage }) {
           {processSteps.map((step) => (
             <div key={step.step} className="p-6 rounded-2xl bg-security-900 border border-security-800 grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
               <div className="md:col-span-2 flex items-center space-x-3">
-                <span className="text-2xl font-black font-mono text-blue-500">
+                <span className="text-2xl font-black font-mono text-emerald-400">
                   {step.step}
                 </span>
                 <span className="text-lg font-extrabold uppercase text-white font-display">

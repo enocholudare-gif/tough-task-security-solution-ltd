@@ -162,169 +162,137 @@ export default function SecurityServicesSection({ onOpenQuote }) {
           </button>
         </div>
 
-        {/* 6-Card Spartan-Style Tactical Grid (2 Rows of 3 Cards) */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+        {/* 6-Card 3D Interactive Flip Grid (Hover on desktop or tap on mobile flips to reveal full details) */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((srv, idx) => {
             const SrvIcon = srv.icon;
-            const isSelected = activeService === idx;
+            const isFlipped = activeService === idx;
 
             return (
               <div
                 key={srv.id}
-                onClick={() => setActiveService(idx)}
-                onMouseEnter={() => setHoveredCard(srv.id)}
-                onMouseLeave={() => setHoveredCard(null)}
-                className={`rounded-2xl overflow-hidden flex flex-col justify-between border transition-all duration-300 cursor-pointer group relative spartan-card ${
-                  isSelected
-                    ? 'bg-white border-2 border-emerald-600 shadow-[0_20px_45px_rgba(16,185,129,0.2)] scale-[1.02] -translate-y-2 z-10'
-                    : 'bg-white border-slate-200/90 hover:border-emerald-500/70 hover:shadow-2xl hover:-translate-y-2 shadow-md'
-                }`}
+                className={`flip-card h-[460px] sm:h-[490px] cursor-pointer group ${isFlipped ? 'is-flipped' : ''}`}
+                onClick={() => setActiveService(activeService === idx ? null : idx)}
               >
-                {/* Top Active Indicator Glow Line */}
-                {isSelected && (
-                  <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-emerald-600 via-green-500 to-teal-400 z-20" />
-                )}
-
-                {/* Service Image Header with Animated Zoom & Contrast */}
-                <div className="relative h-56 w-full overflow-hidden bg-slate-100">
-                  <img
-                    src={srv.image}
-                    alt={srv.title}
-                    onError={(e) => {
-                      e.currentTarget.src = srv.kommodoUrl;
-                    }}
-                    className="w-full h-full object-cover filter brightness-[0.92] contrast-[1.05] spartan-img"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                <div className="flip-card-inner">
                   
-                  {/* Floating Number Pill */}
-                  <div className="absolute top-3.5 left-3.5 px-3 py-1 rounded-full bg-slate-900/90 border border-slate-700 text-xs font-mono font-bold text-emerald-400 backdrop-blur-md shadow-md">
-                    {srv.number}
-                  </div>
-
-                  {/* Animated Icon Floating Pod */}
-                  <div className={`absolute top-3.5 right-3.5 w-10 h-10 rounded-xl flex items-center justify-center transition-all duration-300 backdrop-blur-md ${
-                    isSelected 
-                      ? 'bg-emerald-600 text-white shadow-lg shadow-emerald-500/50 scale-110' 
-                      : 'bg-white/95 border border-slate-200 text-slate-800 group-hover:bg-emerald-600 group-hover:text-white group-hover:border-emerald-600 shadow-md'
-                  }`}>
-                    <SrvIcon className="w-5 h-5" />
-                  </div>
-                </div>
-
-                {/* Service Text Body */}
-                <div className="p-6 flex-1 flex flex-col justify-between space-y-4 bg-white">
-                  <div className="space-y-2.5">
-                    <div className="text-[10px] font-mono font-bold text-emerald-700 uppercase tracking-wider">
-                      {srv.badge}
-                    </div>
-                    <h3 className="text-lg font-black font-display text-slate-900 uppercase tracking-tight group-hover:text-emerald-600 transition-colors leading-snug">
-                      {srv.title}
-                    </h3>
-                    <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
-                      {srv.description}
-                    </p>
-                  </div>
-
-                  {/* Bullet Highlights */}
-                  <div className="space-y-1.5 pt-2 border-t border-slate-100">
-                    {srv.highlights.slice(0, 3).map((hl, hIdx) => (
-                      <div key={hIdx} className="flex items-center text-[11px] text-slate-700">
-                        <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 mr-2 shrink-0" />
-                        <span className="truncate">{hl}</span>
-                      </div>
-                    ))}
-                  </div>
-
-                  {/* Animated Action Footer (Spartan SA "Learn More" Link) */}
-                  <div className="pt-4 border-t border-slate-100 flex items-center justify-between">
-                    <button
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        onOpenQuote(srv.title);
+                  {/* ========================================================
+                      FRONT FACE: PURE HIGH-IMPACT SECURITY IMAGE SHOWCASE
+                     ======================================================== */}
+                  <div className="flip-card-front bg-slate-900 border-2 border-slate-200/90 group-hover:border-emerald-500 shadow-xl transition-all">
+                    {/* Full Card Image */}
+                    <img
+                      src={srv.image}
+                      alt={srv.title}
+                      onError={(e) => {
+                        e.currentTarget.src = srv.kommodoUrl;
                       }}
-                      className="text-xs font-bold text-emerald-600 hover:text-emerald-700 uppercase tracking-wider transition-colors flex items-center group-hover:translate-x-0.5 cursor-pointer"
-                    >
-                      <span>Get Quote</span>
-                      <ArrowRight className="w-3.5 h-3.5 ml-1" />
-                    </button>
-                    <span className="text-[11px] font-mono text-slate-500 group-hover:text-slate-900 transition-colors flex items-center">
-                      <span>Learn More</span>
-                      <ChevronRight className="w-4 h-4 ml-0.5 group-hover:translate-x-1 transition-transform" />
-                    </span>
-                  </div>
-                </div>
+                      className="w-full h-full object-cover filter brightness-[0.88] contrast-[1.08] group-hover:scale-105 transition-transform duration-700"
+                    />
 
+                    {/* Gradient Overlay for Text Legibility */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-black/60 pointer-events-none" />
+
+                    {/* Top Badges */}
+                    <div className="absolute top-4 left-4 right-4 flex items-center justify-between z-10">
+                      <div className="px-3.5 py-1.5 rounded-full bg-slate-950/80 backdrop-blur-md border border-slate-700/80 text-xs font-mono font-bold text-emerald-400 shadow-lg">
+                        {srv.number}
+                      </div>
+
+                      <div className="w-10 h-10 rounded-xl bg-emerald-600/90 text-white backdrop-blur-md flex items-center justify-center shadow-lg group-hover:bg-emerald-500 transition-colors">
+                        <SrvIcon className="w-5 h-5" />
+                      </div>
+                    </div>
+
+                    {/* Bottom Caption & Flip Prompt */}
+                    <div className="absolute bottom-4 left-4 right-4 z-10 space-y-3">
+                      <div className="space-y-1">
+                        <span className="text-[10px] font-mono font-bold text-emerald-400 uppercase tracking-widest block">
+                          {srv.badge}
+                        </span>
+                        <h3 className="text-xl sm:text-2xl font-black font-display text-white uppercase tracking-tight leading-snug drop-shadow-md">
+                          {srv.title}
+                        </h3>
+                      </div>
+
+                      <div className="pt-2 border-t border-white/15 flex items-center justify-between text-xs text-slate-300">
+                        <span className="flex items-center text-emerald-400 font-mono text-[11px] font-semibold">
+                          <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 mr-1.5 animate-pulse" />
+                          Hover to view details
+                        </span>
+                        <span className="px-2.5 py-1 rounded-full bg-white/10 backdrop-blur-md text-[10px] font-mono text-white flex items-center space-x-1 group-hover:bg-emerald-600 transition-colors">
+                          <span>FLIP ↻</span>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* ========================================================
+                      BACK FACE: DETAILED TACTICAL SPECS & ACTIONS
+                     ======================================================== */}
+                  <div className="flip-card-back bg-slate-900 border-2 border-emerald-500 text-white p-6 sm:p-7 flex flex-col justify-between shadow-2xl relative">
+                    {/* Ambient Glow */}
+                    <div className="absolute -top-12 -right-12 w-40 h-40 bg-emerald-500/15 rounded-full blur-2xl pointer-events-none" />
+
+                    {/* Header */}
+                    <div className="space-y-3 relative z-10">
+                      <div className="flex items-center justify-between">
+                        <span className="text-xs font-mono font-bold text-emerald-400">
+                          SERVICE SPECIFICATION • {srv.number}
+                        </span>
+                        <div className="w-9 h-9 rounded-lg bg-emerald-500/20 border border-emerald-500/40 text-emerald-400 flex items-center justify-center">
+                          <SrvIcon className="w-4 h-4" />
+                        </div>
+                      </div>
+
+                      <h3 className="text-lg sm:text-xl font-black font-display uppercase tracking-tight text-white leading-tight">
+                        {srv.title}
+                      </h3>
+
+                      <p className="text-xs text-slate-300 leading-relaxed">
+                        {srv.description}
+                      </p>
+                    </div>
+
+                    {/* Highlights */}
+                    <div className="space-y-2 py-3 border-y border-slate-800 relative z-10">
+                      <div className="text-[10px] font-mono text-slate-400 uppercase tracking-wider font-bold">
+                        KEY OPERATIONAL CAPABILITIES:
+                      </div>
+                      {srv.highlights.map((hl, hIdx) => (
+                        <div key={hIdx} className="flex items-start text-xs text-slate-200">
+                          <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 mr-2 shrink-0 mt-0.5" />
+                          <span className="leading-tight">{hl}</span>
+                        </div>
+                      ))}
+                    </div>
+
+                    {/* SLA & Action */}
+                    <div className="space-y-3 relative z-10">
+                      <div className="p-2.5 rounded-xl bg-emerald-950/40 border border-emerald-500/30 text-[11px] text-emerald-300 flex items-center space-x-2">
+                        <Lock className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
+                        <span className="truncate"><strong>SLA:</strong> {srv.sla}</span>
+                      </div>
+
+                      <button
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          onOpenQuote(srv.title);
+                        }}
+                        className="w-full py-3 bg-gradient-to-r from-emerald-600 via-green-600 to-emerald-700 hover:from-emerald-500 hover:to-green-600 text-white font-extrabold text-xs uppercase tracking-wider rounded-xl shadow-lg transition-all flex items-center justify-center space-x-2 cursor-pointer btn-shimmer"
+                      >
+                        <Shield className="w-3.5 h-3.5" />
+                        <span>REQUEST THIS SERVICE</span>
+                        <ArrowRight className="w-3.5 h-3.5" />
+                      </button>
+                    </div>
+
+                  </div>
+
+                </div>
               </div>
             );
           })}
-        </div>
-
-        {/* Deep Dive Active Service Interactive Showcase Banner */}
-        <div className="rounded-3xl bg-gradient-to-r from-[#0d162a] via-[#091122] to-[#0d162a] border border-emerald-500/30 p-6 sm:p-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center shadow-2xl relative overflow-hidden">
-          
-          <div className="lg:col-span-7 space-y-5">
-            <div className="flex items-center space-x-2 text-xs font-mono font-bold text-emerald-400 uppercase">
-              <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-ping" />
-              <span>ACTIVE DEPLOYMENT PREVIEW • {current.number} / 06</span>
-            </div>
-
-            <div className="space-y-2">
-              <h3 className="text-2xl sm:text-3xl lg:text-4xl font-black font-display text-white uppercase tracking-tight">
-                {current.title}
-              </h3>
-              <p className="text-slate-300 text-xs sm:text-sm md:text-base leading-relaxed">
-                {current.description}
-              </p>
-            </div>
-
-            {/* 4 Feature Badges */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
-              {current.highlights.map((h, i) => (
-                <div key={i} className="p-3 rounded-2xl bg-[#060a14] border border-slate-800 flex items-start space-x-2.5">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
-                  <span className="text-xs text-slate-200">{h}</span>
-                </div>
-              ))}
-            </div>
-
-            {/* Service SLA Box */}
-            <div className="p-3.5 rounded-2xl bg-emerald-950/40 border border-emerald-500/30 text-xs text-emerald-300 flex items-center space-x-2.5">
-              <Lock className="w-4 h-4 text-emerald-400 shrink-0" />
-              <span><strong>Guaranteed SLA:</strong> {current.sla}</span>
-            </div>
-
-            <div className="pt-2 flex flex-wrap items-center gap-4">
-              <button
-                onClick={() => onOpenQuote(current.title)}
-                className="px-8 py-3.5 bg-gradient-to-r from-emerald-600 to-green-600 hover:from-emerald-500 hover:to-green-500 text-white font-bold text-xs uppercase tracking-wider rounded-full shadow-xl transition-all duration-200 transform hover:-translate-y-0.5 active:scale-95 flex items-center space-x-2 cursor-pointer btn-shimmer"
-              >
-                <span>DEPLOY {current.title.toUpperCase()}</span>
-                <ArrowRight className="w-4 h-4" />
-              </button>
-            </div>
-          </div>
-
-          <div className="lg:col-span-5 relative h-72 sm:h-80 lg:h-96 rounded-3xl overflow-hidden border border-slate-700 bg-slate-900 shadow-2xl group">
-            <img
-              src={current.image}
-              alt={current.title}
-              onError={(e) => {
-                e.currentTarget.src = current.kommodoUrl;
-              }}
-              className="w-full h-full object-cover filter brightness-[0.9] contrast-[1.08] group-hover:scale-105 transition-transform duration-700"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#09101f] via-transparent to-transparent" />
-            
-            <div className="absolute bottom-4 left-4 right-4 p-4 rounded-2xl bg-[#05080e]/95 backdrop-blur-md border border-slate-800 text-xs flex items-center justify-between">
-              <div className="space-y-0.5">
-                <span className="text-emerald-400 font-bold font-mono block">NATIONWIDE REACH:</span>
-                <span className="text-slate-200">All 10 Provinces • 39 Districts</span>
-              </div>
-              <Shield className="w-6 h-6 text-emerald-400 shrink-0" />
-            </div>
-          </div>
-
         </div>
 
       </div>

@@ -1,74 +1,81 @@
 import React, { useState } from 'react';
-import { Briefcase, MapPin, CheckCircle2, ChevronRight, ArrowRight, Shield, Building2, Calendar, Lock, Users, Truck } from 'lucide-react';
+import { Briefcase, MapPin, CheckCircle2, ChevronRight, Building2, Calendar, Lock, Users, Truck, UserCheck } from 'lucide-react';
 
 export default function ProjectPortfolioSection({ onOpenQuote }) {
   const [selectedCategory, setSelectedCategory] = useState('all');
 
+  // 6 balanced authentic operational project showcases
   const portfolioProjects = [
     {
       id: 'proj-1',
-      title: 'Corporate Security Solutions',
-      sourceName: 'ChatGPT Image Oct 8, 2025, 06_29_54 PM',
-      category: 'Corporate & Commercial',
-      location: 'Rhodes Park / Cairo Road, Lusaka',
-      summary: 'Comprehensive corporate access control, visitor screening, and 24/7 static guarding for premier financial and corporate headquarters.',
+      title: 'Corporate Headquarters & Banking Complex',
+      category: 'Corporate Guarding',
+      location: 'Rhodes Park & Cairo Road, Lusaka',
+      summary: 'Biometric access screening, 24/7 static sentries, visitor logs, and perimeter deterrence for premier commercial and banking towers.',
       image: '/assets/service-corporate.jpg',
       icon: Building2,
-      metrics: '100% Biometric Access Logged'
+      metrics: '100% Verified Checkpoint Logging'
     },
     {
       id: 'proj-2',
-      title: 'Event Security Management',
-      sourceName: 'ChatGPT Image Oct 8, 2025, 06_44_37 PM',
+      title: 'National Conventions & Public Event Security',
       category: 'Special Events',
-      location: 'Lusaka National Showgrounds / Hotels',
-      summary: 'Crowd management, stage perimeter zoning, bag screening, and rapid medical/evacuation coordination for large-scale conventions and concerts.',
+      location: 'Lusaka Showgrounds & Conference Arenas',
+      summary: 'Tactical crowd control, bag scanning, perimeter buffer zones, and medical emergency liaison for high-attendance summits and expos.',
       image: '/assets/service-event.jpg',
       icon: Calendar,
-      metrics: 'Zero Incidents Across 50+ Events'
+      metrics: 'Zero Security Breaches Logged'
     },
     {
       id: 'proj-3',
-      title: 'Community Safety Initiatives',
-      sourceName: 'Community Safety Initiatives',
+      title: 'Residential Estates & Corridor Mobile Patrols',
       category: 'Mobile Patrols',
-      location: 'Residential Estates & Commercial Corridors',
-      summary: 'Dedicated 24/7 rapid mobile patrol cruisers, neighborhood watch integration, and radio-linked emergency response.',
+      location: 'Woodlands, Kabulonga & Rhodes Park',
+      summary: '24/7 active mobile patrol cruisers with radio-linked backup, rapid perimeter sweep, and direct emergency control room dispatch.',
       image: '/assets/security-patrol.jpg',
       icon: Users,
-      metrics: 'Sub-5 Min Emergency Arrival'
+      metrics: 'Sub-5 Min Rapid Response Time'
     },
     {
       id: 'proj-4',
-      title: 'Cash Management Solutions',
-      sourceName: 'cao',
+      title: 'Armored Cash-In-Transit & Bullion Logistics',
       category: 'Cash Management & CIT',
-      location: 'Commercial Bank Vaults & Retail Transit',
-      summary: 'Specialized armored vehicle transport for cash and valuables, designed to ensure secure delivery with minimal risk and GPS telemetry.',
+      location: 'Inter-Provincial Banking Transit Corridors',
+      summary: 'Armored carrier transports with GPS satellite telemetry, dual-custody vault manifests, and armed tactical escort escorts.',
       image: '/assets/cao.jpg',
       icon: Truck,
-      metrics: 'Zero-Loss Bullion Transport'
+      metrics: 'Zero-Loss Transit Record'
     },
     {
       id: 'proj-5',
-      title: 'Industrial & Concession Security',
-      sourceName: 'pexels-photo-207574-1',
+      title: 'Mining Concession & Industrial Perimeter Defense',
       category: 'Industrial & Mining',
       location: 'Copperbelt & North-Western Mining Corridors',
-      summary: 'Perimeter fence surveillance, canine patrols, and gatehouse verification for remote mining concessions and logistics hubs.',
+      summary: 'Heavy-duty fence surveillance, canine patrols, raw material gatehouse verification, and compound access control in heavy industrial zones.',
       image: '/assets/security-parade.jpg',
       icon: Lock,
-      metrics: '24/7 Monitored NFC Patrols'
+      metrics: '24/7 NFC Monitored Guard Tours'
+    },
+    {
+      id: 'proj-6',
+      title: 'Diplomatic & VIP Executive Close Protection',
+      category: 'VIP Protection',
+      location: 'Lusaka Diplomatic Corridors & KKIA Airport',
+      summary: 'Discreet executive bodyguard teams, counter-surveillance route surveys, and armored motorcade escorts for visiting dignitaries and CEOs.',
+      image: '/assets/services/service-vip-protection.jpg',
+      icon: UserCheck,
+      metrics: 'International Discretion Standard'
     }
   ];
 
   const categories = [
-    { id: 'all', label: 'All Projects' },
-    { id: 'Corporate & Commercial', label: 'Corporate Solutions' },
-    { id: 'Special Events', label: 'Event Security' },
-    { id: 'Mobile Patrols', label: 'Community Patrols' },
+    { id: 'all', label: 'All Operations' },
+    { id: 'Corporate Guarding', label: 'Corporate' },
+    { id: 'Special Events', label: 'Events' },
+    { id: 'Mobile Patrols', label: 'Patrols' },
     { id: 'Cash Management & CIT', label: 'Cash & CIT' },
-    { id: 'Industrial & Mining', label: 'Industrial & Mining' }
+    { id: 'Industrial & Mining', label: 'Industrial' },
+    { id: 'VIP Protection', label: 'VIP Protection' }
   ];
 
   const filtered = selectedCategory === 'all' 
@@ -76,15 +83,15 @@ export default function ProjectPortfolioSection({ onOpenQuote }) {
     : portfolioProjects.filter(p => p.category === selectedCategory);
 
   return (
-    <section id="our-project-portfolio" className="py-24 lg:py-32 bg-white text-slate-900 border-t border-slate-200 relative overflow-hidden light-grid-pattern">
+    <section id="our-project-portfolio" className="py-20 lg:py-28 bg-white text-slate-900 border-t border-slate-200 relative overflow-hidden light-grid-pattern">
       <div className="relative z-10 w-full max-w-[1680px] mx-auto px-4 sm:px-8 lg:px-12 space-y-12">
         
         {/* Header with Category Filter Buttons */}
         <div className="flex flex-col md:flex-row md:items-end justify-between pb-6 border-b border-slate-200 gap-6">
           <div className="space-y-3 max-w-2xl">
-            <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-600 text-xs font-mono font-bold uppercase tracking-widest shadow-sm">
+            <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-700 text-xs font-mono font-bold uppercase tracking-widest shadow-sm">
               <Briefcase className="w-3.5 h-3.5 mr-1 text-emerald-600" />
-              <span>OPERATIONAL EXCELLENCE IN ACTION</span>
+              <span>PROVEN OPERATIONAL DEPLOYMENTS</span>
             </div>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-black font-display tracking-tight uppercase text-slate-900 leading-tight">
               OUR PROJECT <span className="text-emerald-600">PORTFOLIO</span>
@@ -94,15 +101,15 @@ export default function ProjectPortfolioSection({ onOpenQuote }) {
             </p>
           </div>
 
-          {/* Category Filter Pills */}
+          {/* Clean Category Filter Pills */}
           <div className="flex flex-wrap gap-2 shrink-0">
             {categories.map((cat) => (
               <button
                 key={cat.id}
                 onClick={() => setSelectedCategory(cat.id)}
-                className={`px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider transition-all duration-200 cursor-pointer ${
+                className={`px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider transition-all duration-200 cursor-pointer ${
                   selectedCategory === cat.id
-                    ? 'bg-emerald-600 text-white shadow-md scale-105'
+                    ? 'bg-emerald-600 text-white shadow-md shadow-emerald-600/30'
                     : 'bg-slate-100 text-slate-700 hover:text-slate-900 hover:bg-slate-200 border border-slate-200'
                 }`}
               >
@@ -112,7 +119,7 @@ export default function ProjectPortfolioSection({ onOpenQuote }) {
           </div>
         </div>
 
-        {/* Portfolio Cards Grid */}
+        {/* Balanced 3x2 Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filtered.map((proj) => {
             const Icon = proj.icon;
@@ -122,17 +129,22 @@ export default function ProjectPortfolioSection({ onOpenQuote }) {
                 className="rounded-3xl bg-slate-50 border border-slate-200 hover:border-emerald-500 hover:bg-white overflow-hidden flex flex-col justify-between transition-all duration-300 hover:-translate-y-2 shadow-sm hover:shadow-2xl group spartan-card"
               >
                 {/* Image Section with Overlay */}
-                <div className="relative h-60 w-full overflow-hidden bg-slate-100">
+                <div className="relative h-60 w-full overflow-hidden bg-slate-200">
                   <img
                     src={proj.image}
                     alt={proj.title}
-                    className="w-full h-full object-cover filter brightness-[0.92] contrast-[1.05] spartan-img"
+                    className="w-full h-full object-cover filter brightness-[0.92] contrast-[1.05] group-hover:scale-105 transition-transform duration-700"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                   
                   {/* Category Chip */}
                   <div className="absolute top-4 left-4 px-3 py-1 rounded-full bg-slate-900/90 backdrop-blur-md border border-slate-700 text-xs font-mono font-bold text-emerald-400 shadow-md">
                     {proj.category}
+                  </div>
+
+                  {/* Icon Pod */}
+                  <div className="absolute top-4 right-4 w-9 h-9 rounded-xl bg-white/95 backdrop-blur-md text-slate-800 border border-slate-200 flex items-center justify-center shadow-md group-hover:bg-emerald-600 group-hover:text-white group-hover:border-emerald-600 transition-colors">
+                    <Icon className="w-4 h-4" />
                   </div>
 
                   {/* Location Chip */}
@@ -143,12 +155,12 @@ export default function ProjectPortfolioSection({ onOpenQuote }) {
                 </div>
 
                 {/* Body Content */}
-                <div className="p-6 flex-1 flex flex-col justify-between space-y-5">
+                <div className="p-6 sm:p-7 flex-1 flex flex-col justify-between space-y-5">
                   <div className="space-y-2.5">
-                    <h3 className="text-xl font-black font-display text-slate-900 group-hover:text-emerald-600 transition-colors uppercase leading-snug">
+                    <h3 className="text-lg sm:text-xl font-black font-display text-slate-900 group-hover:text-emerald-600 transition-colors uppercase leading-snug">
                       {proj.title}
                     </h3>
-                    <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                    <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
                       {proj.summary}
                     </p>
                   </div>

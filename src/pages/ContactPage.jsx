@@ -22,20 +22,20 @@ export default function ContactPage({ onOpenQuote }) {
   };
 
   return (
-    <div className="py-16 bg-security-950 text-slate-100 space-y-20">
+    <div className="py-16 bg-slate-900 text-slate-100 space-y-20">
       
       {/* Page Hero */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto space-y-4">
-          <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-emerald-950/60 border border-emerald-500/30 text-emerald-400 text-xs font-bold uppercase tracking-widest">
+          <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-emerald-950/70 border border-emerald-500/30 text-emerald-400 text-xs font-mono font-bold uppercase tracking-widest">
             <Phone className="w-3.5 h-3.5 mr-1 text-emerald-400" />
-            GET IN TOUCH
+            <span>24/7 COMMAND DESK</span>
           </div>
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-black text-white font-display tracking-tight uppercase leading-tight">
             CONTACT <span className="text-emerald-500">TOUGH TASK SECURITY</span>
           </h1>
-          <p className="text-slate-300 text-base sm:text-lg leading-relaxed">
-            Connect with our operations command in Rhodespark, Lusaka for site security surveys, emergency dispatch, or national corporate tenders.
+          <p className="text-slate-300 text-base sm:text-lg leading-relaxed font-normal">
+            Connect directly with our 24/7 Rhodespark Command Center in Lusaka for site security surveys, emergency armed dispatch, or national corporate tenders.
           </p>
         </div>
       </div>
@@ -45,8 +45,8 @@ export default function ContactPage({ onOpenQuote }) {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           
           {/* Card 1: Physical HQ Address */}
-          <div className="p-8 rounded-2xl bg-security-900 border border-security-750 space-y-4 shadow-xl">
-            <div className="w-12 h-12 rounded-xl bg-blue-600/20 border border-blue-500/40 flex items-center justify-center text-blue-400">
+          <div className="p-8 rounded-2xl bg-slate-800/90 border border-slate-700 space-y-4 shadow-xl">
+            <div className="w-12 h-12 rounded-xl bg-emerald-950/80 border border-emerald-800 text-emerald-400 flex items-center justify-center">
               <MapPin className="w-6 h-6" />
             </div>
             <div className="space-y-1">
@@ -69,9 +69,9 @@ export default function ContactPage({ onOpenQuote }) {
           </div>
 
           {/* Card 2: Verified Phone Numbers */}
-          <div className="p-8 rounded-2xl bg-security-900 border border-security-750 space-y-4 shadow-xl">
-            <div className="w-12 h-12 rounded-xl bg-emerald-600/20 border border-emerald-500/40 flex items-center justify-center text-emerald-400">
-              <Phone className="w-6 h-6" />
+          <div className="p-8 rounded-2xl bg-slate-800/90 border border-slate-700 space-y-4 shadow-xl">
+            <div className="w-12 h-12 rounded-xl bg-emerald-950/80 border border-emerald-800 text-emerald-400 flex items-center justify-center">
+              <Phone className="w-6 h-6 animate-pulse" />
             </div>
             <div className="space-y-2">
               <h3 className="text-sm font-bold text-white uppercase tracking-wider">
@@ -79,19 +79,19 @@ export default function ContactPage({ onOpenQuote }) {
               </h3>
               <div className="space-y-1.5 text-sm">
                 <div>
-                  <div className="text-[11px] text-slate-400 font-mono">Primary Operations:</div>
+                  <div className="text-[11px] text-slate-400 font-mono">Emergency Desk (24/7):</div>
                   <a 
                     href="tel:+260777127114" 
-                    className="text-base font-bold text-white hover:text-emerald-400 transition-colors"
+                    className="text-base font-bold text-white hover:text-emerald-400 transition-colors font-mono"
                   >
                     +260 777 127 114
                   </a>
                 </div>
                 <div>
-                  <div className="text-[11px] text-slate-400 font-mono">Direct / Emergency Line:</div>
+                  <div className="text-[11px] text-slate-400 font-mono">Operations & Tenders:</div>
                   <a 
                     href="tel:+260968025444" 
-                    className="text-base font-bold text-white hover:text-blue-400 transition-colors"
+                    className="text-base font-bold text-white hover:text-emerald-400 transition-colors font-mono"
                   >
                     +260 968 025 444
                   </a>
@@ -101,7 +101,7 @@ export default function ContactPage({ onOpenQuote }) {
             <div className="pt-2 flex items-center gap-2">
               <a
                 href="tel:+260777127114"
-                className="text-xs font-bold text-emerald-400 bg-emerald-950/60 px-3 py-1.5 rounded-lg border border-emerald-800/80 hover:bg-emerald-600 hover:text-white transition-colors"
+                className="text-xs font-bold text-white bg-emerald-600 px-3 py-1.5 rounded-lg hover:bg-emerald-500 transition-colors"
               >
                 CALL NOW
               </a>
@@ -109,7 +109,7 @@ export default function ContactPage({ onOpenQuote }) {
                 href="https://wa.me/260777127114"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-xs font-bold text-blue-400 bg-blue-950/60 px-3 py-1.5 rounded-lg border border-blue-800/80 hover:bg-blue-600 hover:text-white transition-colors"
+                className="text-xs font-bold text-emerald-300 bg-emerald-950/80 px-3 py-1.5 rounded-lg border border-emerald-800 hover:bg-emerald-600 hover:text-white transition-colors"
               >
                 WHATSAPP CHAT
               </a>
@@ -117,8 +117,8 @@ export default function ContactPage({ onOpenQuote }) {
           </div>
 
           {/* Card 3: Email & Hours */}
-          <div className="p-8 rounded-2xl bg-security-900 border border-security-750 space-y-4 shadow-xl">
-            <div className="w-12 h-12 rounded-xl bg-blue-600/20 border border-blue-500/40 flex items-center justify-center text-blue-400">
+          <div className="p-8 rounded-2xl bg-slate-800/90 border border-slate-700 space-y-4 shadow-xl">
+            <div className="w-12 h-12 rounded-xl bg-slate-700 border border-slate-600 text-slate-300 flex items-center justify-center">
               <Mail className="w-6 h-6" />
             </div>
             <div className="space-y-1">
@@ -126,7 +126,7 @@ export default function ContactPage({ onOpenQuote }) {
                 CORPORATE EMAIL & HOURS
               </h3>
               <p className="text-sm font-semibold text-slate-200">
-                <a href="mailto:info@toughtaskltd.com" className="hover:text-blue-400 transition-colors">
+                <a href="mailto:info@toughtaskltd.com" className="hover:text-emerald-400 transition-colors">
                   info@toughtaskltd.com
                 </a>
               </p>
@@ -135,11 +135,10 @@ export default function ContactPage({ onOpenQuote }) {
                 <p><strong>Administration:</strong> Mon – Fri: 08:00 – 17:00</p>
               </div>
             </div>
-            <div className="pt-2 text-xs font-mono text-slate-400">
-              Prompt response to all written tenders
+            <div className="pt-2 text-xs font-mono text-emerald-400">
+              Prompt response to all tenders
             </div>
           </div>
-
         </div>
       </div>
 
@@ -148,8 +147,8 @@ export default function ContactPage({ onOpenQuote }) {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
           
           {/* Left: Contact & Assessment Form (7 cols) */}
-          <div className="lg:col-span-7 bg-security-900 border border-security-750 p-8 rounded-3xl shadow-2xl space-y-6">
-            <div className="border-b border-security-800 pb-4 space-y-1">
+          <div className="lg:col-span-7 bg-slate-800/90 border border-slate-700 p-8 rounded-3xl shadow-xl space-y-6">
+            <div className="border-b border-slate-700 pb-4 space-y-1">
               <h2 className="text-2xl font-bold text-white font-display uppercase tracking-tight">
                 SEND AN ENQUIRY / REQUEST A QUOTE
               </h2>
@@ -160,18 +159,18 @@ export default function ContactPage({ onOpenQuote }) {
 
             {formSubmitted ? (
               <div className="text-center py-10 space-y-4">
-                <div className="w-16 h-16 rounded-full bg-emerald-950 text-emerald-400 mx-auto flex items-center justify-center animate-beacon">
+                <div className="w-16 h-16 rounded-full bg-emerald-950 text-emerald-400 mx-auto flex items-center justify-center animate-beacon border border-emerald-800">
                   <CheckCircle2 className="w-8 h-8" />
                 </div>
                 <h3 className="text-2xl font-bold text-white font-display uppercase">
                   MESSAGE TRANSMITTED
                 </h3>
                 <p className="text-sm text-slate-300 max-w-md mx-auto">
-                  Thank you, <strong className="text-white">{formData.fullName}</strong>. Our operations team in Rhodespark has received your submission and will contact you promptly at <span className="text-blue-400">{formData.phone}</span>.
+                  Thank you, <strong className="text-white">{formData.fullName}</strong>. Our operations team in Rhodespark has received your submission and will contact you promptly at <span className="text-emerald-400 font-mono">{formData.phone}</span>.
                 </p>
                 <button
                   onClick={() => setFormSubmitted(false)}
-                  className="px-6 py-2.5 bg-security-950 text-xs font-bold text-slate-300 hover:text-white rounded-xl border border-security-750"
+                  className="px-6 py-2.5 bg-slate-900 text-xs font-bold text-slate-300 hover:text-white rounded-xl border border-slate-700 transition-colors"
                 >
                   Send Another Message
                 </button>
@@ -188,7 +187,7 @@ export default function ContactPage({ onOpenQuote }) {
                       value={formData.fullName}
                       onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
                       placeholder="e.g. Kondwani Banda"
-                      className="w-full px-3.5 py-2.5 bg-security-950 border border-security-750 rounded-xl text-sm text-white placeholder-slate-500 focus:border-blue-500"
+                      className="w-full px-4 py-3 bg-slate-950 border border-slate-700 rounded-xl text-sm text-white placeholder-slate-500 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-colors"
                     />
                   </div>
 
@@ -199,7 +198,7 @@ export default function ContactPage({ onOpenQuote }) {
                       value={formData.company}
                       onChange={(e) => setFormData({ ...formData, company: e.target.value })}
                       placeholder="e.g. Zambian Enterprise Ltd"
-                      className="w-full px-3.5 py-2.5 bg-security-950 border border-security-750 rounded-xl text-sm text-white placeholder-slate-500 focus:border-blue-500"
+                      className="w-full px-4 py-3 bg-slate-950 border border-slate-700 rounded-xl text-sm text-white placeholder-slate-500 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-colors"
                     />
                   </div>
                 </div>
@@ -213,7 +212,7 @@ export default function ContactPage({ onOpenQuote }) {
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                       placeholder="e.g. +260 96X XXX XXX"
-                      className="w-full px-3.5 py-2.5 bg-security-950 border border-security-750 rounded-xl text-sm text-white placeholder-slate-500 focus:border-blue-500"
+                      className="w-full px-4 py-3 bg-slate-950 border border-slate-700 rounded-xl text-sm text-white placeholder-slate-500 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-colors"
                     />
                   </div>
 
@@ -224,7 +223,7 @@ export default function ContactPage({ onOpenQuote }) {
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                       placeholder="e.g. admin@organization.co.zm"
-                      className="w-full px-3.5 py-2.5 bg-security-950 border border-security-750 rounded-xl text-sm text-white placeholder-slate-500 focus:border-blue-500"
+                      className="w-full px-4 py-3 bg-slate-950 border border-slate-700 rounded-xl text-sm text-white placeholder-slate-500 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-colors"
                     />
                   </div>
                 </div>
@@ -235,7 +234,7 @@ export default function ContactPage({ onOpenQuote }) {
                     <select
                       value={formData.serviceRequired}
                       onChange={(e) => setFormData({ ...formData, serviceRequired: e.target.value })}
-                      className="w-full px-3.5 py-2.5 bg-security-950 border border-security-750 rounded-xl text-sm text-white focus:border-blue-500"
+                      className="w-full px-4 py-3 bg-slate-950 border border-slate-700 rounded-xl text-sm text-white focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-colors"
                     >
                       {services.map((s) => (
                         <option key={s.id} value={s.title}>{s.number} - {s.title}</option>
@@ -248,7 +247,7 @@ export default function ContactPage({ onOpenQuote }) {
                     <select
                       value={formData.location}
                       onChange={(e) => setFormData({ ...formData, location: e.target.value })}
-                      className="w-full px-3.5 py-2.5 bg-security-950 border border-security-750 rounded-xl text-sm text-white focus:border-emerald-500"
+                      className="w-full px-4 py-3 bg-slate-950 border border-slate-700 rounded-xl text-sm text-white focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-colors"
                     >
                       <option value="Lusaka (Lusaka Province)">Lusaka (National HQ)</option>
                       {allLocationsList.map((loc) => (
@@ -267,7 +266,7 @@ export default function ContactPage({ onOpenQuote }) {
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                     placeholder="Provide details about your facility, location, guard requirements, or specific security concerns..."
-                    className="w-full px-3.5 py-2.5 bg-security-950 border border-security-750 rounded-xl text-sm text-white placeholder-slate-500 focus:border-emerald-500"
+                    className="w-full px-4 py-3 bg-slate-950 border border-slate-700 rounded-xl text-sm text-white placeholder-slate-500 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-colors"
                   ></textarea>
                 </div>
 
@@ -286,10 +285,10 @@ export default function ContactPage({ onOpenQuote }) {
           <div className="lg:col-span-5 space-y-6">
             
             {/* Embedded Interactive Map Card for Rhodespark Lusaka */}
-            <div className="bg-security-900 border border-security-750 p-6 rounded-3xl shadow-2xl space-y-4">
+            <div className="bg-slate-800/90 border border-slate-700 p-6 rounded-3xl shadow-xl space-y-4">
               <div className="flex items-center justify-between">
                 <div className="flex items-center space-x-2">
-                  <MapPin className="w-4 h-4 text-blue-400" />
+                  <MapPin className="w-4 h-4 text-emerald-400" />
                   <h3 className="text-sm font-bold text-white uppercase tracking-wider">
                     RHODESPARK, LUSAKA LOCATION
                   </h3>
@@ -300,7 +299,7 @@ export default function ContactPage({ onOpenQuote }) {
               </div>
 
               {/* Map Iframe */}
-              <div className="relative aspect-video rounded-2xl overflow-hidden border border-security-800">
+              <div className="relative aspect-video rounded-2xl overflow-hidden border border-slate-700">
                 <iframe
                   title="Tough Task Security Solutions Location - Rhodespark Lusaka"
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15383.023450376757!2d28.2934335!3d-15.4168057!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1940f3531b672809%3A0x86134b2230efc4f7!2sRhodes%20Park%2C%20Lusaka%2C%20Zambia!5e0!3m2!1sen!2szm!4v1700000000000!5m2!1sen!2szm"
@@ -314,70 +313,70 @@ export default function ContactPage({ onOpenQuote }) {
                 ></iframe>
               </div>
 
-              <div className="p-3 bg-security-950 rounded-xl border border-security-800 text-xs text-slate-300">
+              <div className="p-3 bg-slate-900 rounded-xl border border-slate-700 text-xs text-slate-300">
                 <strong>Address:</strong> National Council for the Laity Building, Office No. 5, Rhodespark, Lusaka, Zambia.
               </div>
             </div>
 
             {/* Official Social Media Channels */}
-            <div className="bg-security-900 border border-security-750 p-6 rounded-3xl shadow-2xl space-y-4">
-              <h3 className="text-sm font-bold text-white uppercase tracking-wider border-b border-security-800 pb-3">
+            <div className="bg-slate-800/90 border border-slate-700 p-6 rounded-3xl shadow-xl space-y-4">
+              <h3 className="text-sm font-bold text-white uppercase tracking-wider border-b border-slate-700 pb-3">
                 OFFICIAL SOCIAL MEDIA
               </h3>
 
               <div className="space-y-3">
                 <a
-                  href="https://www.facebook.com/search/top?q=Tough%20Task%20Security%20Solutions%20Ltd"
+                  href="https://www.facebook.com/share/1JTXFuQXzp/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-3 bg-security-950 rounded-xl border border-security-800 flex items-center justify-between hover:border-blue-500 transition-colors"
+                  className="p-3.5 bg-slate-900 rounded-xl border border-slate-700 flex items-center justify-between hover:border-emerald-500 transition-colors group"
                 >
                   <div className="flex items-center space-x-3">
                     <span className="w-8 h-8 rounded-lg bg-blue-600/20 text-blue-400 flex items-center justify-center font-bold text-xs">
                       f
                     </span>
                     <div>
-                      <div className="text-xs font-bold text-white">Facebook</div>
-                      <div className="text-[11px] text-slate-400">Tough Task Security Solutions Ltd</div>
+                      <div className="text-xs font-bold text-white group-hover:text-emerald-400 transition-colors">Facebook</div>
+                      <div className="text-[11px] text-slate-400">@ToughTaskSecuritySolutions</div>
                     </div>
                   </div>
-                  <ExternalLink className="w-4 h-4 text-slate-500" />
+                  <ExternalLink className="w-4 h-4 text-slate-400 group-hover:text-emerald-400" />
                 </a>
 
                 <a
-                  href="https://www.tiktok.com/@toughtasksecurity"
+                  href="https://www.tiktok.com/@toughtasksolution?_r=1&_t=ZS-9AQw2u1aGQP"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-3 bg-security-950 rounded-xl border border-security-800 flex items-center justify-between hover:border-pink-500 transition-colors"
+                  className="p-3.5 bg-slate-900 rounded-xl border border-slate-700 flex items-center justify-between hover:border-emerald-500 transition-colors group"
                 >
                   <div className="flex items-center space-x-3">
-                    <span className="w-8 h-8 rounded-lg bg-pink-600/20 text-pink-400 flex items-center justify-center font-bold text-xs">
+                    <span className="w-8 h-8 rounded-lg bg-slate-800 text-white flex items-center justify-center font-bold text-xs">
                       ♪
                     </span>
                     <div>
-                      <div className="text-xs font-bold text-white">TikTok</div>
-                      <div className="text-[11px] text-slate-400">Tough Task Security Solutions Ltd</div>
+                      <div className="text-xs font-bold text-white group-hover:text-emerald-400 transition-colors">TikTok</div>
+                      <div className="text-[11px] text-slate-400">@toughtasksolution</div>
                     </div>
                   </div>
-                  <ExternalLink className="w-4 h-4 text-slate-500" />
+                  <ExternalLink className="w-4 h-4 text-slate-400 group-hover:text-emerald-400" />
                 </a>
 
                 <a
-                  href="https://www.linkedin.com/company/tough-task-security-solutions-ltd"
+                  href="https://www.linkedin.com/company/tough-task-security-solutions-limited/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-3 bg-security-950 rounded-xl border border-security-800 flex items-center justify-between hover:border-blue-400 transition-colors"
+                  className="p-3.5 bg-slate-900 rounded-xl border border-slate-700 flex items-center justify-between hover:border-emerald-500 transition-colors group"
                 >
                   <div className="flex items-center space-x-3">
-                    <span className="w-8 h-8 rounded-lg bg-blue-500/20 text-blue-300 flex items-center justify-center font-bold text-xs">
+                    <span className="w-8 h-8 rounded-lg bg-blue-600/20 text-blue-400 flex items-center justify-center font-bold text-xs">
                       in
                     </span>
                     <div>
-                      <div className="text-xs font-bold text-white">LinkedIn</div>
-                      <div className="text-[11px] text-slate-400">Tough Task Security Solutions Ltd</div>
+                      <div className="text-xs font-bold text-white group-hover:text-emerald-400 transition-colors">LinkedIn</div>
+                      <div className="text-[11px] text-slate-400">Tough Task Security Solutions Limited</div>
                     </div>
                   </div>
-                  <ExternalLink className="w-4 h-4 text-slate-500" />
+                  <ExternalLink className="w-4 h-4 text-slate-400 group-hover:text-emerald-400" />
                 </a>
               </div>
             </div>

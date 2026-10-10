@@ -73,7 +73,7 @@ export default function Navbar({ activePage, setActivePage, onOpenQuote }) {
               <span className="text-slate-400 uppercase font-medium">Operations:</span>
               <a
                 href="tel:+260968025444"
-                className="text-blue-400 hover:text-blue-300 font-bold transition-colors"
+                className="text-slate-300 hover:text-emerald-400 font-bold transition-colors"
               >
                 +260 968 025 444
               </a>
@@ -107,7 +107,7 @@ export default function Navbar({ activePage, setActivePage, onOpenQuote }) {
             className="flex items-center space-x-3 text-left focus:outline-none group cursor-pointer"
             aria-label="Tough Task Security Solutions Ltd Home"
           >
-            <div className="relative w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-[#0d1424] border border-slate-700/80 p-1.5 flex items-center justify-center shrink-0 shadow-lg group-hover:border-blue-500 transition-all duration-300">
+            <div className="relative w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-[#0d1424] border border-slate-700/80 p-1.5 flex items-center justify-center shrink-0 shadow-lg group-hover:border-emerald-500 transition-all duration-300">
               <img 
                 src="/assets/logo.png" 
                 alt="Tough Task Security Solutions Ltd" 
@@ -116,7 +116,7 @@ export default function Navbar({ activePage, setActivePage, onOpenQuote }) {
             </div>
 
             <div className="flex flex-col justify-center">
-              <span className="text-sm sm:text-base font-black tracking-tight uppercase font-display text-white group-hover:text-blue-400 transition-colors">
+              <span className="text-sm sm:text-base font-black tracking-tight uppercase font-display text-white group-hover:text-emerald-400 transition-colors">
                 TOUGH TASK SECURITY
               </span>
               <span className="text-[10px] tracking-widest text-slate-400 font-mono font-semibold uppercase">
