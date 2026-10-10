@@ -31,7 +31,7 @@ export default function ClientsCarouselSection({ onOpenQuote }) {
             <span>NATIONWIDE CORPORATE PARTNERSHIPS</span>
           </div>
 
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black font-display tracking-tight uppercase text-slate-900 leading-tight">
+          <h2 className="text-2xl sm:text-3xl font-black font-display tracking-tight uppercase text-slate-900 leading-tight">
             TRUSTED BY LEADING <span className="text-emerald-600">ORGANISATIONS</span>
           </h2>
 

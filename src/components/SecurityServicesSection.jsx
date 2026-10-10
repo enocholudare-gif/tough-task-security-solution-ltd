@@ -140,29 +140,29 @@ export default function SecurityServicesSection({ onOpenQuote }) {
         
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between pb-6 border-b border-slate-200 gap-6">
-          <div className="space-y-3 max-w-2xl">
-            <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-700 text-xs font-mono font-bold uppercase tracking-widest shadow-sm">
+          <div className="space-y-2.5 max-w-2xl">
+            <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-700 text-xs font-mono font-bold uppercase tracking-widest shadow-sm">
               <Shield className="w-3.5 h-3.5 mr-1 text-emerald-600" />
               <span>ELITE DEFENSE CAPABILITIES IN ZAMBIA</span>
             </div>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black font-display tracking-tight uppercase text-slate-900 leading-tight">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-black font-display tracking-tight uppercase text-slate-900 leading-tight">
               OUR SECURITY <span className="text-emerald-600">SERVICES</span>
             </h2>
-            <p className="text-slate-600 text-xs sm:text-sm md:text-base leading-relaxed">
-              Advanced security solutions including armed guarding, video surveillance, VIP protection, and rapid response teams.
+            <p className="text-slate-600 text-xs sm:text-sm leading-relaxed">
+              Hover over any service below to explore detailed operational specifications, personnel protocols, and deployment SLAs.
             </p>
           </div>
 
           <button
             onClick={() => onOpenQuote()}
-            className="self-start md:self-end px-7 py-3.5 bg-gradient-to-r from-emerald-600 via-green-600 to-emerald-700 hover:from-emerald-500 hover:to-green-600 text-white text-xs font-bold uppercase tracking-wider rounded-xl transition-all duration-300 flex items-center space-x-2 shadow-xl shadow-emerald-600/30 group cursor-pointer border border-emerald-500/30 btn-shimmer"
+            className="self-start md:self-end px-6 py-3.5 bg-gradient-to-r from-emerald-600 via-green-600 to-emerald-700 hover:from-emerald-500 hover:to-green-600 text-white text-xs font-bold uppercase tracking-wider rounded-xl transition-all duration-300 flex items-center space-x-2 shadow-xl shadow-emerald-600/30 group cursor-pointer border border-emerald-500/30 btn-shimmer"
           >
             <span>GET SECURITY QUOTE</span>
             <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </button>
         </div>
 
-        {/* 6-Card 3D Interactive Flip Grid (Hover on desktop or tap on mobile flips to reveal full details) */}
+        {/* 6-Card 3D Interactive Flip Grid (ONLY IMAGE on front - flips on hover to reveal full details) */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((srv, idx) => {
             const SrvIcon = srv.icon;
@@ -171,60 +171,24 @@ export default function SecurityServicesSection({ onOpenQuote }) {
             return (
               <div
                 key={srv.id}
-                className={`flip-card h-[460px] sm:h-[490px] cursor-pointer group ${isFlipped ? 'is-flipped' : ''}`}
+                className={`flip-card h-[440px] sm:h-[470px] cursor-pointer group ${isFlipped ? 'is-flipped' : ''}`}
                 onClick={() => setActiveService(activeService === idx ? null : idx)}
               >
                 <div className="flip-card-inner">
                   
                   {/* ========================================================
-                      FRONT FACE: PURE HIGH-IMPACT SECURITY IMAGE SHOWCASE
+                      FRONT FACE: PURE IMAGE ONLY (NO TEXT OVERLAY)
                      ======================================================== */}
-                  <div className="flip-card-front bg-slate-900 border-2 border-slate-200/90 group-hover:border-emerald-500 shadow-xl transition-all">
-                    {/* Full Card Image */}
+                  <div className="flip-card-front bg-slate-950 border-2 border-slate-200/90 group-hover:border-emerald-500 shadow-xl transition-all relative overflow-hidden">
+                    {/* Full Card Image Only - Zero Text */}
                     <img
                       src={srv.image}
                       alt={srv.title}
                       onError={(e) => {
                         e.currentTarget.src = srv.kommodoUrl;
                       }}
-                      className="w-full h-full object-cover filter brightness-[0.88] contrast-[1.08] group-hover:scale-105 transition-transform duration-700"
+                      className="w-full h-full object-cover filter contrast-[1.05] brightness-[0.95] group-hover:scale-108 transition-transform duration-700"
                     />
-
-                    {/* Gradient Overlay for Text Legibility */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-black/60 pointer-events-none" />
-
-                    {/* Top Badges */}
-                    <div className="absolute top-4 left-4 right-4 flex items-center justify-between z-10">
-                      <div className="px-3.5 py-1.5 rounded-full bg-slate-950/80 backdrop-blur-md border border-slate-700/80 text-xs font-mono font-bold text-emerald-400 shadow-lg">
-                        {srv.number}
-                      </div>
-
-                      <div className="w-10 h-10 rounded-xl bg-emerald-600/90 text-white backdrop-blur-md flex items-center justify-center shadow-lg group-hover:bg-emerald-500 transition-colors">
-                        <SrvIcon className="w-5 h-5" />
-                      </div>
-                    </div>
-
-                    {/* Bottom Caption & Flip Prompt */}
-                    <div className="absolute bottom-4 left-4 right-4 z-10 space-y-3">
-                      <div className="space-y-1">
-                        <span className="text-[10px] font-mono font-bold text-emerald-400 uppercase tracking-widest block">
-                          {srv.badge}
-                        </span>
-                        <h3 className="text-xl sm:text-2xl font-black font-display text-white uppercase tracking-tight leading-snug drop-shadow-md">
-                          {srv.title}
-                        </h3>
-                      </div>
-
-                      <div className="pt-2 border-t border-white/15 flex items-center justify-between text-xs text-slate-300">
-                        <span className="flex items-center text-emerald-400 font-mono text-[11px] font-semibold">
-                          <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 mr-1.5 animate-pulse" />
-                          Hover to view details
-                        </span>
-                        <span className="px-2.5 py-1 rounded-full bg-white/10 backdrop-blur-md text-[10px] font-mono text-white flex items-center space-x-1 group-hover:bg-emerald-600 transition-colors">
-                          <span>FLIP ↻</span>
-                        </span>
-                      </div>
-                    </div>
                   </div>
 
                   {/* ========================================================

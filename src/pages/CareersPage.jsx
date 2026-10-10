@@ -60,58 +60,58 @@ export default function CareersPage() {
   };
 
   return (
-    <div className="py-16 bg-slate-900 text-slate-100 space-y-20">
+    <div className="py-16 bg-[#f1f5f9] text-slate-900 space-y-20 light-grid-pattern">
       
-      {/* 1. Header Section */}
+      {/* 1. Header Section with Sleek Styling */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto space-y-4">
-          <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-emerald-950/70 border border-emerald-500/30 text-emerald-400 text-xs font-mono font-bold uppercase tracking-widest">
-            <UserCheck className="w-3.5 h-3.5 mr-1 text-emerald-400" />
+          <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-700 text-xs font-mono font-bold uppercase tracking-widest shadow-sm">
+            <UserCheck className="w-3.5 h-3.5 mr-1 text-emerald-600" />
             <span>DISCIPLINED SENTRY RECRUITMENT • ZAMBIA</span>
           </div>
           
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-black text-white font-display tracking-tight uppercase leading-tight">
-            CAREERS AT <span className="text-emerald-500">TOUGH TASK SECURITY</span>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-slate-900 font-display tracking-tight uppercase leading-tight">
+            CAREERS AT <span className="text-emerald-600">TOUGH TASK SECURITY</span>
           </h1>
 
-          <p className="text-slate-300 text-base sm:text-lg leading-relaxed font-normal">
+          <p className="text-slate-600 text-xs sm:text-sm md:text-base leading-relaxed font-normal max-w-2xl mx-auto">
             We are building Zambia's most disciplined, professional, and trusted security force. We hire on character, train for operational excellence, and reward integrity.
           </p>
 
           {/* Key Officer Standards Banner */}
           <div className="pt-4 grid grid-cols-2 md:grid-cols-4 gap-3 text-xs font-mono">
-            <div className="p-3 rounded-xl bg-slate-800/90 border border-slate-700 text-slate-200">
-              <span className="text-emerald-400 font-bold block text-sm">100%</span>
-              <span>Police Vetted</span>
+            <div className="p-3.5 rounded-xl bg-white border border-slate-200 text-slate-800 shadow-sm">
+              <span className="text-emerald-600 font-black block text-base">100%</span>
+              <span className="text-slate-600 font-medium">Police Vetted</span>
             </div>
-            <div className="p-3 rounded-xl bg-slate-800/90 border border-slate-700 text-slate-200">
-              <span className="text-emerald-400 font-bold block text-sm">Punctual</span>
-              <span>Guaranteed Pay</span>
+            <div className="p-3.5 rounded-xl bg-white border border-slate-200 text-slate-800 shadow-sm">
+              <span className="text-emerald-600 font-black block text-base">Punctual</span>
+              <span className="text-slate-600 font-medium">Guaranteed Pay</span>
             </div>
-            <div className="p-3 rounded-xl bg-slate-800/90 border border-slate-700 text-slate-200">
-              <span className="text-emerald-400 font-bold block text-sm">Complete</span>
-              <span>Issued Kit & Gear</span>
+            <div className="p-3.5 rounded-xl bg-white border border-slate-200 text-slate-800 shadow-sm">
+              <span className="text-emerald-600 font-black block text-base">Complete</span>
+              <span className="text-slate-600 font-medium">Issued Kit & Gear</span>
             </div>
-            <div className="p-3 rounded-xl bg-slate-800/90 border border-slate-700 text-slate-200">
-              <span className="text-emerald-400 font-bold block text-sm">Merit-Based</span>
-              <span>Rank Advancement</span>
+            <div className="p-3.5 rounded-xl bg-white border border-slate-200 text-slate-800 shadow-sm">
+              <span className="text-emerald-600 font-black block text-base">Merit-Based</span>
+              <span className="text-slate-600 font-medium">Rank Advancement</span>
             </div>
           </div>
         </div>
       </div>
 
-      {/* 2. Current Open Positions */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
-        <div className="flex flex-col md:flex-row md:items-end justify-between border-b border-slate-800 pb-4 gap-4">
+      {/* 2. Current Open Positions (Sleek Cards) */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
+        <div className="flex flex-col md:flex-row md:items-end justify-between border-b border-slate-200 pb-4 gap-4">
           <div>
-            <span className="text-xs font-mono font-bold text-emerald-400 uppercase tracking-widest">
+            <span className="text-xs font-mono font-bold text-emerald-700 uppercase tracking-widest">
               ACTIVE INTAKE OPENINGS
             </span>
-            <h2 className="text-2xl sm:text-3xl font-black text-white font-display uppercase tracking-tight">
+            <h2 className="text-2xl sm:text-3xl font-black text-slate-900 font-display uppercase tracking-tight">
               AVAILABLE OPERATIONAL POSITIONS
             </h2>
           </div>
-          <p className="text-xs text-slate-400 max-w-md">
+          <p className="text-xs text-slate-500 max-w-md">
             Select a position below to automatically populate the application portal.
           </p>
         </div>
@@ -126,45 +126,45 @@ export default function CareersPage() {
                   setSelectedRole(pos.title);
                   setFormData((prev) => ({ ...prev, role: pos.title }));
                 }}
-                className={`p-6 sm:p-7 rounded-2xl border transition-all cursor-pointer flex flex-col justify-between space-y-5 ${
+                className={`p-6 sm:p-7 rounded-2xl border-2 transition-all cursor-pointer flex flex-col justify-between space-y-5 shadow-sm hover:shadow-md ${
                   isSelected
-                    ? 'bg-slate-800/90 border-2 border-emerald-500 shadow-xl shadow-emerald-500/10 -translate-y-1'
-                    : 'bg-slate-900/90 border-slate-800 hover:border-slate-700 hover:bg-slate-850'
+                    ? 'bg-emerald-50/80 border-emerald-600 shadow-emerald-600/10 -translate-y-1'
+                    : 'bg-white border-slate-200 hover:border-slate-300'
                 }`}
               >
                 <div className="space-y-3">
                   <div className="flex items-center justify-between">
-                    <span className="px-3 py-1 rounded-full bg-emerald-950 text-emerald-400 border border-emerald-800 text-[10px] font-mono font-bold uppercase">
+                    <span className="px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 border border-emerald-200 text-[10px] font-mono font-bold uppercase">
                       {pos.slots}
                     </span>
-                    <span className="text-xs font-mono text-slate-400 flex items-center">
-                      <Clock className="w-3.5 h-3.5 mr-1 text-slate-500" />
+                    <span className="text-xs font-mono text-slate-500 flex items-center">
+                      <Clock className="w-3.5 h-3.5 mr-1 text-slate-400" />
                       {pos.type}
                     </span>
                   </div>
 
-                  <h3 className="text-xl font-black text-white font-display uppercase tracking-tight">
+                  <h3 className="text-lg sm:text-xl font-black text-slate-900 font-display uppercase tracking-tight">
                     {pos.title}
                   </h3>
 
-                  <div className="flex items-center text-xs text-slate-400 font-mono">
-                    <MapPin className="w-3.5 h-3.5 mr-1 text-emerald-400 shrink-0" />
+                  <div className="flex items-center text-xs text-emerald-700 font-mono font-bold">
+                    <MapPin className="w-3.5 h-3.5 mr-1 shrink-0" />
                     <span>{pos.location}</span>
                   </div>
 
-                  <p className="text-xs sm:text-sm text-slate-300 leading-relaxed font-normal">
+                  <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
                     {pos.desc}
                   </p>
                 </div>
 
-                <div className="space-y-2 pt-3 border-t border-slate-800">
-                  <div className="text-[11px] font-mono text-slate-400 font-bold uppercase">
+                <div className="space-y-2 pt-3 border-t border-slate-200">
+                  <div className="text-[11px] font-mono text-slate-500 font-bold uppercase">
                     Key Prerequisites:
                   </div>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-1.5 text-xs text-slate-300">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-1.5 text-xs text-slate-700">
                     {pos.requirements.map((req, rIdx) => (
                       <div key={rIdx} className="flex items-center">
-                        <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 mr-1.5 shrink-0" />
+                        <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 mr-1.5 shrink-0" />
                         <span className="truncate">{req}</span>
                       </div>
                     ))}
@@ -172,10 +172,10 @@ export default function CareersPage() {
                 </div>
 
                 <div className="pt-2 flex items-center justify-between text-xs">
-                  <span className={`font-bold uppercase ${isSelected ? 'text-emerald-400' : 'text-slate-400'}`}>
+                  <span className={`font-bold uppercase ${isSelected ? 'text-emerald-700' : 'text-slate-500'}`}>
                     {isSelected ? '✓ Role Selected for Application' : 'Click to Apply for this Role'}
                   </span>
-                  <ChevronRight className="w-4 h-4 text-emerald-400" />
+                  <ChevronRight className="w-4 h-4 text-emerald-600" />
                 </div>
               </div>
             );
@@ -188,106 +188,106 @@ export default function CareersPage() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
           
           {/* Left: Vetting Checklist & Progression Pathway */}
-          <div className="lg:col-span-6 space-y-8">
-            <div className="space-y-3">
-              <span className="text-xs font-mono font-bold text-emerald-400 uppercase tracking-widest">
+          <div className="lg:col-span-6 space-y-6">
+            <div className="space-y-2">
+              <span className="text-xs font-mono font-bold text-emerald-700 uppercase tracking-widest">
                 VERIFICATION CRITERIA
               </span>
-              <h2 className="text-2xl sm:text-3xl font-black text-white font-display uppercase tracking-tight">
+              <h2 className="text-2xl sm:text-3xl font-black text-slate-900 font-display uppercase tracking-tight">
                 MANDATORY INTAKE STANDARDS
               </h2>
-              <p className="text-slate-300 text-sm leading-relaxed">
+              <p className="text-slate-600 text-xs sm:text-sm leading-relaxed">
                 Before admission into the Tough Task active deployment roster, all recruits must satisfy strict background, physical, and medical criteria.
               </p>
             </div>
 
             <div className="space-y-3">
-              <div className="p-4 rounded-xl bg-slate-900 border border-slate-800 flex items-start space-x-3.5">
-                <FileCheck className="w-5 h-5 text-emerald-400 shrink-0 mt-0.5" />
+              <div className="p-4 rounded-xl bg-white border border-slate-200 flex items-start space-x-3.5 shadow-sm">
+                <FileCheck className="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" />
                 <div>
-                  <h4 className="text-sm font-bold text-white uppercase">Valid NRC & Fingerprint Police Clearance</h4>
-                  <p className="text-xs text-slate-400 mt-0.5">Original Zambian National Registration Card with clean criminal record verified by Zambia Police Service.</p>
+                  <h4 className="text-xs sm:text-sm font-bold text-slate-900 uppercase">Valid NRC & Fingerprint Police Clearance</h4>
+                  <p className="text-xs text-slate-600 mt-0.5">Original Zambian National Registration Card with clean criminal record verified by Zambia Police Service.</p>
                 </div>
               </div>
 
-              <div className="p-4 rounded-xl bg-slate-900 border border-slate-800 flex items-start space-x-3.5">
-                <Award className="w-5 h-5 text-emerald-400 shrink-0 mt-0.5" />
+              <div className="p-4 rounded-xl bg-white border border-slate-200 flex items-start space-x-3.5 shadow-sm">
+                <Award className="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" />
                 <div>
-                  <h4 className="text-sm font-bold text-white uppercase">Educational Qualifications</h4>
-                  <p className="text-xs text-slate-400 mt-0.5">Minimum Grade 12 School Certificate with proficiency in spoken and written English for accurate daily occurrence logs.</p>
+                  <h4 className="text-xs sm:text-sm font-bold text-slate-900 uppercase">Educational Qualifications</h4>
+                  <p className="text-xs text-slate-600 mt-0.5">Minimum Grade 12 School Certificate with proficiency in spoken and written English for accurate daily occurrence logs.</p>
                 </div>
               </div>
 
-              <div className="p-4 rounded-xl bg-slate-900 border border-slate-800 flex items-start space-x-3.5">
-                <Shield className="w-5 h-5 text-emerald-400 shrink-0 mt-0.5" />
+              <div className="p-4 rounded-xl bg-white border border-slate-200 flex items-start space-x-3.5 shadow-sm">
+                <Shield className="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" />
                 <div>
-                  <h4 className="text-sm font-bold text-white uppercase">Medical Fitness & Sobriety Screen</h4>
-                  <p className="text-xs text-slate-400 mt-0.5">Physical agility test, eye examination, and zero-tolerance drug/alcohol toxicology screening.</p>
+                  <h4 className="text-xs sm:text-sm font-bold text-slate-900 uppercase">Medical Fitness & Sobriety Screen</h4>
+                  <p className="text-xs text-slate-600 mt-0.5">Physical agility test, eye examination, and zero-tolerance drug/alcohol toxicology screening.</p>
                 </div>
               </div>
 
-              <div className="p-4 rounded-xl bg-slate-900 border border-slate-800 flex items-start space-x-3.5">
-                <Users className="w-5 h-5 text-emerald-400 shrink-0 mt-0.5" />
+              <div className="p-4 rounded-xl bg-white border border-slate-200 flex items-start space-x-3.5 shadow-sm">
+                <Users className="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" />
                 <div>
-                  <h4 className="text-sm font-bold text-white uppercase">Two Traceable Residential Referees</h4>
-                  <p className="text-xs text-slate-400 mt-0.5">Contactable community, civic, or former employer referees prior to posting.</p>
+                  <h4 className="text-xs sm:text-sm font-bold text-slate-900 uppercase">Two Traceable Residential Referees</h4>
+                  <p className="text-xs text-slate-600 mt-0.5">Contactable community, civic, or former employer referees prior to posting.</p>
                 </div>
               </div>
             </div>
 
             {/* Rank Career Track */}
-            <div className="p-6 rounded-2xl bg-slate-900 border border-slate-800 space-y-4">
-              <h3 className="text-sm font-black text-white uppercase tracking-wider font-display">
+            <div className="p-6 rounded-2xl bg-white border border-slate-200 space-y-3.5 shadow-sm">
+              <h3 className="text-xs font-black text-slate-900 uppercase tracking-wider font-display">
                 STRUCTURED PROMOTION & RANK PATHWAY
               </h3>
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 text-center text-xs font-mono">
-                <div className="p-3 bg-slate-800 rounded-xl border border-slate-700">
-                  <span className="text-emerald-400 font-bold block">RANK 01</span>
-                  <span className="text-slate-200 mt-1 block">Security Officer</span>
+                <div className="p-3 bg-slate-50 rounded-xl border border-slate-200">
+                  <span className="text-emerald-700 font-bold block">RANK 01</span>
+                  <span className="text-slate-800 mt-1 block font-semibold text-[11px]">Security Officer</span>
                 </div>
-                <div className="p-3 bg-slate-800 rounded-xl border border-slate-700">
-                  <span className="text-emerald-400 font-bold block">RANK 02</span>
-                  <span className="text-slate-200 mt-1 block">Senior Sentry</span>
+                <div className="p-3 bg-slate-50 rounded-xl border border-slate-200">
+                  <span className="text-emerald-700 font-bold block">RANK 02</span>
+                  <span className="text-slate-800 mt-1 block font-semibold text-[11px]">Senior Sentry</span>
                 </div>
-                <div className="p-3 bg-slate-800 rounded-xl border border-slate-700">
-                  <span className="text-emerald-400 font-bold block">RANK 03</span>
-                  <span className="text-slate-200 mt-1 block">Shift Sergeant</span>
+                <div className="p-3 bg-slate-50 rounded-xl border border-slate-200">
+                  <span className="text-emerald-700 font-bold block">RANK 03</span>
+                  <span className="text-slate-800 mt-1 block font-semibold text-[11px]">Shift Sergeant</span>
                 </div>
-                <div className="p-3 bg-slate-800 rounded-xl border border-slate-700">
-                  <span className="text-emerald-400 font-bold block">RANK 04</span>
-                  <span className="text-slate-200 mt-1 block">Ops Commander</span>
+                <div className="p-3 bg-slate-50 rounded-xl border border-slate-200">
+                  <span className="text-emerald-700 font-bold block">RANK 04</span>
+                  <span className="text-slate-800 mt-1 block font-semibold text-[11px]">Ops Commander</span>
                 </div>
               </div>
             </div>
 
           </div>
 
-          {/* Right: Direct Candidate Application Form */}
-          <div className="lg:col-span-6 bg-slate-900 border border-slate-800 p-7 sm:p-9 rounded-3xl shadow-2xl space-y-6">
-            <div className="border-b border-slate-800 pb-4">
-              <span className="text-xs font-mono text-emerald-400 font-bold uppercase tracking-wider">
+          {/* Right: Direct Candidate Application Form (Sleek White Card) */}
+          <div className="lg:col-span-6 bg-white border-2 border-slate-200 p-6 sm:p-8 rounded-3xl shadow-xl space-y-5">
+            <div className="border-b border-slate-200 pb-4">
+              <span className="text-xs font-mono text-emerald-700 font-bold uppercase tracking-wider">
                 CANDIDATE PORTAL
               </span>
-              <h3 className="text-xl sm:text-2xl font-black text-white uppercase tracking-tight font-display mt-1">
+              <h3 className="text-xl sm:text-2xl font-black text-slate-900 uppercase tracking-tight font-display mt-1">
                 EXPRESSION OF INTEREST FORM
               </h3>
-              <p className="text-xs text-slate-400 mt-1">
-                Selected Position: <strong className="text-emerald-400">{selectedRole}</strong>
+              <p className="text-xs text-slate-600 mt-1">
+                Selected Position: <strong className="text-emerald-700">{selectedRole}</strong>
               </p>
             </div>
 
             {submitted ? (
-              <div className="text-center py-12 space-y-4">
-                <div className="w-14 h-14 rounded-full bg-emerald-950 text-emerald-400 mx-auto flex items-center justify-center border border-emerald-800 shadow-xl">
+              <div className="text-center py-10 space-y-4">
+                <div className="w-14 h-14 rounded-full bg-emerald-50 text-emerald-600 mx-auto flex items-center justify-center border border-emerald-200 shadow-md">
                   <CheckCircle2 className="w-7 h-7" />
                 </div>
-                <h4 className="text-xl font-bold text-white uppercase font-display">APPLICATION RECORDED</h4>
-                <p className="text-xs text-slate-300 max-w-md mx-auto leading-relaxed">
+                <h4 className="text-xl font-bold text-slate-900 uppercase font-display">APPLICATION RECORDED</h4>
+                <p className="text-xs text-slate-600 max-w-md mx-auto leading-relaxed">
                   Your profile has been entered into the Tough Task HR recruitment registry. Candidates shortlisted for upcoming drill intakes in your province will be contacted via SMS / phone.
                 </p>
                 <button
                   onClick={() => setSubmitted(false)}
-                  className="px-6 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-xs font-bold text-white uppercase transition-colors"
+                  className="px-6 py-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-xs font-bold text-slate-800 uppercase transition-colors"
                 >
                   Submit Another Profile
                 </button>
@@ -296,50 +296,50 @@ export default function CareersPage() {
               <form onSubmit={handleSubmit} className="space-y-4 text-xs">
                 
                 <div className="space-y-1.5">
-                  <label className="text-slate-300 font-semibold uppercase">Full Legal Name</label>
+                  <label className="text-slate-700 font-semibold uppercase">Full Legal Name</label>
                   <input
                     type="text"
                     required
                     value={formData.fullName}
                     onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
                     placeholder="As shown on Zambian NRC"
-                    className="w-full px-4 py-3 bg-slate-950 border border-slate-700 rounded-xl text-white placeholder-slate-500 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-colors"
+                    className="w-full px-4 py-3 bg-slate-50 border border-slate-300 rounded-xl text-slate-900 placeholder-slate-400 focus:outline-none focus:border-emerald-600 focus:bg-white transition-colors"
                   />
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div className="space-y-1.5">
-                    <label className="text-slate-300 font-semibold uppercase">Phone Number</label>
+                    <label className="text-slate-700 font-semibold uppercase">Phone Number</label>
                     <input
                       type="tel"
                       required
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                       placeholder="e.g. +260 97X XXX XXX"
-                      className="w-full px-4 py-3 bg-slate-950 border border-slate-700 rounded-xl text-white placeholder-slate-500 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-colors"
+                      className="w-full px-4 py-3 bg-slate-50 border border-slate-300 rounded-xl text-slate-900 placeholder-slate-400 focus:outline-none focus:border-emerald-600 focus:bg-white transition-colors"
                     />
                   </div>
 
                   <div className="space-y-1.5">
-                    <label className="text-slate-300 font-semibold uppercase">NRC Number</label>
+                    <label className="text-slate-700 font-semibold uppercase">NRC Number</label>
                     <input
                       type="text"
                       required
                       value={formData.nrcNumber}
                       onChange={(e) => setFormData({ ...formData, nrcNumber: e.target.value })}
                       placeholder="e.g. 123456/11/1"
-                      className="w-full px-4 py-3 bg-slate-950 border border-slate-700 rounded-xl text-white placeholder-slate-500 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-colors"
+                      className="w-full px-4 py-3 bg-slate-50 border border-slate-300 rounded-xl text-slate-900 placeholder-slate-400 focus:outline-none focus:border-emerald-600 focus:bg-white transition-colors"
                     />
                   </div>
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div className="space-y-1.5">
-                    <label className="text-slate-300 font-semibold uppercase">Province of Residence</label>
+                    <label className="text-slate-700 font-semibold uppercase">Province of Residence</label>
                     <select
                       value={formData.province}
                       onChange={(e) => setFormData({ ...formData, province: e.target.value })}
-                      className="w-full px-4 py-3 bg-slate-950 border border-slate-700 rounded-xl text-white focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-colors"
+                      className="w-full px-4 py-3 bg-slate-50 border border-slate-300 rounded-xl text-slate-900 focus:outline-none focus:border-emerald-600 focus:bg-white transition-colors"
                     >
                       <option value="Lusaka Province">Lusaka Province</option>
                       <option value="Copperbelt Province">Copperbelt Province</option>
@@ -355,14 +355,14 @@ export default function CareersPage() {
                   </div>
 
                   <div className="space-y-1.5">
-                    <label className="text-slate-300 font-semibold uppercase">Applying For Role</label>
+                    <label className="text-slate-700 font-semibold uppercase">Applying For Role</label>
                     <select
                       value={formData.role}
                       onChange={(e) => {
                         setFormData({ ...formData, role: e.target.value });
                         setSelectedRole(e.target.value);
                       }}
-                      className="w-full px-4 py-3 bg-slate-950 border border-slate-700 rounded-xl text-white focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-colors"
+                      className="w-full px-4 py-3 bg-slate-50 border border-slate-300 rounded-xl text-slate-900 focus:outline-none focus:border-emerald-600 focus:bg-white transition-colors"
                     >
                       {openPositions.map((p) => (
                         <option key={p.id} value={p.title}>{p.title}</option>
@@ -373,11 +373,11 @@ export default function CareersPage() {
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div className="space-y-1.5">
-                    <label className="text-slate-300 font-semibold uppercase">Prior Security Experience</label>
+                    <label className="text-slate-700 font-semibold uppercase">Prior Security Experience</label>
                     <select
                       value={formData.experience}
                       onChange={(e) => setFormData({ ...formData, experience: e.target.value })}
-                      className="w-full px-4 py-3 bg-slate-950 border border-slate-700 rounded-xl text-white focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-colors"
+                      className="w-full px-4 py-3 bg-slate-50 border border-slate-300 rounded-xl text-slate-900 focus:outline-none focus:border-emerald-600 focus:bg-white transition-colors"
                     >
                       <option value="Fresh Recruit (No Prior Security)">Fresh Recruit (No Prior Security)</option>
                       <option value="1-3 Years Private Security">1-3 Years Private Security</option>
@@ -387,11 +387,11 @@ export default function CareersPage() {
                   </div>
 
                   <div className="space-y-1.5">
-                    <label className="text-slate-300 font-semibold uppercase">Police Clearance Available?</label>
+                    <label className="text-slate-700 font-semibold uppercase">Police Clearance Available?</label>
                     <select
                       value={formData.hasPoliceClearance}
                       onChange={(e) => setFormData({ ...formData, hasPoliceClearance: e.target.value })}
-                      className="w-full px-4 py-3 bg-slate-950 border border-slate-700 rounded-xl text-white focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-colors"
+                      className="w-full px-4 py-3 bg-slate-50 border border-slate-300 rounded-xl text-slate-900 focus:outline-none focus:border-emerald-600 focus:bg-white transition-colors"
                     >
                       <option value="Yes - Current Valid Clearance">Yes - Current Valid Clearance</option>
                       <option value="In Progress with Zambia Police">In Progress with Zambia Police</option>
@@ -403,7 +403,7 @@ export default function CareersPage() {
                 <div className="pt-2">
                   <button
                     type="submit"
-                    className="w-full py-4 bg-gradient-to-r from-emerald-600 via-green-600 to-emerald-700 hover:from-emerald-500 hover:to-green-600 text-white font-extrabold text-xs uppercase tracking-wider rounded-xl shadow-xl shadow-emerald-600/30 transition-all cursor-pointer btn-shimmer"
+                    className="w-full py-4 bg-gradient-to-r from-emerald-600 via-green-600 to-emerald-700 hover:from-emerald-500 hover:to-green-600 text-white font-extrabold text-xs uppercase tracking-wider rounded-xl shadow-lg shadow-emerald-600/30 transition-all cursor-pointer btn-shimmer"
                   >
                     SUBMIT RECRUITMENT APPLICATION
                   </button>

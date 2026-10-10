@@ -26,9 +26,9 @@ export const companyInfo = {
   },
 
   socialMedia: {
-    facebook: { name: "Facebook", handle: "Tough Task Security Solutions Ltd", url: "https://www.facebook.com/search/top?q=Tough%20Task%20Security%20Solutions%20Ltd" },
-    tiktok: { name: "TikTok", handle: "Tough Task Security Solutions Ltd", url: "https://www.tiktok.com/@toughtasksecurity" },
-    linkedin: { name: "LinkedIn", handle: "Tough Task Security Solutions Ltd", url: "https://www.linkedin.com/company/tough-task-security-solutions-ltd" }
+    facebook: { name: "Facebook", handle: "Tough Task Security Solutions Ltd", url: "https://www.facebook.com/share/1JTXFuQXzp/" },
+    tiktok: { name: "TikTok", handle: "Tough Task Security Solutions Ltd", url: "https://www.tiktok.com/@toughtasksolution?_r=1&_t=ZS-9AQw2u1aGQP" },
+    linkedin: { name: "LinkedIn", handle: "Tough Task Security Solutions Ltd", url: "https://www.linkedin.com/company/tough-task-security-solutions-limited/" }
   },
 
   mission: "To deliver uncompromising, professional security solutions by combining rigorously vetted and disciplined personnel with cutting-edge tactical technology, safeguarding our clients' assets, operations, and peace of mind with total accountability.",

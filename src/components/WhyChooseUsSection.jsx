@@ -41,32 +41,38 @@ export default function WhyChooseUsSection({ onOpenQuote }) {
   ];
 
   return (
-    <section id="why-choose-us" className="py-24 lg:py-32 bg-[#060a12] text-slate-100 border-t border-slate-800/90 relative overflow-hidden">
-      {/* Ambient Tactical Grid Background */}
-      <div className="absolute inset-0 tactical-grid opacity-30 pointer-events-none" />
+    <section id="why-choose-us" className="py-20 lg:py-28 relative overflow-hidden border-t border-slate-200">
+      {/* High-Resolution Picture Background (Not Dark) */}
+      <div className="absolute inset-0 z-0">
+        <img
+          src="/assets/security-parade.jpg"
+          alt="Tough Task Security Parade"
+          className="w-full h-full object-cover object-center filter contrast-105"
+        />
+        {/* Light & Grey Overlay with subtle backdrop blur so image shows through crisply */}
+        <div className="absolute inset-0 bg-slate-100/90 backdrop-blur-[3px]" />
+        <div className="absolute inset-0 light-grid-pattern opacity-40 pointer-events-none" />
+      </div>
 
-      {/* Radiant Glow Orb */}
-      <div className="absolute top-1/2 right-10 w-96 h-96 bg-emerald-600/10 rounded-full blur-[140px] pointer-events-none" />
-
-      <div className="relative z-10 w-full max-w-[1680px] mx-auto px-4 sm:px-8 lg:px-12 space-y-16">
+      <div className="relative z-10 w-full max-w-[1680px] mx-auto px-4 sm:px-8 lg:px-12 space-y-12">
         
-        {/* Spartan-Style Section Header */}
-        <div className="max-w-3xl space-y-3">
-          <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-mono font-bold uppercase tracking-widest">
-            <Zap className="w-3.5 h-3.5 mr-1" />
+        {/* Spartan-Style Section Header with Reduced Font Size */}
+        <div className="max-w-3xl space-y-2.5">
+          <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-emerald-100 border border-emerald-300 text-emerald-800 text-xs font-mono font-bold uppercase tracking-widest shadow-sm">
+            <Zap className="w-3.5 h-3.5 mr-1 text-emerald-600" />
             <span>UNCOMPROMISING EXCELLENCE</span>
           </div>
 
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black font-display tracking-tight uppercase text-white leading-tight">
-            WHY CHOOSE <span className="bg-gradient-to-r from-emerald-500 via-green-400 to-teal-400 bg-clip-text text-transparent">TOUGH TASK SECURITY</span>
+          <h2 className="text-2xl sm:text-3xl font-black font-display tracking-tight uppercase text-slate-900 leading-tight">
+            WHY CHOOSE <span className="text-emerald-600">TOUGH TASK SECURITY</span>
           </h2>
 
-          <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
+          <p className="text-slate-600 text-xs sm:text-sm md:text-base leading-relaxed">
             Advanced CCTV video surveillance, elite tactical personnel, and rapid response units built to protect what matters most across Zambia.
           </p>
         </div>
 
-        {/* 5-Card Feature Grid (Matching Spartan SA "Why Choose" layout) */}
+        {/* 5-Card Feature Grid with Clean Grey/White Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {points.map((pt, idx) => {
             const Icon = pt.icon;
@@ -75,39 +81,39 @@ export default function WhyChooseUsSection({ onOpenQuote }) {
             return (
               <div
                 key={pt.id}
-                className={`p-7 rounded-2xl border transition-all duration-300 hover:-translate-y-2 flex flex-col justify-between group shadow-xl relative overflow-hidden spartan-card ${
+                className={`p-6 sm:p-7 rounded-2xl border transition-all duration-300 hover:-translate-y-2 flex flex-col justify-between group shadow-md hover:shadow-xl relative overflow-hidden spartan-card ${
                   isHighlight
-                    ? 'bg-gradient-to-br from-[#0c1c14] via-[#0b1612] to-[#0a0f1b] border-emerald-500/50 hover:border-emerald-400 md:col-span-2 lg:col-span-2 shadow-emerald-500/10'
-                    : 'bg-[#090e1a]/95 border-slate-800 hover:border-emerald-500/60 hover:bg-[#0e1627]'
+                    ? 'bg-gradient-to-br from-emerald-50/95 via-white/95 to-slate-50/95 border-emerald-500/50 md:col-span-2 lg:col-span-2 shadow-emerald-600/10'
+                    : 'bg-white/95 border-slate-200 hover:border-emerald-500/70'
                 }`}
               >
                 {/* Header with Tag & Icon */}
-                <div className="space-y-4">
+                <div className="space-y-3.5">
                   <div className="flex items-center justify-between">
-                    <span className="text-[10px] font-mono font-bold text-emerald-400 bg-emerald-950/40 border border-emerald-500/30 px-3 py-1 rounded-full uppercase tracking-wider">
+                    <span className="text-[10px] font-mono font-bold text-emerald-700 bg-emerald-50 border border-emerald-200 px-3 py-1 rounded-full uppercase tracking-wider">
                       {pt.tag}
                     </span>
-                    <div className="w-12 h-12 rounded-xl bg-slate-900 border border-slate-700/80 group-hover:border-emerald-500/60 flex items-center justify-center text-emerald-400 group-hover:text-white transition-colors">
-                      <Icon className="w-6 h-6" />
+                    <div className="w-11 h-11 rounded-xl bg-slate-100 border border-slate-200 group-hover:border-emerald-500 flex items-center justify-center text-emerald-600 group-hover:bg-emerald-600 group-hover:text-white transition-colors shadow-sm">
+                      <Icon className="w-5 h-5" />
                     </div>
                   </div>
 
-                  <h3 className="text-xl font-bold font-display uppercase tracking-tight text-white group-hover:text-emerald-400 transition-colors">
+                  <h3 className="text-lg sm:text-xl font-black font-display uppercase tracking-tight text-slate-900 group-hover:text-emerald-700 transition-colors">
                     {pt.title}
                   </h3>
 
-                  <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                  <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
                     {pt.description}
                   </p>
                 </div>
 
                 {/* Footer Checkmark Indicator */}
-                <div className="pt-6 border-t border-slate-800/80 flex items-center justify-between mt-6">
-                  <div className="flex items-center space-x-2 text-xs font-mono text-emerald-400 font-semibold">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-400" />
+                <div className="pt-4 border-t border-slate-200/90 flex items-center justify-between mt-5">
+                  <div className="flex items-center space-x-1.5 text-xs font-mono text-emerald-700 font-semibold">
+                    <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
                     <span>Guaranteed SLA Standard</span>
                   </div>
-                  <span className="text-[11px] font-mono text-slate-400 group-hover:text-white transition-colors">
+                  <span className="text-[11px] font-mono text-slate-400 group-hover:text-slate-800 transition-colors font-bold">
                     0{idx + 1}
                   </span>
                 </div>
@@ -116,12 +122,12 @@ export default function WhyChooseUsSection({ onOpenQuote }) {
           })}
 
           {/* Quick CTA Card */}
-          <div className="p-7 rounded-2xl bg-gradient-to-br from-emerald-950/40 via-green-950/30 to-[#0a0f1b] border border-emerald-500/40 flex flex-col justify-between space-y-6 shadow-xl">
+          <div className="p-6 sm:p-7 rounded-2xl bg-gradient-to-br from-emerald-900 via-slate-900 to-slate-950 border border-emerald-600/40 text-white flex flex-col justify-between space-y-5 shadow-xl">
             <div className="space-y-2">
               <span className="text-[10px] font-mono font-bold text-emerald-400 uppercase tracking-widest block">
                 GET STARTED IN UNDER 24 HOURS
               </span>
-              <h3 className="text-2xl font-black font-display text-white uppercase leading-snug">
+              <h3 className="text-xl sm:text-2xl font-black font-display text-white uppercase leading-snug">
                 READY TO SECURE YOUR ENTERPRISE?
               </h3>
               <p className="text-xs text-slate-300 leading-relaxed">
@@ -131,7 +137,7 @@ export default function WhyChooseUsSection({ onOpenQuote }) {
 
             <button
               onClick={() => onOpenQuote()}
-              className="w-full py-4 bg-gradient-to-r from-emerald-600 via-green-600 to-emerald-700 hover:from-emerald-500 hover:to-green-600 text-white font-extrabold text-xs uppercase tracking-wider rounded-xl shadow-xl shadow-emerald-600/30 transition-all flex items-center justify-center space-x-2 cursor-pointer border border-emerald-500/40 btn-shimmer"
+              className="w-full py-3.5 bg-gradient-to-r from-emerald-600 via-green-600 to-emerald-700 hover:from-emerald-500 hover:to-green-600 text-white font-extrabold text-xs uppercase tracking-wider rounded-xl shadow-xl shadow-emerald-600/30 transition-all flex items-center justify-center space-x-2 cursor-pointer border border-emerald-500/40 btn-shimmer"
             >
               <Shield className="w-4 h-4" />
               <span>REQUEST SITE SURVEY</span>

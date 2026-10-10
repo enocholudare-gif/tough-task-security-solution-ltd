@@ -103,7 +103,7 @@ export default function HomePage({ setActivePage, onOpenQuote }) {
             <span>24/7 COMMAND DESK ACTIVE • NATIONAL DISPATCH</span>
           </div>
 
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black font-display uppercase tracking-tight leading-tight max-w-4xl mx-auto">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-black font-display uppercase tracking-tight leading-tight max-w-4xl mx-auto">
             DARE TO ELEVATE YOUR <br />
             <span className="bg-gradient-to-r from-emerald-400 via-green-300 to-teal-300 bg-clip-text text-transparent drop-shadow-[0_0_35px_rgba(16,185,129,0.3)]">
               SECURITY STANDARD

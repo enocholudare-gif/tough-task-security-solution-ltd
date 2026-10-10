@@ -86,36 +86,38 @@ export default function ProjectPortfolioSection({ onOpenQuote }) {
     <section id="our-project-portfolio" className="py-20 lg:py-28 bg-white text-slate-900 border-t border-slate-200 relative overflow-hidden light-grid-pattern">
       <div className="relative z-10 w-full max-w-[1680px] mx-auto px-4 sm:px-8 lg:px-12 space-y-12">
         
-        {/* Header with Category Filter Buttons */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between pb-6 border-b border-slate-200 gap-6">
-          <div className="space-y-3 max-w-2xl">
-            <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-700 text-xs font-mono font-bold uppercase tracking-widest shadow-sm">
-              <Briefcase className="w-3.5 h-3.5 mr-1 text-emerald-600" />
-              <span>PROVEN OPERATIONAL DEPLOYMENTS</span>
+        {/* Clean, Well-Arranged Header & Filter Controls */}
+        <div className="space-y-6 pb-6 border-b border-slate-200">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
+            <div className="space-y-2 max-w-2xl">
+              <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-700 text-xs font-mono font-bold uppercase tracking-widest shadow-sm">
+                <Briefcase className="w-3.5 h-3.5 mr-1 text-emerald-600" />
+                <span>PROVEN OPERATIONAL DEPLOYMENTS</span>
+              </div>
+              <h2 className="text-2xl sm:text-3xl font-black font-display tracking-tight uppercase text-slate-900 leading-tight">
+                OUR PROJECT <span className="text-emerald-600">PORTFOLIO</span>
+              </h2>
+              <p className="text-slate-600 text-xs sm:text-sm leading-relaxed max-w-xl">
+                Real-world execution of our security protocols across corporate complexes, high-profile events, cash transit, and industrial corridors.
+              </p>
             </div>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black font-display tracking-tight uppercase text-slate-900 leading-tight">
-              OUR PROJECT <span className="text-emerald-600">PORTFOLIO</span>
-            </h2>
-            <p className="text-slate-600 text-xs sm:text-sm md:text-base leading-relaxed">
-              Real-world execution of our security protocols across corporate complexes, high-profile events, cash transit, and industrial corridors.
-            </p>
-          </div>
 
-          {/* Clean Category Filter Pills */}
-          <div className="flex flex-wrap gap-2 shrink-0">
-            {categories.map((cat) => (
-              <button
-                key={cat.id}
-                onClick={() => setSelectedCategory(cat.id)}
-                className={`px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider transition-all duration-200 cursor-pointer ${
-                  selectedCategory === cat.id
-                    ? 'bg-emerald-600 text-white shadow-md shadow-emerald-600/30'
-                    : 'bg-slate-100 text-slate-700 hover:text-slate-900 hover:bg-slate-200 border border-slate-200'
-                }`}
-              >
-                {cat.label}
-              </button>
-            ))}
+            {/* Clean Category Filter Pills */}
+            <div className="flex flex-wrap items-center gap-1.5 self-start md:self-end">
+              {categories.map((cat) => (
+                <button
+                  key={cat.id}
+                  onClick={() => setSelectedCategory(cat.id)}
+                  className={`px-3.5 py-1.5 rounded-lg text-xs font-bold uppercase tracking-wider transition-all duration-200 cursor-pointer ${
+                    selectedCategory === cat.id
+                      ? 'bg-emerald-600 text-white shadow-sm'
+                      : 'bg-slate-100 text-slate-700 hover:text-slate-900 hover:bg-slate-200 border border-slate-200'
+                  }`}
+                >
+                  {cat.label}
+                </button>
+              ))}
+            </div>
           </div>
         </div>
 

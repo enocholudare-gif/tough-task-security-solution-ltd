@@ -59,21 +59,21 @@ export default function HeroSection({ onOpenQuote, setActivePage }) {
               <span>ELITE DEFENSE & TACTICAL RESPONSE • ZAMBIA</span>
             </div>
 
-            {/* Spartan SA Bold Editorial Title */}
+            {/* Spartan SA Refined Editorial Title */}
             <div className="space-y-1">
-              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black font-display uppercase tracking-tight text-slate-900 leading-[1.05]">
+              <h1 className="text-2xl sm:text-3xl lg:text-4xl font-black font-display uppercase tracking-tight text-slate-900 leading-[1.15]">
                 Elite
               </h1>
-              <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black font-display uppercase tracking-tight text-slate-900 leading-[1.05]">
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black font-display uppercase tracking-tight text-slate-900 leading-[1.15]">
                 Security &amp; Tactical <span className="text-emerald-600">Response</span>
               </h2>
             </div>
 
             {/* Spartan SA Signature Gradient Accent Bar (96px wide) */}
-            <div className="w-24 h-1.5 bg-gradient-to-r from-emerald-600 via-green-500 to-transparent rounded-full" />
+            <div className="w-20 h-1.5 bg-gradient-to-r from-emerald-600 via-green-500 to-transparent rounded-full" />
 
             {/* Subheadline */}
-            <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-slate-800 leading-snug font-display">
+            <h3 className="text-base sm:text-lg lg:text-xl font-bold text-slate-800 leading-snug font-display">
               Protecting people, properties and businesses across Zambia.
             </h3>
 
