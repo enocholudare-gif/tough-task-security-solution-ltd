@@ -3,7 +3,6 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import QuoteBuilderModal from './components/QuoteBuilderModal';
 import FloatingEmergencyButton from './components/FloatingEmergencyButton';
-import DualSplitIntro from './components/DualSplitIntro';
 import HomePage from './pages/HomePage';
 import AboutPage from './pages/AboutPage';
 import ServicesPage from './pages/ServicesPage';
@@ -18,15 +17,12 @@ export default function App() {
   const [quoteModalOpen, setQuoteModalOpen] = useState(false);
   const [preselectedService, setPreselectedService] = useState('');
   const [preselectedLocation, setPreselectedLocation] = useState('');
-  
-  // Left & Right dual split intro animation state
-  const [showIntro, setShowIntro] = useState(true);
 
   // Sync with browser URL hash
   useEffect(() => {
     const handleHashChange = () => {
       const hash = window.location.hash.replace('#', '');
-      const validPages = ['home', 'about', 'services', 'coverage', 'technology', 'operations', 'careers', 'contact'];
+      const validPages = ['home', 'about', 'services', 'projects', 'operations', 'coverage', 'technology', 'careers', 'contact'];
       if (validPages.includes(hash)) {
         setActivePage(hash);
       }
@@ -55,21 +51,16 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#f5f5f5] text-slate-900 selection:bg-emerald-600 selection:text-white font-sans antialiased">
+    <div className="min-h-screen flex flex-col bg-[#F0F2F5] text-[#0F172A] selection:bg-[#16A34A] selection:text-white font-sans antialiased">
       
-      {/* 1. Full-Screen Left & Right Dual-Split Portal Opening Reveal */}
-      {showIntro && (
-        <DualSplitIntro onComplete={() => setShowIntro(false)} />
-      )}
-
-      {/* 2. Sticky Navigation */}
+      {/* 1. Header Navigation */}
       <Navbar 
-        activePage={activePage} 
+        activePage={activePage === 'operations' ? 'projects' : activePage} 
         setActivePage={handlePageChange} 
         onOpenQuote={() => handleOpenQuote()} 
       />
 
-      {/* 3. Main Page Content */}
+      {/* 2. Main Page Content */}
       <main className="flex-grow">
         {activePage === 'home' && (
           <HomePage 
@@ -88,6 +79,11 @@ export default function App() {
             onOpenQuote={handleOpenQuote} 
           />
         )}
+        {(activePage === 'projects' || activePage === 'operations') && (
+          <OperationsPage 
+            onOpenQuote={handleOpenQuote} 
+          />
+        )}
         {activePage === 'coverage' && (
           <CoveragePage 
             onOpenQuote={handleOpenQuote} 
@@ -95,11 +91,6 @@ export default function App() {
         )}
         {activePage === 'technology' && (
           <TechnologyPage 
-            onOpenQuote={handleOpenQuote} 
-          />
-        )}
-        {activePage === 'operations' && (
-          <OperationsPage 
             onOpenQuote={handleOpenQuote} 
           />
         )}
@@ -113,13 +104,13 @@ export default function App() {
         )}
       </main>
 
-      {/* 4. Corporate Footer */}
+      {/* 3. Corporate Footer */}
       <Footer 
         setActivePage={handlePageChange} 
         onOpenQuote={() => handleOpenQuote()} 
       />
 
-      {/* 5. Global Interactive Quote Modal */}
+      {/* 4. Global Interactive Quote Modal */}
       <QuoteBuilderModal 
         isOpen={quoteModalOpen} 
         onClose={() => {
@@ -131,7 +122,7 @@ export default function App() {
         preselectedLocation={preselectedLocation}
       />
 
-      {/* 6. Spartan Floating Emergency Dispatch Trigger */}
+      {/* 5. 24/7 Floating Emergency Dispatch Trigger */}
       <FloatingEmergencyButton 
         onOpenQuote={() => handleOpenQuote()} 
       />

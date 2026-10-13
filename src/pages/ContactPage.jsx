@@ -1,397 +1,407 @@
 import React, { useState } from 'react';
-import { MapPin, Phone, Mail, Clock, Shield, Send, CheckCircle2, MessageSquare, ExternalLink, ChevronRight, ArrowRight } from 'lucide-react';
-import { companyInfo } from '../data/companyInfo';
-import { services } from '../data/servicesData';
+import { MapPin, Phone, Mail, Clock, Send, CheckCircle2, MessageSquare, Shield, HelpCircle, ArrowRight } from 'lucide-react';
 import { allLocationsList } from '../data/coverageData';
 
-export default function ContactPage({ onOpenQuote }) {
+export default function ContactPage({ onOpenQuote: _onOpenQuote }) {
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [formData, setFormData] = useState({
     fullName: '',
     company: '',
     phone: '',
     email: '',
-    serviceRequired: 'Manned Guarding',
+    serviceRequired: 'Manned Guarding & Sentry Services',
     location: 'Lusaka (Lusaka Province)',
     message: ''
   });
+
+  const serviceOptions = [
+    'Manned Guarding & Sentry Services',
+    'Tactical Armed Patrols & Escort',
+    '24/7 Offsite CCTV Surveillance',
+    'Rapid Alarm & Panic Response',
+    'VIP & Close Protection Details',
+    'Cash-In-Transit & Bullion Logistics'
+  ];
 
   const handleSubmit = (e) => {
     e.preventDefault();
     setFormSubmitted(true);
   };
 
+  const contactFaqs = [
+    {
+      q: 'How quickly can Tough Task mobilize security officers to a new site?',
+      a: 'For commercial and industrial facilities, our senior operations managers conduct an on-site security survey within 24 hours. A vetted, uniform-equipped sentry detachment with customized post standing orders can deploy within 48 to 72 hours across Zambia.'
+    },
+    {
+      q: 'Are all sentries vetted by the Zambia Police CID?',
+      a: 'Yes. Every security officer on our roster undergoes mandatory biometric fingerprint verification through the Zambia Police Criminal Investigation Department (CID) and possesses verified police clearance certificates.'
+    },
+    {
+      q: 'What is your response time for alarm triggers in Lusaka and Copperbelt?',
+      a: 'Our dedicated rapid armed cruiser units achieve a contractually backed sub-5-minute emergency intervention SLA across core commercial zones in Lusaka and the Copperbelt, coordinated via VHF radio by our Rhodespark Control Room.'
+    },
+    {
+      q: 'Can Tough Task handle security tenders across multiple provinces simultaneously?',
+      a: 'Yes. With permanent operational detachments in all 10 provinces and 39 districts, we manage unified multi-site national contracts with consolidated reporting and single-point account management.'
+    }
+  ];
+
   return (
-    <div className="py-16 bg-[#f1f5f9] text-slate-900 space-y-16 light-grid-pattern">
+    <div className="bg-[#F0F2F5] text-[#0F172A] min-h-screen">
       
-      {/* 1. Page Hero (Spartan SA Refined Style) */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-3xl mx-auto space-y-3.5">
-          <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-700 text-xs font-mono font-bold uppercase tracking-widest shadow-sm">
-            <span className="w-2 h-2 rounded-full bg-emerald-500 animate-ping" />
-            <span>24/7 COMMAND DESK ACTIVE • NATIONAL DISPATCH</span>
+      {/* 1. Page Hero: Clean Spartan Headline */}
+      <section className="py-20 lg:py-28 border-b border-gray-200 bg-white">
+        <div className="w-full max-w-[1600px] mx-auto px-4 sm:px-8 lg:px-12">
+          <div className="max-w-3xl space-y-4">
+            
+            <div className="inline-flex items-center space-x-2 text-[11px] font-mono font-bold tracking-widest text-[#16A34A] uppercase">
+              <span className="w-8 h-[1.5px] bg-[#16A34A]" />
+              <span>DIRECT RESPONSIBILITY • CLEAR COMMUNICATION</span>
+            </div>
+
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold font-display uppercase tracking-tight text-[#0F172A] leading-[1.05]">
+              CONTACT OUR <br />
+              <span className="text-[#16A34A]">COMMAND HEADQUARTERS</span>
+            </h1>
+
+            <p className="text-[#475569] text-sm sm:text-base leading-relaxed max-w-2xl font-normal">
+              Connect directly with our 24/7 central operations desk in Rhodespark, Lusaka for rapid guard deployments, tactical escorts, site audits, or multi-province corporate tenders across Zambia.
+            </p>
+
+            <div className="pt-2 flex flex-wrap items-center gap-y-2 text-[10px] sm:text-[11px] font-mono text-[#64748B] uppercase tracking-wider">
+              <span>RHODESPARK LUSAKA HQ</span>
+              <span className="text-[#16A34A] mx-2.5">/</span>
+              <span>24/7/365 ACTIVE DISPATCH</span>
+              <span className="text-[#16A34A] mx-2.5">/</span>
+              <span>10 PROVINCES COVERED</span>
+            </div>
+
           </div>
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-slate-900 font-display tracking-tight uppercase leading-tight">
-            CONTACT <span className="text-emerald-600">TOUGH TASK SECURITY</span>
-          </h1>
-          <p className="text-slate-600 text-xs sm:text-sm md:text-base leading-relaxed font-normal max-w-2xl mx-auto">
-            Connect directly with our 24/7 Rhodespark Command Center in Lusaka for site security surveys, emergency armed dispatch, or national corporate tenders.
-          </p>
         </div>
-      </div>
+      </section>
 
-      {/* 2. Top Tier: 3-Column Contact Authority Cards (Spartan SA Structure) */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          
-          {/* Card 1: Physical HQ Address */}
-          <div className="p-7 rounded-2xl bg-white border border-slate-200 space-y-4 shadow-sm hover:shadow-md hover:border-emerald-500 transition-all spartan-card">
-            <div className="w-12 h-12 rounded-xl bg-slate-100 border border-slate-200 text-slate-800 flex items-center justify-center">
-              <MapPin className="w-6 h-6 text-emerald-600" />
-            </div>
-            <div className="space-y-1">
-              <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-slate-500">
-                HEADQUARTERS LOCATION
-              </span>
-              <h3 className="text-base font-bold text-slate-900">
-                National Council for the Laity Building
-              </h3>
-              <p className="text-xs text-slate-600 font-medium">
-                Office No. 5, Rhodespark, Lusaka, Zambia
-              </p>
-            </div>
-            <div className="pt-2 text-xs font-mono text-emerald-700 font-bold border-t border-slate-100 flex items-center">
-              <CheckCircle2 className="w-3.5 h-3.5 mr-1 text-emerald-600" />
-              <span>Active National Operations Hub</span>
-            </div>
-          </div>
-
-          {/* Card 2: 24/7 Telephone & Rapid Dispatch */}
-          <div className="p-7 rounded-2xl bg-white border-2 border-emerald-500/80 space-y-4 shadow-md spartan-card">
-            <div className="w-12 h-12 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-600 flex items-center justify-center">
-              <Phone className="w-6 h-6 animate-pulse" />
-            </div>
-            <div className="space-y-1.5">
-              <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-emerald-700">
-                24/7 TELEPHONE DISPATCH
-              </span>
+      {/* 2. Three Authority Contact Cards (Spartan Style) */}
+      <section className="py-14 bg-[#F0F2F5] border-b border-gray-200">
+        <div className="w-full max-w-[1600px] mx-auto px-4 sm:px-8 lg:px-12">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            
+            {/* Card 1: 24/7 Emergency Control Room */}
+            <div className="p-7 rounded-2xl bg-white border-2 border-[#16A34A] space-y-4 shadow-md relative overflow-hidden">
+              <div className="flex items-center justify-between">
+                <div className="w-10 h-10 rounded-xl bg-green-50 border border-green-200 text-[#16A34A] flex items-center justify-center">
+                  <Phone className="w-5 h-5 animate-pulse" />
+                </div>
+                <span className="inline-flex items-center text-[10px] font-mono text-green-800 bg-green-100 px-2.5 py-0.5 rounded-full font-bold uppercase tracking-wider">
+                  <Clock className="w-2.5 h-2.5 mr-1 text-[#16A34A]" />
+                  Live 24/7/365
+                </span>
+              </div>
               <div>
-                <div className="text-[11px] text-slate-500 font-mono">Control Room (24/7):</div>
-                <a 
-                  href="tel:+260777127114" 
-                  className="text-base font-black text-slate-900 hover:text-emerald-600 transition-colors font-mono block"
-                >
+                <span className="text-[10px] font-mono text-green-700 font-bold uppercase tracking-wider block">
+                  EMERGENCY DISPATCH CONTROL ROOM
+                </span>
+                <a href="tel:+260777127114" className="text-xl font-bold font-mono text-[#0F172A] hover:text-[#16A34A] transition-colors mt-1 block">
                   +260 777 127 114
                 </a>
               </div>
-              <div>
-                <div className="text-[11px] text-slate-500 font-mono">Operations & Tenders:</div>
-                <a 
-                  href="tel:+260968025444" 
-                  className="text-sm font-bold text-slate-800 hover:text-emerald-600 transition-colors font-mono block"
+              <p className="text-xs text-[#475569] leading-relaxed">
+                Direct tactical cruiser routing, alarm monitoring response, and rapid armed escorts.
+              </p>
+              <div className="pt-2">
+                <a
+                  href="tel:+260777127114"
+                  className="inline-flex items-center space-x-1.5 px-4 py-2.5 rounded-xl bg-[#16A34A] text-white text-xs font-bold uppercase tracking-wider hover:bg-[#15803D] transition-colors shadow-sm"
                 >
+                  <span>CALL CONTROL ROOM</span>
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </a>
+              </div>
+            </div>
+
+            {/* Card 2: Operations & Commercial Tenders */}
+            <div className="p-7 rounded-2xl bg-white border border-gray-200/90 space-y-4 shadow-md hover:border-[#16A34A] transition-all">
+              <div className="w-10 h-10 rounded-xl bg-gray-50 border border-gray-200 text-[#16A34A] flex items-center justify-center">
+                <Shield className="w-5 h-5" />
+              </div>
+              <div>
+                <span className="text-[10px] font-mono text-[#64748B] font-bold uppercase tracking-wider block">
+                  OPERATIONS &amp; CONTRACT TENDERS
+                </span>
+                <a href="tel:+260968025444" className="text-xl font-bold font-mono text-[#0F172A] hover:text-[#16A34A] transition-colors mt-1 block">
                   +260 968 025 444
                 </a>
               </div>
-            </div>
-            <div className="pt-2 flex items-center gap-2 border-t border-slate-100">
-              <a
-                href="tel:+260777127114"
-                className="text-xs font-bold text-white bg-emerald-600 px-3.5 py-1.5 rounded-lg hover:bg-emerald-500 transition-colors"
-              >
-                CALL NOW
-              </a>
-              <a
-                href="https://wa.me/260777127114"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-xs font-bold text-emerald-700 bg-emerald-50 px-3 py-1.5 rounded-lg border border-emerald-200 hover:bg-emerald-100 transition-colors"
-              >
-                WHATSAPP CHAT
-              </a>
-            </div>
-          </div>
-
-          {/* Card 3: Email & Operating Hours */}
-          <div className="p-7 rounded-2xl bg-white border border-slate-200 space-y-4 shadow-sm hover:shadow-md hover:border-emerald-500 transition-all spartan-card">
-            <div className="w-12 h-12 rounded-xl bg-slate-100 border border-slate-200 text-slate-800 flex items-center justify-center">
-              <Mail className="w-6 h-6 text-emerald-600" />
-            </div>
-            <div className="space-y-1">
-              <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-slate-500">
-                CORPORATE EMAIL & HOURS
-              </span>
-              <p className="text-sm font-bold text-slate-900">
-                <a href="mailto:info@toughtaskltd.com" className="hover:text-emerald-600 transition-colors">
-                  info@toughtaskltd.com
-                </a>
+              <p className="text-xs text-[#475569] leading-relaxed">
+                Site security assessments, corporate proposals, VIP motorcades, and cash-in-transit planning.
               </p>
-              <div className="pt-1.5 text-xs text-slate-600 space-y-0.5">
-                <p><strong>Tactical Dispatch:</strong> 24/7/365 Non-stop</p>
-                <p><strong>Administration:</strong> Mon – Fri: 08:00 – 17:00</p>
+              <div className="pt-2">
+                <a
+                  href="mailto:info@toughtaskltd.com"
+                  className="inline-flex items-center space-x-1.5 px-4 py-2.5 rounded-xl bg-gray-50 text-[#0F172A] text-xs font-semibold uppercase tracking-wider hover:bg-gray-100 border border-gray-200 transition-colors"
+                >
+                  <Mail className="w-3.5 h-3.5 text-[#16A34A]" />
+                  <span>EMAIL TENDERS DESK</span>
+                </a>
               </div>
             </div>
-            <div className="pt-2 text-xs font-mono text-emerald-700 font-bold border-t border-slate-100">
-              Prompt response to commercial tenders
+
+            {/* Card 3: Lusaka HQ Address */}
+            <div className="p-7 rounded-2xl bg-white border border-gray-200/90 space-y-4 shadow-md hover:border-[#16A34A] transition-all">
+              <div className="w-10 h-10 rounded-xl bg-gray-50 border border-gray-200 text-[#16A34A] flex items-center justify-center">
+                <MapPin className="w-5 h-5" />
+              </div>
+              <div>
+                <span className="text-[10px] font-mono text-[#64748B] font-bold uppercase tracking-wider block">
+                  NATIONAL HEADQUARTERS
+                </span>
+                <h3 className="text-base font-bold text-[#0F172A] mt-1 uppercase font-display">
+                  National Council for the Laity
+                </h3>
+              </div>
+              <p className="text-xs text-[#475569] leading-relaxed">
+                Office No. 5, Rhodespark, Lusaka, Zambia. Central Command Operations Desk.
+              </p>
+              <div className="pt-2">
+                <a
+                  href="https://wa.me/260777127114?text=Hello%20Tough%20Task%20Security,%20I%20would%20like%20to%20enquire%20about%20your%20services."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center space-x-1.5 px-4 py-2.5 rounded-xl bg-green-50 text-green-800 text-xs font-semibold uppercase tracking-wider hover:bg-green-100 border border-green-200 transition-colors"
+                >
+                  <MessageSquare className="w-3.5 h-3.5 text-[#16A34A]" />
+                  <span>WHATSAPP COMMAND DESK</span>
+                </a>
+              </div>
             </div>
+
           </div>
-
         </div>
-      </div>
+      </section>
 
-      {/* 3. Middle Tier: Asymmetric Split Form (7 cols) + Map & Socials (5 cols) */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+      {/* 3. Main Consultation Form & HQ Briefing */}
+      <section className="py-20 lg:py-28 w-full max-w-[1600px] mx-auto px-4 sm:px-8 lg:px-12">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
           
-          {/* Left: Contact Form (7 cols) */}
-          <div className="lg:col-span-7 bg-white border border-slate-200 p-7 sm:p-9 rounded-3xl shadow-md space-y-6 relative overflow-hidden">
-            <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-emerald-600 via-green-500 to-teal-500" />
-
-            <div className="border-b border-slate-200 pb-4 space-y-1">
-              <span className="text-[11px] font-mono font-bold text-emerald-700 uppercase tracking-wider">
-                CONFIDENTIAL SITE SURVEY REQUEST
+          {/* Left Column: Interactive Consultation Form */}
+          <div className="lg:col-span-7 bg-white border border-gray-200/90 rounded-2xl p-6 sm:p-8 lg:p-10 shadow-md space-y-6">
+            <div className="space-y-1.5 pb-5 border-b border-gray-100">
+              <span className="text-[10px] font-mono uppercase tracking-wider text-green-700 font-bold">
+                PRIORITY INQUIRY FORM
               </span>
-              <h2 className="text-xl sm:text-2xl font-black text-slate-900 font-display uppercase tracking-tight">
-                REQUEST A CALL BACK / SECURITY ASSESSMENT
+              <h2 className="text-xl sm:text-2xl font-bold font-display uppercase tracking-tight text-[#0F172A]">
+                REQUEST A SECURITY ASSESSMENT
               </h2>
-              <p className="text-xs text-slate-500">
-                Complete the form below to request security sentries, risk audits, or patrol coverage.
+              <p className="text-xs text-[#64748B]">
+                Submit your facility requirements and our senior operations command will respond within 60 minutes.
               </p>
             </div>
 
             {formSubmitted ? (
-              <div className="text-center py-10 space-y-4">
-                <div className="w-16 h-16 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-600 mx-auto flex items-center justify-center shadow-lg animate-beacon">
-                  <CheckCircle2 className="w-8 h-8" />
+              <div className="py-12 text-center space-y-4">
+                <div className="w-14 h-14 rounded-full bg-green-50 border border-green-200 text-[#16A34A] flex items-center justify-center mx-auto">
+                  <CheckCircle2 className="w-7 h-7" />
                 </div>
-                <h3 className="text-2xl font-bold text-slate-900 font-display uppercase">
-                  MESSAGE TRANSMITTED
+                <h3 className="text-lg font-bold font-display uppercase text-[#0F172A]">
+                  Inquiry Received by Rhodespark Command
                 </h3>
-                <p className="text-xs sm:text-sm text-slate-600 max-w-md mx-auto leading-relaxed">
-                  Thank you, <strong className="text-slate-900">{formData.fullName}</strong>. Our command desk in Rhodespark has received your brief and will contact you promptly at <span className="text-emerald-700 font-mono font-bold">{formData.phone}</span>.
+                <p className="text-xs text-[#475569] max-w-md mx-auto leading-relaxed">
+                  Thank you, <strong className="text-[#0F172A]">{formData.fullName}</strong>. An operations duty officer will contact you directly on <strong className="text-[#16A34A]">{formData.phone}</strong>.
                 </p>
-                <div className="pt-3">
-                  <button
-                    onClick={() => setFormSubmitted(false)}
-                    className="px-6 py-2.5 bg-slate-100 text-xs font-bold text-slate-700 hover:text-slate-900 rounded-xl border border-slate-300 transition-colors"
-                  >
-                    Send Another Message
-                  </button>
-                </div>
+                <button
+                  onClick={() => setFormSubmitted(false)}
+                  className="px-5 py-2.5 bg-gray-100 text-[#0F172A] hover:bg-gray-200 rounded-xl text-xs font-mono font-bold uppercase tracking-wider border border-gray-200 transition-colors cursor-pointer"
+                >
+                  Submit Another Inquiry
+                </button>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-4 text-xs">
                 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {/* Service Selection Radio Group */}
+                <div className="space-y-2">
+                  <label className="text-[11px] font-mono font-semibold text-[#475569] uppercase">
+                    Primary Service Requirement *
+                  </label>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                    {serviceOptions.map((svc, i) => (
+                      <label
+                        key={i}
+                        className={`flex items-center space-x-2.5 p-2.5 rounded-xl border cursor-pointer transition-all ${
+                          formData.serviceRequired === svc
+                            ? 'bg-green-50/80 border-[#16A34A] text-[#0F172A] font-semibold'
+                            : 'bg-gray-50/60 border-gray-200 text-[#475569] hover:border-gray-300'
+                        }`}
+                      >
+                        <input
+                          type="radio"
+                          name="serviceRequired"
+                          value={svc}
+                          checked={formData.serviceRequired === svc}
+                          onChange={(e) => setFormData({ ...formData, serviceRequired: e.target.value })}
+                          className="accent-[#16A34A]"
+                        />
+                        <span className="text-[11px] leading-tight">{svc}</span>
+                      </label>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 pt-1">
                   <div className="space-y-1.5">
-                    <label className="text-slate-700 font-bold uppercase">Full Name *</label>
+                    <label className="text-[11px] font-mono font-semibold text-[#475569] uppercase">
+                      Full Name *
+                    </label>
                     <input
                       type="text"
                       required
+                      placeholder="e.g. Mwamba Banda"
                       value={formData.fullName}
                       onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
-                      placeholder="e.g. Kondwani Banda"
-                      className="w-full px-4 py-3 bg-slate-50 border border-slate-300 rounded-xl text-slate-900 placeholder-slate-400 focus:outline-none focus:border-emerald-600 focus:bg-white transition-colors"
+                      className="w-full px-3.5 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-xs text-[#0F172A] placeholder-[#94A3B8] focus:bg-white focus:outline-none focus:border-[#16A34A] focus:ring-1 focus:ring-[#16A34A] transition-all"
                     />
                   </div>
 
                   <div className="space-y-1.5">
-                    <label className="text-slate-700 font-bold uppercase">Company / Organization</label>
+                    <label className="text-[11px] font-mono font-semibold text-[#475569] uppercase">
+                      Organisation / Company Name
+                    </label>
                     <input
                       type="text"
+                      placeholder="Company or Property Name"
                       value={formData.company}
                       onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-                      placeholder="e.g. Zambian Enterprise Ltd"
-                      className="w-full px-4 py-3 bg-slate-50 border border-slate-300 rounded-xl text-slate-900 placeholder-slate-400 focus:outline-none focus:border-emerald-600 focus:bg-white transition-colors"
+                      className="w-full px-3.5 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-xs text-[#0F172A] placeholder-[#94A3B8] focus:bg-white focus:outline-none focus:border-[#16A34A] focus:ring-1 focus:ring-[#16A34A] transition-all"
                     />
                   </div>
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
                   <div className="space-y-1.5">
-                    <label className="text-slate-700 font-bold uppercase">Phone Number *</label>
+                    <label className="text-[11px] font-mono font-semibold text-[#475569] uppercase">
+                      Phone Number *
+                    </label>
                     <input
                       type="tel"
                       required
+                      placeholder="+260 9XX XXX XXX"
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                      placeholder="e.g. +260 96X XXX XXX"
-                      className="w-full px-4 py-3 bg-slate-50 border border-slate-300 rounded-xl text-slate-900 placeholder-slate-400 focus:outline-none focus:border-emerald-600 focus:bg-white transition-colors"
+                      className="w-full px-3.5 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-xs text-[#0F172A] placeholder-[#94A3B8] focus:bg-white focus:outline-none focus:border-[#16A34A] focus:ring-1 focus:ring-[#16A34A] transition-all font-mono"
                     />
                   </div>
 
                   <div className="space-y-1.5">
-                    <label className="text-slate-700 font-bold uppercase">Email Address</label>
+                    <label className="text-[11px] font-mono font-semibold text-[#475569] uppercase">
+                      Work Email
+                    </label>
                     <input
                       type="email"
+                      placeholder="name@company.co.zm"
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      placeholder="e.g. admin@organization.co.zm"
-                      className="w-full px-4 py-3 bg-slate-50 border border-slate-300 rounded-xl text-slate-900 placeholder-slate-400 focus:outline-none focus:border-emerald-600 focus:bg-white transition-colors"
+                      className="w-full px-3.5 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-xs text-[#0F172A] placeholder-[#94A3B8] focus:bg-white focus:outline-none focus:border-[#16A34A] focus:ring-1 focus:ring-[#16A34A] transition-all"
                     />
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <div className="space-y-1.5">
-                    <label className="text-slate-700 font-bold uppercase">Service Required *</label>
-                    <select
-                      value={formData.serviceRequired}
-                      onChange={(e) => setFormData({ ...formData, serviceRequired: e.target.value })}
-                      className="w-full px-4 py-3 bg-slate-50 border border-slate-300 rounded-xl text-slate-900 focus:outline-none focus:border-emerald-600 focus:bg-white transition-colors"
-                    >
-                      {services.map((s) => (
-                        <option key={s.id} value={s.title}>{s.number} - {s.title}</option>
-                      ))}
-                    </select>
-                  </div>
-
-                  <div className="space-y-1.5">
-                    <label className="text-slate-700 font-bold uppercase">Location / Province *</label>
-                    <select
-                      value={formData.location}
-                      onChange={(e) => setFormData({ ...formData, location: e.target.value })}
-                      className="w-full px-4 py-3 bg-slate-50 border border-slate-300 rounded-xl text-slate-900 focus:outline-none focus:border-emerald-600 focus:bg-white transition-colors"
-                    >
-                      <option value="Lusaka (Lusaka Province)">Lusaka (National HQ)</option>
-                      {allLocationsList.map((loc) => (
-                        <option key={loc.id} value={`${loc.name} (${loc.province})`}>
-                          {loc.name} — {loc.province}
-                        </option>
-                      ))}
-                    </select>
                   </div>
                 </div>
 
                 <div className="space-y-1.5">
-                  <label className="text-slate-700 font-bold uppercase">Security Brief / Premises Overview</label>
+                  <label className="text-[11px] font-mono font-semibold text-[#475569] uppercase">
+                    Deployment Location / District
+                  </label>
+                  <select
+                    value={formData.location}
+                    onChange={(e) => setFormData({ ...formData, location: e.target.value })}
+                    className="w-full px-3.5 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-xs text-[#0F172A] focus:bg-white focus:outline-none focus:border-[#16A34A] focus:ring-1 focus:ring-[#16A34A] transition-all"
+                  >
+                    {allLocationsList.slice(0, 39).map((loc, idx) => (
+                      <option key={idx} value={`${loc.name} (${loc.province})`}>
+                        {loc.name} — {loc.province}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+
+                <div className="space-y-1.5">
+                  <label className="text-[11px] font-mono font-semibold text-[#475569] uppercase">
+                    Site Security Scope &amp; Details
+                  </label>
                   <textarea
                     rows="3"
+                    placeholder="Briefly describe your site (e.g. number of guard posts, hours of duty, access control points, existing issues)..."
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    placeholder="Provide details regarding your facility, guard quantity, shift requirements, or emergency needs..."
-                    className="w-full px-4 py-3 bg-slate-50 border border-slate-300 rounded-xl text-slate-900 placeholder-slate-400 focus:outline-none focus:border-emerald-600 focus:bg-white transition-colors"
-                  ></textarea>
+                    className="w-full px-3.5 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-xs text-[#0F172A] placeholder-[#94A3B8] focus:bg-white focus:outline-none focus:border-[#16A34A] focus:ring-1 focus:ring-[#16A34A] transition-all resize-none"
+                  />
                 </div>
 
                 <button
                   type="submit"
-                  className="w-full py-4 bg-gradient-to-r from-emerald-600 via-green-600 to-emerald-700 hover:from-emerald-500 hover:to-green-600 text-white font-extrabold text-xs uppercase tracking-wider rounded-xl shadow-lg shadow-emerald-600/30 transition-all flex items-center justify-center space-x-2 cursor-pointer btn-shimmer"
+                  className="w-full py-3.5 bg-[#16A34A] hover:bg-[#15803D] text-white font-bold text-xs uppercase tracking-wider rounded-xl transition-all flex items-center justify-center space-x-2 shadow-md shadow-[#16A34A]/25 cursor-pointer mt-2"
                 >
-                  <Send className="w-4 h-4" />
-                  <span>REQUEST SECURITY ASSESSMENT</span>
+                  <Send className="w-3.5 h-3.5" />
+                  <span>TRANSMIT SECURITY ASSESSMENT REQUEST</span>
                 </button>
-
-                <p className="text-[11px] text-slate-500 text-center font-mono pt-1">
-                  🔒 Confidential threat survey. No spam. 24/7 Rhodespark response guarantee.
-                </p>
               </form>
             )}
+
           </div>
 
-          {/* Right: Rhodespark Office Map & Verified Socials (5 cols) */}
+          {/* Right Column: HQ Intelligence & Deployment SLAs */}
           <div className="lg:col-span-5 space-y-6">
             
-            {/* Embedded Interactive Map Card for Rhodespark Lusaka */}
-            <div className="bg-white border border-slate-200 p-6 rounded-3xl shadow-md space-y-4">
-              <div className="flex items-center justify-between">
-                <div className="flex items-center space-x-2">
-                  <MapPin className="w-4 h-4 text-emerald-600" />
-                  <h3 className="text-xs font-bold text-slate-900 uppercase tracking-wider">
-                    RHODESPARK, LUSAKA LOCATION
-                  </h3>
+            <div className="p-7 rounded-2xl bg-white border border-gray-200/90 space-y-4 shadow-md">
+              <span className="text-[10px] font-mono uppercase tracking-wider text-green-700 font-bold">
+                COMMAND CENTER BRIEFING
+              </span>
+              <h3 className="text-lg font-bold font-display uppercase tracking-tight text-[#0F172A]">
+                RHODESPARK CENTRAL OPERATIONS ROOM
+              </h3>
+              <p className="text-xs text-[#475569] leading-relaxed">
+                All provincial security detachments, electronic patrol telemetry, and mobile cruiser dispatches are overseen around the clock by duty command officers at our Lusaka headquarters.
+              </p>
+
+              <div className="space-y-2.5 pt-2 text-xs font-mono">
+                <div className="flex items-center justify-between p-3 rounded-xl bg-gray-50 border border-gray-100">
+                  <span className="text-[#64748B]">Control Room Hours:</span>
+                  <span className="text-[#16A34A] font-bold">24 Hours / 365 Days</span>
                 </div>
-                <span className="text-[10px] font-mono text-emerald-800 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200 font-semibold">
-                  HEADQUARTERS
-                </span>
-              </div>
-
-              {/* Map Iframe */}
-              <div className="relative aspect-video rounded-2xl overflow-hidden border border-slate-200 shadow-inner">
-                <iframe
-                  title="Tough Task Security Solutions Location - Rhodespark Lusaka"
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15383.023450376757!2d28.2934335!3d-15.4168057!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1940f3531b672809%3A0x86134b2230efc4f7!2sRhodes%20Park%2C%20Lusaka%2C%20Zambia!5e0!3m2!1sen!2szm!4v1700000000000!5m2!1sen!2szm"
-                  width="100%"
-                  height="100%"
-                  style={{ border: 0 }}
-                  allowFullScreen=""
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                ></iframe>
-              </div>
-
-              <div className="p-3 bg-slate-50 rounded-xl border border-slate-200 text-xs text-slate-700">
-                <strong>Address:</strong> National Council for the Laity Building, Office No. 5, Rhodespark, Lusaka, Zambia.
+                <div className="flex items-center justify-between p-3 rounded-xl bg-gray-50 border border-gray-100">
+                  <span className="text-[#64748B]">Emergency Dial:</span>
+                  <span className="text-[#0F172A] font-bold">+260 777 127 114</span>
+                </div>
+                <div className="flex items-center justify-between p-3 rounded-xl bg-gray-50 border border-gray-100">
+                  <span className="text-[#64748B]">Vetting Standard:</span>
+                  <span className="text-[#0F172A] font-bold">100% Police CID Fingerprint</span>
+                </div>
               </div>
             </div>
 
-            {/* Official Social Media Channels */}
-            <div className="bg-white border border-slate-200 p-6 rounded-3xl shadow-md space-y-4">
-              <h3 className="text-xs font-bold text-slate-900 uppercase tracking-wider border-b border-slate-200 pb-3">
-                OFFICIAL SOCIAL MEDIA CHANNELS
-              </h3>
-
-              <div className="space-y-2.5">
-                <a
-                  href="https://www.facebook.com/share/1JTXFuQXzp/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="p-3 bg-slate-50 rounded-xl border border-slate-200 flex items-center justify-between hover:border-emerald-500 hover:bg-emerald-50 transition-colors group"
-                >
-                  <div className="flex items-center space-x-3">
-                    <span className="w-8 h-8 rounded-lg bg-blue-600 text-white flex items-center justify-center font-bold text-xs shadow-sm">
-                      f
-                    </span>
-                    <div>
-                      <div className="text-xs font-bold text-slate-900 group-hover:text-emerald-700 transition-colors">Facebook</div>
-                      <div className="text-[11px] text-slate-500 font-mono">Tough Task Security Solutions Ltd</div>
-                    </div>
+            {/* Deployment Questions Briefing */}
+            <div className="p-7 rounded-2xl bg-white border border-gray-200/90 space-y-4 shadow-md">
+              <div className="flex items-center space-x-2 text-[10px] font-mono uppercase tracking-wider text-green-700 font-bold">
+                <HelpCircle className="w-3.5 h-3.5" />
+                <span>FREQUENT DEPLOYMENT INQUIRIES</span>
+              </div>
+              
+              <div className="space-y-3.5">
+                {contactFaqs.map((faq, i) => (
+                  <div key={i} className="space-y-1 border-b border-gray-100 pb-3 last:border-b-0 last:pb-0">
+                    <h4 className="text-xs font-bold text-[#0F172A]">
+                      {faq.q}
+                    </h4>
+                    <p className="text-[11px] text-[#475569] leading-relaxed">
+                      {faq.a}
+                    </p>
                   </div>
-                  <ExternalLink className="w-4 h-4 text-slate-400 group-hover:text-emerald-600" />
-                </a>
-
-                <a
-                  href="https://www.tiktok.com/@toughtasksolution?_r=1&_t=ZS-9AQw2u1aGQP"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="p-3 bg-slate-50 rounded-xl border border-slate-200 flex items-center justify-between hover:border-emerald-500 hover:bg-emerald-50 transition-colors group"
-                >
-                  <div className="flex items-center space-x-3">
-                    <span className="w-8 h-8 rounded-lg bg-black text-white flex items-center justify-center font-bold text-xs shadow-sm">
-                      ♪
-                    </span>
-                    <div>
-                      <div className="text-xs font-bold text-slate-900 group-hover:text-emerald-700 transition-colors">TikTok</div>
-                      <div className="text-[11px] text-slate-500 font-mono">@toughtasksolution</div>
-                    </div>
-                  </div>
-                  <ExternalLink className="w-4 h-4 text-slate-400 group-hover:text-emerald-600" />
-                </a>
-
-                <a
-                  href="https://www.linkedin.com/company/tough-task-security-solutions-limited/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="p-3 bg-slate-50 rounded-xl border border-slate-200 flex items-center justify-between hover:border-emerald-500 hover:bg-emerald-50 transition-colors group"
-                >
-                  <div className="flex items-center space-x-3">
-                    <span className="w-8 h-8 rounded-lg bg-blue-700 text-white flex items-center justify-center font-bold text-xs shadow-sm">
-                      in
-                    </span>
-                    <div>
-                      <div className="text-xs font-bold text-slate-900 group-hover:text-emerald-700 transition-colors">LinkedIn</div>
-                      <div className="text-[11px] text-slate-500 font-mono">Tough Task Security Solutions Limited</div>
-                    </div>
-                  </div>
-                  <ExternalLink className="w-4 h-4 text-slate-400 group-hover:text-emerald-600" />
-                </a>
+                ))}
               </div>
             </div>
 
           </div>
 
         </div>
-      </div>
+      </section>
 
     </div>
   );

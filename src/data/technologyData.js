@@ -145,7 +145,7 @@ export const projectShowcases = [
     id: "commercial-estate",
     title: "Nationwide Commercial Facility Manned Guarding",
     category: "Manned Guarding",
-    image: "/assets/security-parade.jpg",
+    image: "/assets/services/service-manned-guarding.jpg",
     location: "Nationwide (10 Provinces)",
     scope: "Uniformed Guarding, Electronic Patrol Checkpoints, 24/7 Dispatch Integration",
     summary: "Deploying disciplined, vetted security officers backed by digital tour logging and proactive supervisor spot audits."

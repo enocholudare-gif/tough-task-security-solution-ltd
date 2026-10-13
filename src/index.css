@@ -1,244 +1,96 @@
 @import "tailwindcss";
 
 @theme {
-  --color-security-950: #06080d;
-  --color-security-900: #0b0f17;
-  --color-security-850: #101622;
-  --color-security-800: #161f2e;
-  --color-security-750: #1d283b;
-  --color-security-700: #25344d;
-  --color-security-600: #3b4d6d;
-  --color-security-500: #64748b;
-  --color-security-400: #94a3b8;
-  --color-security-300: #cbd5e1;
-  --color-security-200: #e2e8f0;
-  --color-security-100: #f1f5f9;
+  --color-primary-bg: #14171A;
+  --color-dark-base: #14171A;
+  --color-dark-surface: #1B1F24;
+  --color-dark-surface-2: #242930;
+  --color-dark-surface-3: #2E343D;
+  --color-dark-border: #333A44;
+  --color-dark-border-subtle: #252B33;
 
-  --font-display: "Plus Jakarta Sans", "Inter", system-ui, sans-serif;
+  --color-accent: #22C55E;
+  --color-accent-light: #4ADE80;
+  --color-accent-deep: #16A34A;
+  --color-accent-muted: rgba(34, 197, 94, 0.15);
+
+  /* Gold alias to tactical green for backward compatibility */
+  --color-gold: #22C55E;
+  --color-gold-light: #4ADE80;
+  --color-gold-deep: #16A34A;
+  --color-gold-muted: rgba(34, 197, 94, 0.15);
+
+  --color-light-bg: #F5F4F0;
+  --color-light-surface: #FFFFFF;
+  --color-light-surface-2: #ECEAE4;
+  --color-light-border: #DDDCD5;
+  --color-light-text: #191B1D;
+  --color-light-muted: #5C6066;
+
+  --color-text-primary: #F5F4F0;
+  --color-text-secondary: #9E9D99;
+  --color-text-muted: #6E6D69;
+
+  --color-brand-green: #16A34A;
+  --color-brand-green-light: #22C55E;
+
+  --font-display: "Plus Jakarta Sans", "Inter", system-ui, -apple-system, sans-serif;
   --font-sans: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --font-mono: "JetBrains Mono", monospace;
 }
 
 html {
   scroll-behavior: smooth;
+  background-color: #F0F2F5;
+  color: #0F172A;
 }
 
 body {
-  background-color: #f5f5f5;
-  color: #121c27;
+  background-color: #F0F2F5;
+  color: #0F172A;
   font-family: var(--font-sans);
+  overflow-x: hidden;
 }
 
 ::selection {
-  background-color: #16a34a;
-  color: #ffffff;
+  background-color: #16A34A;
+  color: #FFFFFF;
 }
 
-/* Light tactical grid pattern for light sections */
-.light-grid-pattern {
+/* Subtle, restrained dot-grid for dark editorial sections */
+.dark-pattern-grid {
   background-size: 32px 32px;
   background-image: 
-    linear-gradient(to right, rgba(0, 0, 0, 0.03) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
+    radial-gradient(circle, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
 }
 
-/* Restrained tactical grid and patterns */
-.tactical-grid {
-  background-size: 40px 40px;
+/* Crisp light section grid */
+.light-pattern-grid {
+  background-size: 32px 32px;
   background-image: 
-    linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+    radial-gradient(circle, rgba(17, 19, 21, 0.06) 1px, transparent 1px);
 }
 
-/* Subtle radar sweep animation */
-@keyframes radar-sweep {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-.animate-radar {
-  animation: radar-sweep 12s linear infinite;
-}
-
-/* Pulse beacon */
-@keyframes beacon-pulse {
-  0%, 100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-  50% {
-    opacity: 0.4;
-    transform: scale(1.3);
-  }
-}
-
-.animate-beacon {
-  animation: beacon-pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-}
-
-/* Smooth fade in */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: scale(0.98);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-/* Progress bar keyframe for Globant pill tabs */
-@keyframes progress {
-  0% {
-    width: 0%;
-  }
-  100% {
-    width: 100%;
-  }
-}
-
-/* Floating on Water Physics Animations */
-@keyframes float-water-1 {
-  0%, 100% {
-    transform: translateY(0px) rotate(0deg);
-  }
-  50% {
-    transform: translateY(-10px) rotate(0.4deg);
-  }
-}
-
-@keyframes float-water-2 {
-  0%, 100% {
-    transform: translateY(0px) rotate(0deg);
-  }
-  50% {
-    transform: translateY(-12px) rotate(-0.5deg);
-  }
-}
-
-@keyframes float-water-3 {
-  0%, 100% {
-    transform: translateY(0px) rotate(0deg);
-  }
-  50% {
-    transform: translateY(-9px) rotate(0.6deg);
-  }
-}
-
-@keyframes float-water-4 {
-  0%, 100% {
-    transform: translateY(0px) rotate(0deg);
-  }
-  50% {
-    transform: translateY(-13px) rotate(-0.4deg);
-  }
-}
-
-@keyframes float-water-title {
-  0%, 100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-5px);
-  }
-}
-
-@keyframes wave {
-  0% {
-    transform: translateX(0) scaleY(1);
-  }
-  50% {
-    transform: translateX(-25px) scaleY(1.08);
-  }
-  100% {
-    transform: translateX(0) scaleY(1);
-  }
-}
-
-/* Silky Flowing Water Waves */
-@keyframes flowingWater {
-  0% {
-    transform: translateX(0) translateY(0) scaleY(1);
-  }
-  50% {
-    transform: translateX(-30px) translateY(-6px) scaleY(1.05);
-  }
-  100% {
-    transform: translateX(0) translateY(0) scaleY(1);
-  }
-}
-
-/* Smooth Floating Water Physics */
-@keyframes waterFlow {
-  0%, 100% {
-    transform: translateY(0px) rotate(0deg);
-  }
-  50% {
-    transform: translateY(-8px) rotate(0.3deg);
-  }
-}
-
-.animate-float-water-1 {
-  animation: float-water-1 5.5s ease-in-out infinite;
-}
-
-.animate-float-water-2 {
-  animation: float-water-2 6.5s ease-in-out infinite;
-}
-
-.animate-float-water-3 {
-  animation: float-water-3 5.8s ease-in-out infinite;
-}
-
-.animate-float-water-4 {
-  animation: float-water-4 7.0s ease-in-out infinite;
-}
-
-.animate-float-water-title {
-  animation: float-water-title 4.8s ease-in-out infinite;
-}
-
-.animate-fadeIn {
-  animation: fadeIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-}
-
-/* Accessibility reduced motion */
-@media (prefers-reduced-motion: reduce) {
-  *,
-  ::before,
-  ::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
-}
-
-/* Custom scrollbar */
+/* Custom restrained scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+  width: 7px;
+  height: 7px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #06080d;
+  background: #14171A;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #1f2937;
+  background: #2E343D;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #374151;
+  background: #22C55E;
 }
 
-/* Infinite Marquee Animation for Trusted Clients */
+/* Infinite Marquee Animation for Client Partners */
 @keyframes marquee {
   0% {
     transform: translateX(0);
@@ -251,103 +103,43 @@ body {
 .animate-marquee {
   display: flex;
   width: max-content;
-  animation: marquee 32s linear infinite;
+  animation: marquee 35s linear infinite;
 }
 
 .animate-marquee:hover {
   animation-play-state: paused;
 }
 
-/* Spartan Tactical Card Glow & Shimmer */
-.tactical-border-glow {
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.tactical-border-glow:hover {
-  box-shadow: 0 10px 30px -10px rgba(37, 99, 235, 0.35), 0 0 1px 1px rgba(59, 130, 246, 0.4);
-}
-
-/* Spartan Card Lift & Hover Effect */
-.spartan-card {
-  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s ease;
-}
-
-.spartan-card:hover {
-  transform: translateY(-8px);
-}
-
-/* Spartan Image Zoom on Card Hover */
-.spartan-img {
-  transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1), filter 0.4s ease;
-}
-
-.group:hover .spartan-img {
-  transform: scale(1.07);
-}
-
-/* Spartan Sonar Radar Pulse */
-@keyframes sonar-wave {
-  0% {
-    transform: scale(0.95);
-    opacity: 0.8;
-  }
-  100% {
-    transform: scale(1.6);
-    opacity: 0;
-  }
-}
-
-.animate-sonar {
-  animation: sonar-wave 2s cubic-bezier(0.2, 0.8, 0.4, 1) infinite;
-}
-
-/* Spartan Floating Element */
-@keyframes float-gentle {
+/* Subtle pulse beacon */
+@keyframes beacon-pulse {
   0%, 100% {
-    transform: translateY(0);
+    opacity: 1;
+    transform: scale(1);
   }
   50% {
-    transform: translateY(-6px);
+    opacity: 0.5;
+    transform: scale(1.15);
   }
 }
 
-.animate-float-gentle {
-  animation: float-gentle 4s ease-in-out infinite;
+.animate-beacon {
+  animation: beacon-pulse 2.2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 
-/* Spartan Shimmer Button Effect */
-.btn-shimmer {
-  position: relative;
-  overflow: hidden;
-}
-
-.btn-shimmer::after {
-  content: '';
-  position: absolute;
-  top: -50%;
-  left: -60%;
-  width: 220%;
-  height: 200%;
-  background: linear-gradient(
-    60deg,
-    transparent 20%,
-    rgba(255, 255, 255, 0.28) 50%,
-    transparent 80%
-  );
-  transform: translateX(-100%);
-  transition: transform 0.8s ease;
-  pointer-events: none;
-}
-
-.btn-shimmer:hover::after {
-  transform: translateX(100%);
-}
-
-/* Entrance Fade In Up */
-@keyframes fadeInUp {
+/* Professional Animation Utilities */
+@keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUpFade {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
   }
   to {
     opacity: 1;
@@ -355,92 +147,50 @@ body {
   }
 }
 
-.animate-fade-in-up {
-  animation: fadeInUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-}
-
-/* 3D Flip Card Styles */
-.flip-card {
-  perspective: 1200px;
-}
-
-.flip-card-inner {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  transition: transform 0.75s cubic-bezier(0.4, 0, 0.2, 1);
-  transform-style: preserve-3d;
-}
-
-.flip-card:hover .flip-card-inner,
-.flip-card.is-flipped .flip-card-inner {
-  transform: rotateY(180deg);
-}
-
-.flip-card-front,
-.flip-card-back {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  border-radius: 1.5rem;
-  overflow: hidden;
-}
-
-.flip-card-back {
-  transform: rotateY(180deg);
-}
-
-
-
-
-/* Animated Architectural Pillar Beams (Video-like Pillar Animation) */
-@keyframes pillarBeamUp {
-  0% {
-    transform: translateY(100%);
+@keyframes slideRightFade {
+  from {
     opacity: 0;
+    transform: translateX(-16px);
   }
-  30% {
-    opacity: 0.55;
+  to {
+    opacity: 1;
+    transform: translateX(0);
   }
-  70% {
-    opacity: 0.55;
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+.animate-slideUpFade {
+  animation: slideUpFade 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-slideRightFade {
+  animation: slideRightFade 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes kenBurnsSubtle {
+  0% {
+    transform: scale(1);
   }
   100% {
-    transform: translateY(-100%);
-    opacity: 0;
+    transform: scale(1.06);
   }
 }
 
-@keyframes pillarGlow {
-  0%, 100% {
-    opacity: 0.25;
-    transform: scaleX(1);
-  }
-  50% {
-    opacity: 0.7;
-    transform: scaleX(1.3);
-  }
+.animate-kenBurns {
+  animation: kenBurnsSubtle 8s ease-out forwards;
 }
 
-.animate-pillar-beam-1 {
-  animation: pillarBeamUp 7s cubic-bezier(0.4, 0, 0.2, 1) infinite;
-}
-.animate-pillar-beam-2 {
-  animation: pillarBeamUp 8.5s cubic-bezier(0.4, 0, 0.2, 1) infinite 1.5s;
-}
-.animate-pillar-beam-3 {
-  animation: pillarBeamUp 6.5s cubic-bezier(0.4, 0, 0.2, 1) infinite 0.7s;
-}
-.animate-pillar-beam-4 {
-  animation: pillarBeamUp 9s cubic-bezier(0.4, 0, 0.2, 1) infinite 2.2s;
-}
-.animate-pillar-beam-5 {
-  animation: pillarBeamUp 7.8s cubic-bezier(0.4, 0, 0.2, 1) infinite 3s;
-}
-
-.animate-pillar-glow {
-  animation: pillarGlow 4s ease-in-out infinite;
+/* Accessibility reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
