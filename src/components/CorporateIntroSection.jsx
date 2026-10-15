@@ -1,119 +1,179 @@
-import React from 'react';
-import { Shield, Award, CheckCircle2, ArrowRight } from 'lucide-react';
+import React, { useState, useEffect, useRef } from 'react';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 
-export default function CorporateIntroSection({ onOpenQuote }) {
-  const metrics = [
-    { value: '10 / 10', label: 'Provinces Active', desc: 'Full national coverage in Zambia' },
-    { value: '39', label: 'Operational Districts', desc: 'Commercial & mining corridors' },
-    { value: '<5m', label: 'Tactical Escalation SLA', desc: 'Priority cruiser response' },
-    { value: '100%', label: 'Police CID Vetted', desc: 'Biometric fingerprint clearance' }
-  ];
+const galleryImages = [
+  {
+    id: 'MBYFeIszQhQG8FUytF7J',
+    src: '/assets/gallery/gallery-01.jpg',
+    fallback: 'https://plain-weur-prod-public.komododecks.com/202610/15/MBYFeIszQhQG8FUytF7J/image.jpg',
+    alt: 'Tough Task Security Field Operations - 01'
+  },
+  {
+    id: '1OletrOqBZr0os3ecRXv',
+    src: '/assets/gallery/gallery-02.jpg',
+    fallback: 'https://plain-weur-prod-public.komododecks.com/202610/15/1OletrOqBZr0os3ecRXv/image.jpg',
+    alt: 'Tough Task Security Field Operations - 02'
+  },
+  {
+    id: '462n9BAJwfv0zeRIx45S',
+    src: '/assets/gallery/gallery-03.jpg',
+    fallback: 'https://plain-weur-prod-public.komododecks.com/202610/15/462n9BAJwfv0zeRIx45S/image.jpg',
+    alt: 'Tough Task Security Field Operations - 03'
+  },
+  {
+    id: 'E9TlGMITm1TzaSi1isMj',
+    src: '/assets/gallery/gallery-04.jpg',
+    fallback: 'https://plain-weur-prod-public.komododecks.com/202610/15/E9TlGMITm1TzaSi1isMj/image.jpg',
+    alt: 'Tough Task Security Field Operations - 04'
+  },
+  {
+    id: 'aqkEFlsmiyFfAvAogRFa',
+    src: '/assets/gallery/gallery-05.jpg',
+    fallback: 'https://plain-weur-prod-public.komododecks.com/202610/15/aqkEFlsmiyFfAvAogRFa/image.jpg',
+    alt: 'Tough Task Security Field Operations - 05'
+  },
+  {
+    id: 'RTpUAwSzKxY9tnkZtNYu',
+    src: '/assets/gallery/gallery-06.jpg',
+    fallback: 'https://plain-weur-prod-public.komododecks.com/202610/15/RTpUAwSzKxY9tnkZtNYu/image.jpg',
+    alt: 'Tough Task Security Field Operations - 06'
+  },
+  {
+    id: 'aFGTh9ZX4HaCP3SfgSpk',
+    src: '/assets/gallery/gallery-07.jpg',
+    fallback: 'https://plain-weur-prod-public.komododecks.com/202610/15/aFGTh9ZX4HaCP3SfgSpk/image.jpg',
+    alt: 'Tough Task Security Field Operations - 07'
+  },
+  {
+    id: 'FUwr2RuAW9LW6P1ZxtMG',
+    src: '/assets/gallery/gallery-08.jpg',
+    fallback: 'https://plain-weur-prod-public.komododecks.com/202610/15/FUwr2RuAW9LW6P1ZxtMG/image.jpg',
+    alt: 'Tough Task Security Field Operations - 08'
+  },
+  {
+    id: 'caz3VKrexLl9ODtL7kDa',
+    src: '/assets/gallery/gallery-09.jpg',
+    fallback: 'https://plain-weur-prod-public.komododecks.com/202610/15/caz3VKrexLl9ODtL7kDa/image.jpg',
+    alt: 'Tough Task Security Field Operations - 09'
+  },
+  {
+    id: 'V2y77xFKZweqjU2pbKWi',
+    src: '/assets/gallery/gallery-10.jpg',
+    fallback: 'https://plain-weur-prod-public.komododecks.com/202610/15/V2y77xFKZweqjU2pbKWi/image.jpg',
+    alt: 'Tough Task Security Field Operations - 10'
+  },
+  {
+    id: 'Atme6EjgXtpJbvXeXq1L',
+    src: '/assets/gallery/gallery-11.jpg',
+    fallback: 'https://plain-weur-prod-public.komododecks.com/202610/15/Atme6EjgXtpJbvXeXq1L/image.jpg',
+    alt: 'Tough Task Security Field Operations - 11'
+  },
+  {
+    id: 'AaypfGZLy1SHCegR5Djf',
+    src: '/assets/gallery/gallery-12.jpg',
+    fallback: 'https://plain-weur-prod-public.komododecks.com/202610/15/AaypfGZLy1SHCegR5Djf/image.jpg',
+    alt: 'Tough Task Security Field Operations - 12'
+  }
+];
+
+export default function CorporateIntroSection() {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+  const touchStartX = useRef(null);
+  const touchEndX = useRef(null);
+
+  useEffect(() => {
+    if (isPaused) return;
+    const timer = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % galleryImages.length);
+    }, 4500);
+
+    return () => clearInterval(timer);
+  }, [isPaused]);
+
+  const goToPrev = () => {
+    setCurrentIndex((prev) => (prev === 0 ? galleryImages.length - 1 : prev - 1));
+  };
+
+  const goToNext = () => {
+    setCurrentIndex((prev) => (prev + 1) % galleryImages.length);
+  };
+
+  const handleTouchStart = (e) => {
+    touchStartX.current = e.targetTouches[0].clientX;
+  };
+
+  const handleTouchMove = (e) => {
+    touchEndX.current = e.targetTouches[0].clientX;
+  };
+
+  const handleTouchEnd = () => {
+    if (!touchStartX.current || !touchEndX.current) return;
+    const diff = touchStartX.current - touchEndX.current;
+    if (diff > 50) {
+      goToNext();
+    } else if (diff < -50) {
+      goToPrev();
+    }
+    touchStartX.current = null;
+    touchEndX.current = null;
+  };
 
   return (
-    <section className="py-20 lg:py-24 bg-[#F0F2F5] text-[#0F172A] border-y border-gray-200/80 relative overflow-hidden">
-      <div className="relative z-10 w-full max-w-[1600px] mx-auto px-4 sm:px-8 lg:px-12 space-y-12">
-        
-        {/* Straightened Editorial Two-Column Header */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-center">
-          
-          {/* Left Column: Straightened, Proportional Hierarchy */}
-          <div className="lg:col-span-7 space-y-5">
-            <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-[#16A34A]/10 border border-[#16A34A]/25 text-[#16A34A] text-xs font-mono font-bold uppercase tracking-wider">
-              <Award className="w-3.5 h-3.5" />
-              <span>ACCREDITED CORPORATE SECURITY • RHODESPARK LUSAKA HQ</span>
-            </div>
-
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold font-display tracking-tight uppercase text-[#0F172A] leading-snug">
-              DISCIPLINED PROTECTION FOR <br className="hidden sm:inline" />
-              <span className="text-[#16A34A]">COMMERCIAL &amp; DIPLOMATIC</span> ASSETS
-            </h2>
-
-            <p className="text-sm sm:text-base text-[#334155] leading-relaxed max-w-2xl font-normal">
-              Headquartered in Rhodespark, Lusaka, Tough Task Security Solutions Ltd. operates a centralized, 24/7 national command infrastructure. Every deployed sentry is vetted with biometric fingerprint clearances by the Zambia Police Service Criminal Investigation Department (CID), guaranteeing military drill posture, ceremonial turnout, and strict adherence to site standing orders.
-            </p>
-
-            {/* Core Verification Checkpoints in White Badges */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-1">
-              <div className="flex items-center space-x-2.5 p-2 rounded-lg bg-white border border-gray-200/80 shadow-xs text-xs text-[#0F172A]">
-                <CheckCircle2 className="w-4 h-4 text-[#16A34A] shrink-0" />
-                <span className="font-medium">Statutory PACRA Co. 120220042456</span>
-              </div>
-              <div className="flex items-center space-x-2.5 p-2 rounded-lg bg-white border border-gray-200/80 shadow-xs text-xs text-[#0F172A]">
-                <CheckCircle2 className="w-4 h-4 text-[#16A34A] shrink-0" />
-                <span className="font-medium">Ministry of Home Affairs Registered</span>
-              </div>
-              <div className="flex items-center space-x-2.5 p-2 rounded-lg bg-white border border-gray-200/80 shadow-xs text-xs text-[#0F172A]">
-                <CheckCircle2 className="w-4 h-4 text-[#16A34A] shrink-0" />
-                <span className="font-medium">Electronic NFC Patrol Checkpoint Logging</span>
-              </div>
-              <div className="flex items-center space-x-2.5 p-2 rounded-lg bg-white border border-gray-200/80 shadow-xs text-xs text-[#0F172A]">
-                <CheckCircle2 className="w-4 h-4 text-[#16A34A] shrink-0" />
-                <span className="font-medium">24/7 Direct VHF/UHF HQ Radio Link</span>
-              </div>
-            </div>
-
-            {/* Action CTAs */}
-            <div className="pt-2 flex flex-wrap items-center gap-3">
-              <button
-                onClick={() => onOpenQuote('Site Security Vulnerability Audit')}
-                className="px-6 py-3.5 bg-[#16A34A] hover:bg-[#15803D] text-white font-bold text-xs uppercase tracking-wider rounded-lg transition-all duration-200 flex items-center space-x-2 shadow-md shadow-[#16A34A]/20 cursor-pointer"
+    <section className="py-12 sm:py-16 md:py-20 bg-[#F0F2F5] text-[#0F172A] border-y border-gray-200/80">
+      <div className="w-full max-w-[1600px] mx-auto px-4 sm:px-8 lg:px-12">
+        {/* Plain Seamless Image Carousel: No progress line, no indicator lines */}
+        <div
+          className="relative w-full h-[360px] sm:h-[460px] md:h-[560px] lg:h-[640px] rounded-2xl md:rounded-3xl overflow-hidden bg-slate-950 border border-gray-200/90 shadow-xl group select-none"
+          onMouseEnter={() => setIsPaused(true)}
+          onMouseLeave={() => setIsPaused(false)}
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+          onTouchEnd={handleTouchEnd}
+        >
+          {galleryImages.map((img, index) => {
+            const isActive = index === currentIndex;
+            return (
+              <div
+                key={img.id}
+                className={`absolute inset-0 w-full h-full transition-opacity duration-1000 ease-in-out ${
+                  isActive ? 'opacity-100 z-10' : 'opacity-0 z-0 pointer-events-none'
+                }`}
               >
-                <Shield className="w-3.5 h-3.5" />
-                <span>BOOK ON-SITE SECURITY AUDIT</span>
-                <ArrowRight className="w-3.5 h-3.5" />
-              </button>
-
-              <a
-                href="#our-security-services"
-                className="px-5 py-3.5 bg-white hover:bg-gray-50 text-[#0F172A] border border-gray-200 text-xs font-semibold uppercase tracking-wider rounded-lg transition-colors cursor-pointer shadow-xs"
-              >
-                <span>VIEW CORE SERVICES ↓</span>
-              </a>
-            </div>
-
-          </div>
-
-          {/* Right Column: Authentic Field Asset Photographic Portal */}
-          <div className="lg:col-span-5 relative">
-            <div className="relative rounded-2xl overflow-hidden bg-white border border-gray-200 shadow-xl aspect-[4/3] sm:aspect-[16/10] lg:aspect-[4/3]">
-              <img
-                src="/assets/security-parade.jpg"
-                alt="Tough Task Security Officers on Inspection Parade"
-                className="w-full h-full object-cover object-center filter contrast-[1.05] hover:scale-103 transition-transform duration-500"
-                loading="lazy"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent" />
-
-              {/* Bottom Stamp Badge */}
-              <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between text-[11px] font-mono text-white bg-slate-900/90 border border-white/20 px-3.5 py-2 rounded-xl backdrop-blur-md">
-                <span className="text-[#4ADE80] font-bold">CEREMONIAL PARADE INSPECTION</span>
-                <span className="text-gray-300">RHODESPARK HQ</span>
+                <img
+                  src={img.src}
+                  alt={img.alt}
+                  onError={(e) => {
+                    if (e.target.src !== img.fallback) {
+                      e.target.src = img.fallback;
+                    }
+                  }}
+                  className="w-full h-full object-cover object-center filter contrast-[1.03] brightness-[0.98]"
+                  loading={index < 3 ? 'eager' : 'lazy'}
+                />
               </div>
-            </div>
-          </div>
+            );
+          })}
 
+          {/* Clean Subtle Navigation Arrows: Plain & Unobtrusive */}
+          <button
+            type="button"
+            onClick={goToPrev}
+            aria-label="Previous Image"
+            className="absolute left-4 sm:left-6 top-1/2 -translate-y-1/2 z-20 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-black/40 hover:bg-black/70 text-white backdrop-blur-md flex items-center justify-center transition-all duration-200 opacity-70 group-hover:opacity-100 hover:scale-105 cursor-pointer border border-white/10"
+          >
+            <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6" />
+          </button>
+
+          <button
+            type="button"
+            onClick={goToNext}
+            aria-label="Next Image"
+            className="absolute right-4 sm:right-6 top-1/2 -translate-y-1/2 z-20 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-black/40 hover:bg-black/70 text-white backdrop-blur-md flex items-center justify-center transition-all duration-200 opacity-70 group-hover:opacity-100 hover:scale-105 cursor-pointer border border-white/10"
+          >
+            <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6" />
+          </button>
         </div>
-
-        {/* Integrated High-Trust Metric Band (Spartan SA Inspired Clean Rows) */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 pt-4 border-t border-gray-200">
-          {metrics.map((m, idx) => (
-            <div 
-              key={idx}
-              className="p-5 rounded-xl bg-white border border-gray-200/90 hover:border-[#16A34A]/50 transition-colors shadow-sm"
-            >
-              <div className="text-xl sm:text-2xl font-bold font-mono text-[#16A34A] mb-1">
-                {m.value}
-              </div>
-              <div className="text-xs sm:text-sm font-bold uppercase tracking-wider text-[#0F172A]">
-                {m.label}
-              </div>
-              <div className="text-[11px] text-[#64748B] font-mono mt-0.5">
-                {m.desc}
-              </div>
-            </div>
-          ))}
-        </div>
-
       </div>
     </section>
   );
