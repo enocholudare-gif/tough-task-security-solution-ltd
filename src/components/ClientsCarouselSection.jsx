@@ -6,13 +6,13 @@ export default function ClientsCarouselSection({ onOpenQuote }) {
 
   // Verified Client Organizations & Commercial Partners in Zambia
   const clientLogos = [
-    { id: 'client-etg', name: 'ETG Agri Inputs', category: 'Agricultural Logistics', logo: '/assets/clients/logo 1.jpeg' },
-    { id: 'client-skylark', name: 'Skylark', category: 'Commercial Enterprise', logo: '/assets/clients/logo 2.jpeg' },
-    { id: 'client-ipl', name: 'IPL International', category: 'Industrial & Trade', logo: '/assets/clients/logo 4.jpeg' },
-    { id: 'client-villa', name: 'Villa Emile', category: 'Hospitality & Estates', logo: '/assets/clients/logo 5.jpeg' },
-    { id: 'client-farmarama', name: 'Farmarama', category: 'Commercial Agri-Retail', logo: '/assets/clients/logo 6.jpeg' },
-    { id: 'client-lumiere', name: 'Lumiére', category: 'Retail & Commercial', logo: '/assets/clients/logo 7.jpeg' },
-    { id: 'client-zioh', name: 'Italian Orthopedic Hospital', category: 'Healthcare Facility', logo: '/assets/1.jpg' }
+    { id: 'client-etg', name: 'ETG Agri Inputs', category: 'Agricultural Logistics', logo: '/assets/clients/logo 4.jpeg' },
+    { id: 'client-skylark', name: 'Skylark', category: 'Commercial Enterprise', logo: '/assets/2.jpg' },
+    { id: 'client-ipl', name: 'IPL International', category: 'Industrial & Trade', logo: '/assets/3.jpg' },
+    { id: 'client-villa', name: 'Villa Emile', category: 'Hospitality & Estates', logo: '/assets/4.jpg' },
+    { id: 'client-farmarama', name: 'Farmarama', category: 'Commercial Agri-Retail', logo: '/assets/5.jpg' },
+    { id: 'client-lumiere', name: 'Lumiére', category: 'Retail & Commercial', logo: '/assets/clients/logo 6.jpeg' },
+    { id: 'client-zioh', name: 'Italian Orthopedic Hospital', category: 'Healthcare Facility', logo: '/assets/clients/logo 7.jpeg' }
   ];
 
   // Seamless infinite loop list
