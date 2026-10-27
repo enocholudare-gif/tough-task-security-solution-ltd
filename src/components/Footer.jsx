@@ -192,6 +192,17 @@ export default function Footer({ setActivePage, onOpenQuote }) {
                   +260 968 025 444
                 </a>
               </div>
+              <div className="flex items-center justify-between p-2 rounded-lg bg-[#181B1F] border border-[#22C55E]/30">
+                <span className="text-[11px] text-[#22C55E] font-bold">WhatsApp:</span>
+                <a 
+                  href="https://wa.me/260968025444?text=Hello%20Tough%20Task%20Security,%20I%20would%20like%20to%20enquire%20about%20your%20services." 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="text-[#22C55E] font-bold hover:underline"
+                >
+                  +260 0968025444
+                </a>
+              </div>
             </div>
 
             <div className="pt-1">

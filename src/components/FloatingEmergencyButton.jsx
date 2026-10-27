@@ -45,14 +45,14 @@ export default function FloatingEmergencyButton({ onOpenQuote }) {
             </a>
 
             <a
-              href="https://wa.me/260777127114?text=EMERGENCY%20DISPATCH%20REQUIRED:%20Please%20respond."
+              href="https://wa.me/260968025444?text=EMERGENCY%20DISPATCH%20REQUIRED:%20Please%20respond."
               target="_blank"
               rel="noopener noreferrer"
               className="w-full py-2.5 px-3 bg-[#22272E] hover:bg-white/10 border border-white/10 text-[#22C55E] hover:text-[#4ADE80] font-bold rounded-lg flex items-center justify-between transition-colors shadow-sm"
             >
               <div className="flex items-center space-x-2">
                 <MessageSquare className="w-4 h-4" />
-                <span>WhatsApp Dispatch</span>
+                <span>WhatsApp: +260 0968025444</span>
               </div>
               <span className="font-mono text-[10px] bg-[#22C55E]/20 px-1.5 py-0.5 rounded text-[#22C55E]">Live</span>
             </a>

@@ -19,7 +19,7 @@ export default function FAQSection() {
     },
     {
       q: 'What geographic areas and provinces does Tough Task cover?',
-      a: 'Tough Task Security Solutions has active operational deployment across all 10 provinces in Zambia, covering 39 core economic districts including Lusaka, Ndola, Kitwe, Kabwe, Livingstone, Chipata, Solwezi, and Kasama, as well as inter-provincial transit routes.'
+      a: 'Tough Task Security Solutions has active operational deployment across all 10 provinces in Zambia, covering 42 core economic districts including Lusaka, Ndola, Kitwe, Kabwe, Livingstone, Chipata, Solwezi, and Kasama, as well as inter-provincial transit routes.'
     },
     {
       q: 'Can we combine static manned guarding with 24/7 offsite CCTV monitoring?',

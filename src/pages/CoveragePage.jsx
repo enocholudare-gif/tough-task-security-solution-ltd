@@ -18,7 +18,7 @@ export default function CoveragePage({ onOpenQuote }) {
             OPERATIONS IN ALL <span className="text-[#16A34A]">10 PROVINCES</span>
           </h1>
           <p className="text-[#475569] text-sm sm:text-base leading-relaxed max-w-2xl font-normal">
-            With verified operational presence in 39 core economic districts, Tough Task delivers rapid mobilization, armed escorts, and managed guarding anywhere across the Republic of Zambia.
+            With verified operational presence in 42 core economic districts, Tough Task delivers rapid mobilization, armed escorts, and managed guarding anywhere across the Republic of Zambia.
           </p>
         </div>
       </div>

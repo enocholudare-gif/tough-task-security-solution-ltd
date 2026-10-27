@@ -34,7 +34,7 @@ export default function HomePage({ setActivePage, onOpenQuote }) {
       {/* 6. WHY CHOOSE TOUGH TASK: 6 Verified Differentiators */}
       <WhyChooseUsSection onOpenQuote={onOpenQuote} />
 
-      {/* 7. OPERATIONAL FOOTPRINT: Zambia 10 Provinces & 39 Districts Directory & Official Map */}
+      {/* 7. OPERATIONAL FOOTPRINT: Zambia 10 Provinces & 42 Districts Directory & Official Map */}
       <CoverageSection onOpenQuote={onOpenQuote} />
 
       {/* 8. OPERATIONAL CASE STUDIES: Proven Sector Deployments */}

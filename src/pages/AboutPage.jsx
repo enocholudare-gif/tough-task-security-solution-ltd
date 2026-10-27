@@ -66,6 +66,8 @@ export default function AboutPage({ onOpenQuote }) {
             loop
             muted
             playsInline
+            preload="metadata"
+            poster="/assets/security-leadership.jpg"
             className="w-full h-full object-cover object-center filter brightness-[0.8] contrast-[1.05]"
           >
             <source src="/assets/about-video.mp4" type="video/mp4" />
@@ -177,7 +179,7 @@ export default function AboutPage({ onOpenQuote }) {
                 <span className="text-[10px] text-[#64748B] uppercase tracking-wider block">Provinces Active</span>
               </div>
               <div className="space-y-1 p-3 bg-white border border-gray-200 rounded-xl shadow-xs">
-                <span className="text-2xl font-black text-[#16A34A] font-display block">39</span>
+                <span className="text-2xl font-black text-[#16A34A] font-display block">42</span>
                 <span className="text-[10px] text-[#64748B] uppercase tracking-wider block">Operational Districts</span>
               </div>
               <div className="space-y-1 p-3 bg-white border border-gray-200 rounded-xl shadow-xs">

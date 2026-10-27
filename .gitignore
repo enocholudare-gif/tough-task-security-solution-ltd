@@ -25,3 +25,5 @@ dist-ssr
 
 # Raw uploaded video files in root
 VID-*.mp4
+
+*-original.mp4

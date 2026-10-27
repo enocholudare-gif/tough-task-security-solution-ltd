@@ -23,7 +23,7 @@ export default function CoverageSection({ onOpenQuote }) {
             </div>
 
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold font-display tracking-tight uppercase text-[#0F172A] leading-snug">
-              NATIONWIDE COVERAGE: <span className="text-[#16A34A]">10 PROVINCES &amp; 39 DISTRICTS</span>
+              NATIONWIDE COVERAGE: <span className="text-[#16A34A]">10 PROVINCES &amp; 42 DISTRICTS</span>
             </h2>
 
             <p className="text-[#334155] text-xs sm:text-sm md:text-base leading-relaxed">

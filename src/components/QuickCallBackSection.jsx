@@ -117,13 +117,16 @@ export default function QuickCallBackSection() {
                   <span className="truncate text-[11px] font-semibold">info@toughtaskltd.com</span>
                 </a>
                 <a
-                  href="https://wa.me/260777127114?text=Hello%20Tough%20Task%20Security,%20I%20would%20like%20to%20enquire%20about%20your%20services."
+                  href="https://wa.me/260968025444?text=Hello%20Tough%20Task%20Security,%20I%20would%20like%20to%20enquire%20about%20your%20services."
                   target="_blank"
                   rel="noopener noreferrer"
                   className="p-3.5 rounded-xl bg-white border border-gray-200/90 hover:border-[#16A34A] shadow-sm flex items-center space-x-2 text-[#475569] hover:text-[#0F172A] transition-colors"
                 >
                   <MessageSquare className="w-4 h-4 text-[#16A34A] shrink-0" />
-                  <span className="text-[11px] font-semibold">WhatsApp Desk</span>
+                  <div className="truncate">
+                    <span className="text-[11px] font-semibold block leading-tight">WhatsApp Desk</span>
+                    <span className="text-[10px] text-[#16A34A] font-bold block leading-tight">+260 0968025444</span>
+                  </div>
                 </a>
               </div>
 
@@ -247,7 +250,7 @@ export default function QuickCallBackSection() {
                       onChange={(e) => setFormData({ ...formData, location: e.target.value })}
                       className="w-full px-3.5 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-xs text-[#0F172A] focus:bg-white focus:outline-none focus:border-[#16A34A] focus:ring-1 focus:ring-[#16A34A] transition-all"
                     >
-                      {allLocationsList.slice(0, 39).map((loc, idx) => (
+                      {allLocationsList.map((loc, idx) => (
                         <option key={idx} value={`${loc.name} (${loc.province})`}>
                           {loc.name} — {loc.province}
                         </option>

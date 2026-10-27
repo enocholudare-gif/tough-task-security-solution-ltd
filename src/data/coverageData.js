@@ -24,7 +24,7 @@ export const provincesData = [
     name: "Central Province",
     capital: "Kabwe",
     description: "Key agricultural and transit logistics corridor connecting Lusaka to the northern and eastern frontiers.",
-    districts: ["Kapiri Mposhi", "Mkushi", "Masansa", "Serenje", "Chibombo"],
+    districts: ["Kapiri Mposhi", "Mkushi", "Masansa", "Serenje", "Chibombo", "Mumbwa"],
     status: "Active Deployment",
     color: "#059669",
     mapCoord: { x: 54, y: 53 }
@@ -44,7 +44,7 @@ export const provincesData = [
     name: "Northern Province",
     capital: "Kasama",
     description: "Port security at Lake Tanganyika, logistics hubs, and commercial agriculture operations.",
-    districts: ["Mbala", "Senga Hill", "Mpulungu", "Kasama", "Mungwi", "Luwingu"],
+    districts: ["Mbala", "Senga Hill", "Mpulungu", "Kasama", "Mungwi", "Luwingu", "Mporokoso"],
     status: "Active Deployment",
     color: "#7c3aed",
     mapCoord: { x: 67, y: 25 }
@@ -64,7 +64,7 @@ export const provincesData = [
     name: "Luapula Province",
     capital: "Mansa",
     description: "Trade routes, fisheries, and commercial asset protection across the Luapula belt.",
-    districts: ["Kawambwa", "Samfya"],
+    districts: ["Mansa", "Kawambwa", "Samfya"],
     status: "Active Deployment",
     color: "#0d9488",
     mapCoord: { x: 57, y: 30 }
@@ -101,7 +101,7 @@ export const provincesData = [
   }
 ];
 
-// All 39 verified locations flat list with province mapping
+// All 42 verified locations flat list with province mapping
 export const allLocationsList = [
   { id: 1, name: "Kasempa", province: "North-Western Province", type: "District Center", coverage: "Manned Guarding, Rapid Response, Industrial" },
   { id: 2, name: "Chililabombwe", province: "Copperbelt Province", type: "Border & Mining Hub", coverage: "Border Security, Manned Guarding, Industrial" },
@@ -141,5 +141,8 @@ export const allLocationsList = [
   { id: 36, name: "Chadiza", province: "Eastern Province", type: "Border District", coverage: "Border Facility Security, Guarding" },
   { id: 37, name: "Vubwi", province: "Eastern Province", type: "Frontier Post", coverage: "Static Guarding, Asset Protection" },
   { id: 38, name: "Kaoma", province: "Western Province", type: "Commercial Hub", coverage: "Manned Guarding, Loss Prevention" },
-  { id: 39, name: "Luampa", province: "Western Province", type: "District Post", coverage: "Static Guarding, Commercial Security" }
+  { id: 39, name: "Luampa", province: "Western Province", type: "District Post", coverage: "Static Guarding, Commercial Security" },
+  { id: 40, name: "Mumbwa", province: "Central Province", type: "District Center & Agri-Hub", coverage: "Manned Guarding, Commercial Security, Patrols" },
+  { id: 41, name: "Mporokoso", province: "Northern Province", type: "District Center", coverage: "Manned Guarding, Static Posts, Facility Protection" },
+  { id: 42, name: "Mansa", province: "Luapula Province", type: "Provincial Capital & Commercial Hub", coverage: "Command Unit, Commercial Guarding, CCTV, Mobile Patrols" }
 ];

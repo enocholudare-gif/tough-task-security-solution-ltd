@@ -161,6 +161,16 @@ export default function Navbar({ activePage, setActivePage, onOpenQuote }) {
                     +260 968 025 444
                   </a>
                 </div>
+                <div className="pt-1 border-t border-[#22272E] text-center">
+                  <a 
+                    href="https://wa.me/260968025444?text=Hello%20Tough%20Task%20Security,%20I%20would%20like%20to%20enquire%20about%20your%20services." 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="text-[#22C55E] font-bold text-[11px] hover:underline"
+                  >
+                    WhatsApp Chat: +260 0968025444
+                  </a>
+                </div>
               </div>
             </div>
           </div>

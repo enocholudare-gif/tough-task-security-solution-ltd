@@ -19,6 +19,13 @@ export const companyInfo = {
     { display: "+260 968 025 444", raw: "+260968025444", label: "Direct Line / Rapid Response" }
   ],
   
+  whatsapp: {
+    display: "+260 0968025444",
+    raw: "+260968025444",
+    chatUrl: "https://wa.me/260968025444",
+    label: "WhatsApp Live Chat Desk"
+  },
+  
   email: {
     display: "info@toughtaskltd.com",
     raw: "info@toughtaskltd.com",
@@ -45,7 +52,7 @@ export const companyInfo = {
   trustIndicators: [
     { title: "24/7 Operations", subtitle: "Round-the-clock control room & mobile dispatch" },
     { title: "10 Provinces", subtitle: "True nationwide operational presence in Zambia" },
-    { title: "39 Districts", subtitle: "Active deployment footprint across key economic corridors" },
+    { title: "42 Districts", subtitle: "Active deployment footprint across key economic corridors" },
     { title: "Tech-Enabled", subtitle: "GPS guard tour tracking & digital incident evidence" }
   ]
 };

@@ -127,12 +127,12 @@ export default function QuoteBuilderModal({ isOpen, onClose, preselectedService 
                   </a>
 
                   <a
-                    href={`https://wa.me/260777127114?text=Hello%20Tough%20Task%20Security,%20I%20have%20submitted%20a%20quote%20request%20for%20${encodeURIComponent(formData.serviceRequired)}%20in%20${encodeURIComponent(formData.location)}.`}
+                    href={`https://wa.me/260968025444?text=Hello%20Tough%20Task%20Security,%20I%20have%20submitted%20a%20quote%20request%20for%20${encodeURIComponent(formData.serviceRequired)}%20in%20${encodeURIComponent(formData.location)}.`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="px-4 py-2 bg-white hover:bg-gray-100 border border-gray-200 text-green-800 font-bold text-xs uppercase tracking-wider rounded-xl flex items-center transition-colors shadow-xs"
                   >
-                    WhatsApp Command Desk
+                    WhatsApp: +260 0968025444
                   </a>
                 </div>
               </div>

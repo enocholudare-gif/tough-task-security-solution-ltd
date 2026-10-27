@@ -17,6 +17,7 @@ export default function HeroSection({ onOpenQuote }) {
           loop
           muted
           playsInline
+          preload="metadata"
           className="w-full h-full object-cover object-center filter brightness-[0.88] contrast-[1.08]"
           poster="/assets/cao.jpg"
         >
@@ -111,7 +112,7 @@ export default function HeroSection({ onOpenQuote }) {
           <div className="flex items-center space-x-4">
             <span className="text-[#22C55E] font-bold">&lt;5 MIN TACTICAL SLA</span>
             <span className="text-white/30">•</span>
-            <span>39 OPERATIONAL DISTRICTS</span>
+            <span>42 OPERATIONAL DISTRICTS</span>
           </div>
         </div>
       </div>

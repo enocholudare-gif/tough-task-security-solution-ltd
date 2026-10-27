@@ -43,7 +43,7 @@ export default function ContactPage({ onOpenQuote: _onOpenQuote }) {
     },
     {
       q: 'Can Tough Task handle security tenders across multiple provinces simultaneously?',
-      a: 'Yes. With permanent operational detachments in all 10 provinces and 39 districts, we manage unified multi-site national contracts with consolidated reporting and single-point account management.'
+      a: 'Yes. With permanent operational detachments in all 10 provinces and 42 districts, we manage unified multi-site national contracts with consolidated reporting and single-point account management.'
     }
   ];
 
@@ -164,13 +164,13 @@ export default function ContactPage({ onOpenQuote: _onOpenQuote }) {
               </p>
               <div className="pt-2">
                 <a
-                  href="https://wa.me/260777127114?text=Hello%20Tough%20Task%20Security,%20I%20would%20like%20to%20enquire%20about%20your%20services."
+                  href="https://wa.me/260968025444?text=Hello%20Tough%20Task%20Security,%20I%20would%20like%20to%20enquire%20about%20your%20services."
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center space-x-1.5 px-4 py-2.5 rounded-xl bg-green-50 text-green-800 text-xs font-semibold uppercase tracking-wider hover:bg-green-100 border border-green-200 transition-colors"
                 >
                   <MessageSquare className="w-3.5 h-3.5 text-[#16A34A]" />
-                  <span>WHATSAPP COMMAND DESK</span>
+                  <span>WHATSAPP: +260 0968025444</span>
                 </a>
               </div>
             </div>
@@ -314,7 +314,7 @@ export default function ContactPage({ onOpenQuote: _onOpenQuote }) {
                     onChange={(e) => setFormData({ ...formData, location: e.target.value })}
                     className="w-full px-3.5 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-xs text-[#0F172A] focus:bg-white focus:outline-none focus:border-[#16A34A] focus:ring-1 focus:ring-[#16A34A] transition-all"
                   >
-                    {allLocationsList.slice(0, 39).map((loc, idx) => (
+                    {allLocationsList.map((loc, idx) => (
                       <option key={idx} value={`${loc.name} (${loc.province})`}>
                         {loc.name} — {loc.province}
                       </option>
